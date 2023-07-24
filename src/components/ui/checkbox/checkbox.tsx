@@ -1,7 +1,11 @@
-export const checkbox = () => {
+import s from './checkbox.module.scss'
+// type CheckboxProps = {
+//   name?: string
+// }
+
+export const Checkbox = () => {
   return (
-    <div>
-      <input type={'checkbox'} checked />
+    <div className={s.checkboxWrapper}>
       <input type={'checkbox'} />
     </div>
   )
