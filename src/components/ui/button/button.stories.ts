@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from './'
 
 const meta = {
-  title: 'Components/Button',
+  title: 'Components/Card',
   component: Button,
   tags: ['autodocs'],
   argTypes: {
@@ -20,7 +20,7 @@ type Story = StoryObj<typeof meta>
 export const Primary: Story = {
   args: {
     variant: 'primary',
-    children: 'Primary Button',
+    children: 'Primary Card',
     disabled: false,
   },
 }
@@ -28,21 +28,21 @@ export const Primary: Story = {
 export const Secondary: Story = {
   args: {
     variant: 'secondary',
-    children: 'Secondary Button',
+    children: 'Secondary Card',
     disabled: false,
   },
 }
 export const Tertiary: Story = {
   args: {
     variant: 'tertiary',
-    children: 'Tertiary Button',
+    children: 'Tertiary Card',
     disabled: false,
   },
 }
 export const Link: Story = {
   args: {
     variant: 'link',
-    children: 'Tertiary Button',
+    children: 'Tertiary Card',
     disabled: false,
   },
 }
@@ -50,7 +50,7 @@ export const Link: Story = {
 export const FullWidth: Story = {
   args: {
     variant: 'primary',
-    children: 'Full Width Button',
+    children: 'Full Width Card',
     disabled: false,
     fullWidth: true,
   },
