@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from './'
 
 const meta = {
-  title: 'Components/Card',
+  title: 'Components/Button',
   component: Button,
   tags: ['autodocs'],
   argTypes: {
