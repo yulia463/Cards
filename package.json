@@ -15,7 +15,8 @@
   "dependencies": {
     "@fontsource/roboto": "^5.0.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.3"
   },
   "devDependencies": {
     "@it-incubator/eslint-config": "^0.1.3",
