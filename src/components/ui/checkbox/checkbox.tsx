@@ -10,3 +10,4 @@ export const Checkbox = () => {
     </div>
   )
 }
+console.log('test')
