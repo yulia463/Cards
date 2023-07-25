@@ -1,17 +1,124 @@
+
 .primary {
-  background-color: red;
+  background-color: var(--color-accent-500);
+  border: none;
+  padding: 6px 28px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+}
+
+.primary:active {
+  background-color: var(--color-accent-700);
+}
+
+.primary:hover {
+  background-color: var(--color-accent-300);
+}
+
+.primary:focus {
+  background-color: var(--color-accent-500);
+  border: 2px solid var(--color-info-700);
+}
+
+.primary:disabled {
+  background-color: var(--color-accent-900);
+  color: var(--color-light-900);
+  cursor: auto;
 }
 
 .secondary {
-  background-color: green;
+  background-color: var(--color-dark-300);
+  border: none;
+  padding: 6px 28px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+}
+
+.secondary:active {
+  background-color: var(--color-dark-500);
+}
+
+.secondary:hover {
+  background-color: var(--color-dark-100);
+}
+
+.secondary:focus {
+  background-color: var(--color-dark-300);
+  border: 2px solid var(--color-info-700);
+}
+
+.secondary:disabled {
+  background-color: var(--color-dark-300);
+  color: var(--color-light-900);
+  cursor: auto;
 }
 
 .tertiary {
-  background-color: blue;
+  background-color: transparent;
+  padding: 8px 28px;
+  border: 1px solid var(--color-accent-500);
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  color: var(--color-accent-500)
+}
+
+.tertiary:active {
+  background-color: var(--color-accent-900);
+}
+
+.tertiary:hover {
+  background-color: var(--color-accent-700);
+}
+
+.tertiary:focus {
+  background-color: transparent;
+  border: 2px solid var(--color-info-700);
+}
+
+.tertiary:disabled {
+  background-color: transparent;
+  color: var(--color-accent-900);
+  border: 2px solid var(--color-accent-900);
+  cursor: auto;
 }
 
 .link {
-  background-color: yellow;
+  background-color: transparent;
+  padding: 6px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  color: var(--color-accent-500)
+}
+
+.link:active {
+  background-color: var(--color-accent-700);
+}
+
+.link:hover {
+  background-color: transparent;
+  color: var(--color-accent-300)
+}
+
+.link:focus {
+  background-color: transparent;
+  border: 2px solid var(--color-info-700);
+}
+
+.link:disabled {
+  background-color: transparent;
+  color: var(--color-accent-900);
+  border: none;
+  border-radius: 50%;
+  cursor: auto;
 }
 
 .fullWidth {
