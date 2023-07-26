@@ -1,0 +1,61 @@
+.select {
+  background-color: transparent;
+  color: var(--color-light-100);
+  border: 1px solid var(--color-dark-300);
+  border-radius: 2px;
+  padding: 6px 20px;
+  font-family: Roboto, sans-serif;
+  font-weight: var(--font-weight-regular);
+}
+
+.select:active {
+  background-color: transparent;
+  border: 1px solid var(--color-dark-100);
+}
+
+.select:hover {
+  background-color: var(--color-dark-500);
+  border: 1px solid var(--color-dark-100);
+}
+
+.select:focus {
+  background-color: var(--color-dark-500);
+  border: 2px solid var(--color-info-700);
+}
+
+.select:disabled {
+  color: var(--color-dark-300);
+  border: 1px solid var(--color-dark-300);
+}
+
+.option {
+  background-color: transparent;
+  color: var(--color-light-100);
+  border: 1px solid var(--color-dark-300);
+  border-radius: 2px;
+  padding: 6px 20px;
+  font-family: Roboto, sans-serif;
+  font-weight: var(--font-weight-regular);
+}
+
+.option:active {
+  background-color: transparent;
+  border: 1px solid var(--color-dark-100);
+}
+
+.option:hover {
+  background-color: var(--color-accent-900);
+  color: var(--color-accent-300);
+  border: 1px solid var(--color-dark-100);
+}
+
+.option:focus {
+  background-color: var(--color-dark-500);
+  border: 2px solid var(--color-info-700);
+}
+
+.option:disabled {
+  color: var(--color-dark-300);
+  border: 1px solid var(--color-dark-300);
+}
+
