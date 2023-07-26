@@ -1,13 +1,47 @@
-import s from './checkbox.module.scss'
-// type CheckboxProps = {
-//   name?: string
-// }
+type DefaultInputPropsType = React.DetailedHTMLProps<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  HTMLInputElement
+>
 
-export const Checkbox = () => {
+export type CheckboxPropsType = Omit<DefaultInputPropsType, 'type'> & {
+  onChangeChecked?: (checked: boolean) => void
+  spanClassName?: string
+  className?: string
+  onChange?: () => void // Make onChange optional
+  id: string
+  label?: string
+}
+
+export const Checkbox: React.FC<CheckboxPropsType & { label: string }> = ({
+  onChange,
+  onChangeChecked,
+  className,
+  spanClassName,
+  children,
+  id,
+  label,
+  ...restProps
+}) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (onChange) {
+      onChange(event)
+    }
+    if (onChangeChecked) {
+      onChangeChecked(event.target.checked)
+    }
+  }
+
   return (
-    <div className={s.checkboxWrapper}>
-      <input type={'checkbox'} />
-    </div>
+    <label className={`checkbox ${className}`}>
+      <input
+        className="checkbox-input"
+        type="checkbox"
+        onChange={handleChange}
+        id={id}
+        {...restProps}
+      />
+      <span className={`checkmark ${spanClassName}`} />
+      {label}
+    </label>
   )
 }
-console.log('test')
