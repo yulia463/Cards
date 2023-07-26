@@ -1,0 +1,14 @@
+.sliderWrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+
+.sliderValueWrapper {
+  padding: 7px;
+  border: 2px solid var(--color-dark-300);
+  border-radius: 3px;
+  font-family: Roboto, sans-serif;
+  font-weight: var(--font-weight-regular);
+}
