@@ -1,0 +1,48 @@
+// Dropdown.module.scss
+
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-select {
+  cursor: pointer;
+
+  min-width: 150px;
+  padding: 8px 16px;
+
+  background-color: #341919;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: #9f9696;
+  }
+}
+
+.dropdown-options {
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+
+  min-width: 150px;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  background-color: #211f1f;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 20%);
+}
+
+.dropdown-option {
+  cursor: pointer;
+  padding: 8px 16px;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+}
