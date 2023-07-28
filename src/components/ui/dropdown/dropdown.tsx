@@ -1,5 +1,5 @@
 import s from './dropdown.module.scss'
-type Option = React.ReactChild
+type Option = { label: string; value: string }
 
 type DropdownProps = {
   options: Option[]
@@ -7,7 +7,7 @@ type DropdownProps = {
   isDropdownOpen: boolean
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ options, isDropdownOpen }) => {
+export const Dropdown: React.FC<DropdownProps> = ({ options, isDropdownOpen }) => {
   // const [selectedOption, setSelectedOption] = useState<Option | undefined>(defaultOption)
   // const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
@@ -23,7 +23,7 @@ const Dropdown: React.FC<DropdownProps> = ({ options, isDropdownOpen }) => {
         <ul className={s['dropdown-options']}>
           {options.map((option, index) => (
             <li key={index} className={s['dropdown-option']}>
-              {option}
+              {option.label}
             </li>
           ))}
         </ul>
@@ -31,5 +31,3 @@ const Dropdown: React.FC<DropdownProps> = ({ options, isDropdownOpen }) => {
     </div>
   )
 }
-
-export default Dropdown
