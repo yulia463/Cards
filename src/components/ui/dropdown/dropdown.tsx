@@ -1,5 +1,5 @@
 import s from './dropdown.module.scss'
-type Option = { label: string; value: string }
+export type Option = { label: string; value: string }
 
 type DropdownProps = {
   options: Option[]
