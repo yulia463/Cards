@@ -19,6 +19,7 @@ type SupertextFieldPropsType = Omit<DefaultInputPropsType, 'type'> & {
   error?: ReactNode
   spanClassName?: string
   disabled?: true
+  label?: string
 }
 
 export const TextField: React.FC<SupertextFieldPropsType> = ({
@@ -28,6 +29,7 @@ export const TextField: React.FC<SupertextFieldPropsType> = ({
   onEnter,
   error,
   className,
+  label,
   spanClassName,
   id,
 

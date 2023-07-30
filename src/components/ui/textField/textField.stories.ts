@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { TextField } from './textField'
 
 const meta = {
-  title: 'Components/Input',
+  title: 'Components/TextField',
   component: TextField,
   tags: ['autodocs'],
   argTypes: {},
@@ -13,13 +13,21 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-  args: {},
+  args: {
+    label: 'Label',
+  },
 }
 
 export const Disabled: Story = {
-  args: { disabled: true },
+  args: {
+    disabled: true,
+    label: 'Label',
+  },
 }
 
 export const Error: Story = {
-  args: { error: 'Error' },
+  args: {
+    error: 'Error',
+    label: 'Label',
+  },
 }
