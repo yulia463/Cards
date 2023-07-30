@@ -5,7 +5,6 @@ import { z } from 'zod'
 
 import { Button } from '../../ui/button/button.tsx'
 import { ControlledCheckbox } from '../../ui/controlled/controlled-checkbox/controlledCheckbox.tsx'
-import { Input } from '../../ui/input/input.tsx'
 
 const loginSchema = z.object({
   email: z.string().email(),
@@ -15,13 +14,13 @@ const loginSchema = z.object({
 
 type FormValues = z.infer<typeof loginSchema>
 
-const emailRegex =
-  /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/
+// const emailRegex =
+//   /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/
 
 export const LoginForm = () => {
   const {
     control,
-    register,
+    // register,
     handleSubmit,
     formState: { errors },
   } = useForm<FormValues>({
@@ -45,8 +44,8 @@ export const LoginForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <DevTool control={control} />
-      <Input {...register('email')} label={'email'} errorMessage={errors.email?.message} />
-      <Input {...register('password')} label={'password'} errorMessage={errors.password?.message} />
+      {/*<Input {...register('email')} label={'email'} errorMessage={errors.email?.message} />*/}
+      {/*<Input {...register('password')} label={'password'} errorMessage={errors.password?.message} />*/}
       <ControlledCheckbox label={'remember me'} control={control} name={'rememberMe'} />
       <Button type="submit">Submit</Button>
     </form>
