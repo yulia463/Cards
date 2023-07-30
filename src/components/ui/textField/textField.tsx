@@ -6,14 +6,14 @@ import {
   ReactNode,
 } from 'react'
 
-import s from './input.module.scss'
+import s from './textField.module.scss'
 
 type DefaultInputPropsType = DetailedHTMLProps<
   InputHTMLAttributes<HTMLInputElement>,
   HTMLInputElement
 >
 
-type SuperInputTextPropsType = Omit<DefaultInputPropsType, 'type'> & {
+type SupertextFieldPropsType = Omit<DefaultInputPropsType, 'type'> & {
   onChangeText?: (value: string) => void
   onEnter?: () => void
   error?: ReactNode
@@ -21,7 +21,7 @@ type SuperInputTextPropsType = Omit<DefaultInputPropsType, 'type'> & {
   disabled?: true
 }
 
-export const Input: React.FC<SuperInputTextPropsType> = ({
+export const TextField: React.FC<SupertextFieldPropsType> = ({
   onChange,
   onChangeText,
   onKeyPress,
