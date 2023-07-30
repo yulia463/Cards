@@ -1,4 +1,4 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 
 import type { Meta, StoryObj } from '@storybook/react'
 
@@ -14,25 +14,26 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {}
-type Sort = {
-  key: string
-  direction: 'asc' | 'desc'
-} | null
+// type Sort = {
+//   key: string
+//   direction: 'asc' | 'desc'
+// } | null
 
-const [sort, setSort] = useState<Sort>(null)
-const handleSort = (key: string) => {
-  if (sort && sort.key === key) {
-    setSort({
-      key,
-      direction: sort.direction === 'asc' ? 'desc' : 'asc',
-    })
-  } else {
-    setSort({
-      key,
-      direction: 'asc',
-    })
-  }
-}
+//const [sort, setSort] = useState<Sort>(null)
+// const handleSort = (key: string) => {
+//   if (sort && sort.key === key) {
+//     setSort({
+//       key,
+//       direction: sort.direction === 'asc' ? 'desc' : 'asc',
+//     })
+//   } else {
+//     setSort({
+//       key,
+//       direction: 'asc',
+//     })
+//   }
+// }
+
 const data = [
   {
     title: 'Project A',
