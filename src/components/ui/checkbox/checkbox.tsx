@@ -1,47 +1,65 @@
-type DefaultInputPropsType = React.DetailedHTMLProps<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  HTMLInputElement
->
+import { FC } from 'react'
 
-export type CheckboxPropsType = Omit<DefaultInputPropsType, 'type'> & {
-  onChangeChecked?: (checked: boolean) => void
-  spanClassName?: string
+import * as CheckboxRadix from '@radix-ui/react-checkbox'
+import * as LabelRadix from '@radix-ui/react-label'
+import { clsx } from 'clsx'
+
+import { Check } from '../../../assets/icons'
+import { Typography } from '../typography'
+
+import s from './checkbox.module.scss'
+export type CheckboxProps = {
   className?: string
-  onChange?: () => void // Make onChange optional
-  id: string
+  checked?: boolean
+  onChange?: (checked: boolean) => void
+  disabled?: boolean
+  required?: boolean
   label?: string
+  id?: string
+  position?: 'left'
 }
 
-export const Checkbox: React.FC<CheckboxPropsType & { label: string }> = ({
+export const Checkbox: FC<CheckboxProps> = ({
+  checked,
   onChange,
-  onChangeChecked,
-  className,
-  spanClassName,
-  children,
-  id,
+  position,
+  disabled,
+  required,
   label,
-  ...restProps
+  id,
+  className,
 }) => {
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (onChange) {
-      onChange(event)
-    }
-    if (onChangeChecked) {
-      onChangeChecked(event.target.checked)
-    }
+  const classNames = {
+    container: clsx(s.container, className),
+    buttonWrapper: clsx(s.buttonWrapper, disabled && s.disabled, position === 'left' && s.left),
+    root: s.root,
+    indicator: s.indicator,
+    label: clsx(s.label, disabled && s.disabled),
   }
 
   return (
-    <label className={`checkbox ${className}`}>
-      <input
-        className="checkbox-input"
-        type="checkbox"
-        onChange={handleChange}
-        id={id}
-        {...restProps}
-      />
-      <span className={`checkmark ${spanClassName}`} />
-      {label}
-    </label>
+    <div className={classNames.container}>
+      <LabelRadix.Root asChild>
+        <Typography variant="body2" className={classNames.label} as={'label'}>
+          <div className={classNames.buttonWrapper}>
+            <CheckboxRadix.Root
+              className={classNames.root}
+              checked={checked}
+              onCheckedChange={onChange}
+              disabled={disabled}
+              required={required}
+              id={id}
+            >
+              {checked && (
+                <CheckboxRadix.Indicator className={classNames.indicator} forceMount>
+                  <Check />
+                </CheckboxRadix.Indicator>
+              )}
+            </CheckboxRadix.Root>
+          </div>
+          {label}
+        </Typography>
+      </LabelRadix.Root>
+    </div>
   )
 }
