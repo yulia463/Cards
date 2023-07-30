@@ -19,3 +19,9 @@ export const Default: Story = {
 export const Disabled: Story = {
   args: { id: '5', label: 'check-box', disabled: true },
 }
+export const Uncontrolled = {
+  args: {
+    label: 'Click here',
+    disabled: false,
+  },
+}

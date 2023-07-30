@@ -4,43 +4,46 @@ type DefaultInputPropsType = React.DetailedHTMLProps<
 >
 
 export type CheckboxPropsType = Omit<DefaultInputPropsType, 'type'> & {
-  onChangeChecked?: (checked: boolean) => void
-  spanClassName?: string
   className?: string
-  onChange?: () => void // Make onChange optional
-  id: string
+  checked?: boolean
+  onValueChange?: (checked: boolean) => void
+  disabled?: boolean
+  required?: boolean
   label?: string
+  id?: string
+  position?: 'left'
 }
 
 export const Checkbox: React.FC<CheckboxPropsType & { label: string }> = ({
-  onChange,
-  onChangeChecked,
-  className,
-  spanClassName,
-  children,
+  checked,
+  onValueChange,
+  position,
+  disabled,
+  required,
   id,
   label,
+  className,
   ...restProps
 }) => {
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (onChange) {
-      onChange(event)
-    }
-    if (onChangeChecked) {
-      onChangeChecked(event.target.checked)
-    }
-  }
+  // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   if (onValueChange) {
+  //     onValueChange(event)
+  //   }
+  //   if (onValueChange) {
+  //     onValueChange(event.target.checked)
+  //   }
+  // }
 
   return (
     <label className={`checkbox ${className}`}>
       <input
         className="checkbox-input"
         type="checkbox"
-        onChange={handleChange}
+        // onChange={handleChange}
         id={id}
         {...restProps}
       />
-      <span className={`checkmark ${spanClassName}`} />
+      <span />
       {label}
     </label>
   )

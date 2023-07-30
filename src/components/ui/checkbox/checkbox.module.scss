@@ -1,38 +1,79 @@
-.checkbox {
+.container {
   display: flex;
   align-items: center;
+}
+
+.label {
   cursor: pointer;
-  font-size: 16px;
-  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+
+  &.disabled {
+    color: var(--color-checkbox-disabled);
+  }
 }
 
-.checkbox input {
-  position: absolute;
-  opacity: 0;
+.root {
   cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 18px;
+  height: 18px;
+
+  background-color: var(--color-bg-primary);
+  border: 2px solid var(--color-light-900);
+  border-radius: 2px;
+
+  &:focus {
+    background-color: var(--color-bg-focus);
+  }
+
+  &:disabled {
+    cursor: initial;
+    border-color: var(--color-checkbox-disabled);
+  }
+
+  &[data-state='checked']:disabled {
+    background-color: var(--color-checkbox-disabled);
+  }
 }
 
-.checkmark {
-  position: relative;
-  height: 24px;
-  width: 24px;
-  border: 2px solid #333;
-  border-radius: 4px;
+.buttonWrapper {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  background-color: rgb(255 255 255 / 0%);
+  border-radius: 50%;
+
+  &.disabled {
+    cursor: initial;
+  }
+
+  &:focus-within,
+  &:hover:not(.disabled),
+  &:hover .root:not([data-state='checked']) {
+    background-color: var(--color-bg-focus);
+  }
+
+  &:active:not(.disabled) {
+    background-color: var(--color-bg-primary-active);
+  }
+
+  &.left {
+    margin-left: -9px;
+  }
 }
 
-.checkbox input:checked ~ .checkmark {
-  background-color: #333;
-}
-
-.checkbox input:focus ~ .checkmark {
-  box-shadow: 0 0 3px #333;
-}
-
-.checkbox input:hover:not(:checked) ~ .checkmark {
-  background-color: #f2f2f2;
-}
-
-.checkbox.disabled {
-  opacity: 0.6;
-  pointer-events: none;
+.indicator {
+  width: 18px;
+  height: 18px;
 }
