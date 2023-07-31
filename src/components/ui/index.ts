@@ -1,5 +1,5 @@
 export * from './button'
-export * from './input'
+export * from './textField/textField.tsx'
 export * from './dropdownButton'
 export * from './dropdown'
 export * from './controlled/controlled-checkbox/controlledCheckbox.tsx'

@@ -1,10 +1,11 @@
 import { DevTool } from '@hookform/devtools'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
+import { useController, useForm } from 'react-hook-form'
 import { z } from 'zod'
 
 import { Button } from '../../ui/button/button.tsx'
 import { ControlledCheckbox } from '../../ui/controlled/controlled-checkbox/controlledCheckbox.tsx'
+import { TextField } from '../../ui/textField/textField.tsx'
 
 const loginSchema = z.object({
   email: z.string().email(),
@@ -14,26 +15,26 @@ const loginSchema = z.object({
 
 type FormValues = z.infer<typeof loginSchema>
 
-// const emailRegex =
-//   /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/
+const emailRegex =
+  /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/
 
 export const LoginForm = () => {
   const {
     control,
-    // register,
+    register,
     handleSubmit,
     formState: { errors },
   } = useForm<FormValues>({
     resolver: zodResolver(loginSchema),
   })
 
-  // const {
-  //   field: { value, onChange },
-  // } = useController({
-  //   name: 'rememberMe',
-  //   control,
-  //   defaultValue: false,
-  // })
+  const {
+    field: { value, onChange },
+  } = useController({
+    name: 'rememberMe',
+    control,
+    defaultValue: false,
+  })
 
   console.log('errors: ', errors)
 
@@ -44,8 +45,12 @@ export const LoginForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <DevTool control={control} />
-      {/*<Input {...register('email')} label={'email'} errorMessage={errors.email?.message} />*/}
-      {/*<Input {...register('password')} label={'password'} errorMessage={errors.password?.message} />*/}
+      <TextField {...register('email')} label={'email'} errorMessage={errors.email?.message} />
+      <TextField
+        {...register('password')}
+        label={'password'}
+        errorMessage={errors.password?.message}
+      />
       <ControlledCheckbox label={'remember me'} control={control} name={'rememberMe'} />
       <Button type="submit">Submit</Button>
     </form>
