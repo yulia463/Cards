@@ -8,6 +8,7 @@ import {
 import { SignIn } from '../src/components/auth/signIn'
 
 import { LoginForm } from './components/auth/login-form/loginForm.tsx'
+import { SignUp } from './components/auth/signUp/signUp.tsx'
 import Layout from './components/ui/Layout/Layout.tsx'
 import Login from './pages/LoginPage/Login.tsx'
 
@@ -25,6 +26,11 @@ export function App() {
       <RouterProvider router={router} />
       <LoginForm />
       <SignIn
+        onSubmit={() => {
+          'test'
+        }}
+      />
+      <SignUp
         onSubmit={() => {
           'test'
         }}
