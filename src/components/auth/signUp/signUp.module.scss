@@ -1,0 +1,45 @@
+.signUp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+  align-items: center;
+  justify-content: center;
+
+  padding: 33px 36px;
+
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+}
+
+.account {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.accountLink {
+  display: flex;
+  flex-direction: column;
+  color: #8C61FF
+}
+
+.button {
+  width: 348px;
+  height: 36px;
+  margin: 60px 0 0
+}

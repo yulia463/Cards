@@ -1,11 +1,13 @@
+import { FC } from 'react'
+
 import s from './Card.module.scss'
-import {FC} from "react";
 
 type CardProps = {
   children: React.ReactNode
+  className?: string
 }
-const Card: FC<CardProps> = ({ children }) => {
-  return <div className={s.cardWrapper}>{children}</div>
+const Card: FC<CardProps> = ({ children, className }) => {
+  return <div className={`${s.cardWrapper} ${className}`}>{children}</div>
 }
 
 export default Card

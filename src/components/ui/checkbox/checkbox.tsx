@@ -1,3 +1,4 @@
+import s from './checkbox.module.scss'
 type DefaultInputPropsType = React.DetailedHTMLProps<
   React.InputHTMLAttributes<HTMLInputElement>,
   HTMLInputElement
@@ -35,12 +36,13 @@ export const Checkbox: React.FC<CheckboxPropsType & { label: string }> = ({
   // }
 
   return (
-    <label className={`checkbox ${className}`}>
+    <label className={s.label}>
       <input
-        className="checkbox-input"
+        className={s.root}
         type="checkbox"
         // onChange={handleChange}
         id={id}
+        disabled={disabled}
         {...restProps}
       />
       <span />
