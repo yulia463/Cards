@@ -18,6 +18,14 @@
 .title {
   display: flex;
   justify-content: center;
+
+  /* Large */
+  font-family: Roboto;
+  font-size: 26px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 36px; /* 138.462% */
+  color: var(--light-100, #FFF);
 }
 
 .input {
@@ -30,12 +38,27 @@
   display: flex;
   flex-direction: column;
 
+  /* Body 2 */
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 24px; /* 171.429% */
+  color: var(--light-900, #C3C1C7);
+  text-align: center;
 }
 
 .accountLink {
   display: flex;
   flex-direction: column;
-  color: #8C61FF
+
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 24px; /* 150% */
+  color: var(--primary-500, #8C61FF);
+  text-decoration-line: underline;
 }
 
 .button {
