@@ -4,7 +4,7 @@ import { Button } from '../button'
 
 import s from './Navbar.module.scss'
 
-const Navbar = () => {
+export const Navbar = () => {
   return (
     <div className={s.Navbar}>
       <h1>Cards project</h1>
@@ -14,5 +14,3 @@ const Navbar = () => {
     </div>
   )
 }
-
-export default Navbar

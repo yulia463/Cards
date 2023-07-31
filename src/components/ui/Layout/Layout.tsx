@@ -1,8 +1,8 @@
 import { Outlet } from 'react-router-dom'
 
-import Navbar from '../Navbar/Navbar.tsx'
+import { Navbar } from '../Navbar'
 
-const Layout = () => {
+export const Layout = () => {
   return (
     <main>
       <Navbar />
@@ -10,5 +10,3 @@ const Layout = () => {
     </main>
   )
 }
-
-export default Layout
