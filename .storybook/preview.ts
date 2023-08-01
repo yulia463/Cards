@@ -2,6 +2,7 @@ import '@fontsource/roboto/400.css'
 import '@fontsource/roboto/700.css'
 import type { Preview } from '@storybook/react'
 import '../src/styles/index.scss'
+import {RouterDecorator} from "../src/storybook/routerDecorator/routerDecotator";
 
 const preview: Preview = {
   parameters: {
@@ -13,7 +14,7 @@ const preview: Preview = {
       },
     },
   },
-    decorators: []
+    decorators: [RouterDecorator]
 };
 
 export default preview;
