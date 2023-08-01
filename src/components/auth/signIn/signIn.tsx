@@ -1,37 +1,50 @@
+import { useEffect } from 'react'
+
 import { DevTool } from '@hookform/devtools'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
-import { Button, Checkbox, TextField } from '../../ui'
+import { Button } from '../../ui/button/button.tsx'
 import Card from '../../ui/card/Card.tsx'
+import { Checkbox } from '../../ui/checkbox/checkbox.tsx'
+import { TextField } from '../../ui/textField/textField.tsx'
 
 import s from './signIn.module.scss'
 
-const schema = z.object({
-  email: z.string().email('Invalid email address').nonempty('Enter email'),
-  password: z.string().nonempty('Enter password'),
-  rememberMe: z.boolean().optional(),
+const loginSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(3),
+  rememberMe: z.boolean().default(false),
 })
 
-type FormType = z.infer<typeof schema>
+type FormValues = z.infer<typeof loginSchema>
 
-type Props = {
-  onSubmit: (data: FormType) => void
-}
-
-export const SignIn = (props: Props) => {
-  const { control, handleSubmit } = useForm<FormType>({
+export const SignIn = () => {
+  const { control, handleSubmit, watch, setValue } = useForm<FormValues>({
     mode: 'onSubmit',
-    resolver: zodResolver(schema),
+    resolver: zodResolver(loginSchema),
     defaultValues: {
       email: '',
       password: '',
-      rememberMe: false,
+      rememberMe: true,
     },
   })
 
-  const handleFormSubmitted = handleSubmit(props.onSubmit)
+  const handleRememberMeChange = (checked: boolean) => {
+    setValue('rememberMe', checked)
+  }
+
+  const onSubmit = (data: FormValues) => {
+    console.log(data)
+  }
+
+  const handleFormSubmitted = handleSubmit(onSubmit)
+
+  useEffect(() => {
+    // You can use the "watch" function to get the current value of "rememberMe"
+    console.log('rememberMe', watch('rememberMe'))
+  }, [watch])
 
   return (
     <div className={s.signIn}>
@@ -44,10 +57,12 @@ export const SignIn = (props: Props) => {
             <TextField placeholder={'Password'} label={'Password'} name={'password'} />
             <div className={s.forgot}>
               <Checkbox
+                checked={watch('rememberMe')}
                 className={s.checkbox}
                 label={'Remember me'}
                 name={'rememberMe'}
                 position={'left'}
+                onValueChange={handleRememberMeChange}
               />
               <div className={s.forgotText}>Forgot Password?</div>
             </div>
