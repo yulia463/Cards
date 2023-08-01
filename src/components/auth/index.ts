@@ -1,1 +1,1 @@
-export * from './login-form/loginForm.tsx'
+export * from 'src/components/auth/signIn/signIn.tsx'

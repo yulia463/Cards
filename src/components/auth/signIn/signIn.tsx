@@ -1,29 +1,27 @@
 import { DevTool } from '@hookform/devtools'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
+import { Controller, useForm } from 'react-hook-form'
 import { z } from 'zod'
 
-import { Button, Checkbox, TextField } from '../../ui'
+import { Button } from '../../ui/button/button.tsx'
 import Card from '../../ui/card/Card.tsx'
+import { Checkbox } from '../../ui/checkbox/checkbox.tsx'
+import { TextField } from '../../ui/textField/textField.tsx'
 
 import s from './signIn.module.scss'
 
-const schema = z.object({
-  email: z.string().email('Invalid email address').nonempty('Enter email'),
-  password: z.string().nonempty('Enter password'),
-  rememberMe: z.boolean().optional(),
+const loginSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(3),
+  rememberMe: z.boolean().default(false),
 })
 
-type FormType = z.infer<typeof schema>
+type FormValues = z.infer<typeof loginSchema>
 
-type Props = {
-  onSubmit: (data: FormType) => void
-}
-
-export const SignIn = (props: Props) => {
-  const { control, handleSubmit } = useForm<FormType>({
+export const SignIn = () => {
+  const { control, handleSubmit, watch, setValue, reset } = useForm<FormValues>({
     mode: 'onSubmit',
-    resolver: zodResolver(schema),
+    resolver: zodResolver(loginSchema),
     defaultValues: {
       email: '',
       password: '',
@@ -31,7 +29,13 @@ export const SignIn = (props: Props) => {
     },
   })
 
-  const handleFormSubmitted = handleSubmit(props.onSubmit)
+  const onSubmit = (data: FormValues) => {
+    console.log(data)
+  }
+
+  const handleFormSubmitted = handleSubmit(onSubmit)
+
+  console.log(watch('rememberMe'))
 
   return (
     <div className={s.signIn}>
@@ -40,14 +44,22 @@ export const SignIn = (props: Props) => {
         <form onSubmit={handleFormSubmitted}>
           <div className={s.inputAndCheckbox}>
             <div className={s.title}>Sign In</div>
-            <TextField placeholder={'Email'} label={'Email'} name={'email'} control={control} />
+            <TextField placeholder={'Email'} label={'Email'} name={'email'} />
             <TextField placeholder={'Password'} label={'Password'} name={'password'} />
             <div className={s.forgot}>
-              <Checkbox
-                className={s.checkbox}
-                label={'Remember me'}
+              <Controller
+                control={control}
+                render={({ field }) => (
+                  <Checkbox
+                    checked={field.value}
+                    className={s.checkbox}
+                    label={'Remember me'}
+                    name={'rememberMe'}
+                    position={'left'}
+                    onValueChange={field.onChange}
+                  />
+                )}
                 name={'rememberMe'}
-                position={'left'}
               />
               <div className={s.forgotText}>Forgot Password?</div>
             </div>
