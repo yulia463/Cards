@@ -1,8 +1,6 @@
-import { useEffect } from 'react'
-
 import { DevTool } from '@hookform/devtools'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
+import { Controller, useForm } from 'react-hook-form'
 import { z } from 'zod'
 
 import { Button } from '../../ui/button/button.tsx'
@@ -21,19 +19,15 @@ const loginSchema = z.object({
 type FormValues = z.infer<typeof loginSchema>
 
 export const SignIn = () => {
-  const { control, handleSubmit, watch, setValue } = useForm<FormValues>({
+  const { control, handleSubmit, watch, setValue, reset } = useForm<FormValues>({
     mode: 'onSubmit',
     resolver: zodResolver(loginSchema),
     defaultValues: {
       email: '',
       password: '',
-      rememberMe: true,
+      rememberMe: false,
     },
   })
-
-  const handleRememberMeChange = (checked: boolean) => {
-    setValue('rememberMe', checked)
-  }
 
   const onSubmit = (data: FormValues) => {
     console.log(data)
@@ -41,10 +35,7 @@ export const SignIn = () => {
 
   const handleFormSubmitted = handleSubmit(onSubmit)
 
-  useEffect(() => {
-    // You can use the "watch" function to get the current value of "rememberMe"
-    console.log('rememberMe', watch('rememberMe'))
-  }, [watch])
+  console.log(watch('rememberMe'))
 
   return (
     <div className={s.signIn}>
@@ -53,16 +44,22 @@ export const SignIn = () => {
         <form onSubmit={handleFormSubmitted}>
           <div className={s.inputAndCheckbox}>
             <div className={s.title}>Sign In</div>
-            <TextField placeholder={'Email'} label={'Email'} name={'email'} control={control} />
+            <TextField placeholder={'Email'} label={'Email'} name={'email'} />
             <TextField placeholder={'Password'} label={'Password'} name={'password'} />
             <div className={s.forgot}>
-              <Checkbox
-                checked={watch('rememberMe')}
-                className={s.checkbox}
-                label={'Remember me'}
+              <Controller
+                control={control}
+                render={({ field }) => (
+                  <Checkbox
+                    checked={field.value}
+                    className={s.checkbox}
+                    label={'Remember me'}
+                    name={'rememberMe'}
+                    position={'left'}
+                    onValueChange={field.onChange}
+                  />
+                )}
                 name={'rememberMe'}
-                position={'left'}
-                onValueChange={handleRememberMeChange}
               />
               <div className={s.forgotText}>Forgot Password?</div>
             </div>
