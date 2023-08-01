@@ -5,10 +5,10 @@ import {
   RouterProvider,
 } from 'react-router-dom'
 
-import { SignIn } from './components/auth/signIn/signIn.tsx'
-import Layout from './components/ui/Layout/Layout.tsx'
+import { SignIn } from '../src/components/auth/signIn'
 
-import { SignUp } from 'components/auth/signUp'
+import { SignUp } from './components/auth/signUp/signUp.tsx'
+import Layout from './components/ui/Layout/Layout.tsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(

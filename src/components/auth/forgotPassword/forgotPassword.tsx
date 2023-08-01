@@ -35,29 +35,26 @@ export const ForgotPassword = (props: Props) => {
   const handleFormSubmitted = handleSubmit(props.onSubmit)
 
   return (
-    <div className={s.signUp}>
+    <div className={s.forgot}>
       <DevTool control={control} />
       <Card className={s.card}>
         <form onSubmit={handleFormSubmitted}>
-          <div className={s.input}>
-            <div className={s.title}>Sign Up</div>
+          <div className={s.inputWrapper}>
+            <div className={s.title}>Forgot your password?</div>
             <TextField placeholder={'Email'} label={'Email'} name={'email'} />
-            <TextField placeholder={'Password'} label={'Password'} name={'password'} />
-            <TextField
-              placeholder={'Confirm Password'}
-              label={'Confirm Password'}
-              name={'Confirm password'}
-            />
+          </div>
+          <div className={s.text}>
+            Enter your email address and we will send you further instructions
           </div>
           <Button className={s.button} fullWidth type={'submit'}>
-            Sign Up
+            Send instructions
           </Button>
         </form>
-        <div className={s.account}> Already have an account? </div>
+        <div className={s.account}> Did you remember your password? </div>
         <Link to={'/SignIn'}>
           {' '}
           <Button variant={'link'} className={s.accountLink}>
-            Sign In
+            Try logging in
           </Button>
         </Link>
       </Card>
