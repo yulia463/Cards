@@ -27,7 +27,7 @@ export const Disabled: Story = {
 
 export const Error: Story = {
   args: {
-    error: 'Error',
+    errorMessage: 'Error',
     label: 'Label',
   },
 }
