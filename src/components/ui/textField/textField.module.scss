@@ -1,26 +1,45 @@
-.input:focus {}
-
-.input {
-  border: 1px solid #D1D1D1;
-  border-radius: 5px;
-  Width: 372px;
-  Height: 36px;
-  color: black;
-}
-
-.inputWrapper {}
-
-.superInput {}
-
-.errorInput {
-  border-color: #CC1439;
-}
-
-.errorInput:focus {
-
-}
-
-.error {
-  color: #CC1439;
+.inputWrapper {
   display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  position: relative;
+
+  .iconWrapper {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+
+  input {
+    background: transparent;
+    padding-right: 30px;
+    border: 1px solid var(--color-dark-300);
+    border-radius: 4px;
+    width: 284px;
+    height: 36px;
+    top: 24px;
+    left: 20px;
+    &:hover {
+      background-color: var(--color-dark-700);
+    }
+    &:active {
+      border-color: var(--color-light-100);
+    }
+    &:focus {
+      border-color: var(--color-info-700);
+    }
+  }
 }
+
+label {
+  color: white;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+
+}
+

@@ -1,54 +1,25 @@
-import {DetailedHTMLProps, FC, InputHTMLAttributes, ReactNode} from 'react'
+import React from 'react'
 
 import s from './textField.module.scss'
 
-type DefaultInputPropsType = DetailedHTMLProps<
-  InputHTMLAttributes<HTMLInputElement>,
-  HTMLInputElement
->
-
-type SupertextFieldPropsType = Omit<DefaultInputPropsType, 'type'> & {
-  onChangeText?: (value: string) => void
-  onEnter?: () => void
-  error?: ReactNode
-  spanClassName?: string
-  disabled?: boolean
+type TextFieldProps = {
   label?: string
-  errorMessage?: any
-}
+  errorMessage?: string
+  icon?: React.ReactNode
+} & React.InputHTMLAttributes<HTMLInputElement>
 
-export const TextField: FC<SupertextFieldPropsType> = ({
-  onChangeText,
-  onEnter,
-  error,
+export const TextField: React.FC<TextFieldProps> = ({
   label,
-  spanClassName,
   errorMessage,
-  disabled,
-
-  ...restProps
+  icon,
+  ...inputProps
 }) => {
-  // const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-  //   onChange?.(e)
-  //
-  //   onChangeText?.(e.currentTarget.value)
-  // }
-  // const onKeyPressCallback = (e: KeyboardEvent<HTMLInputElement>) => {
-  //   onKeyPress?.(e)
-  //
-  //   onEnter && e.key === 'Enter' && onEnter()
-  // }
-
-  // const finalSpanClassName = s.error + (spanClassName ? ' ' + spanClassName : '')
-  // const finalInputClassName =
-  //   s.input +
-  //   (error ? ' ' + s.errorInput : ' ' + s.superInput) +
-  //   (className ? ' ' + s.className : '')
-
   return (
     <div className={s.inputWrapper}>
-      <span>{error}</span>
-      <input type={'text'} {...restProps} />
+      <label>{label}</label>
+      <input {...inputProps} />
+      {icon && <div className={s.iconWrapper}>{icon}</div>}
+      {errorMessage && <div className={s.error}>{errorMessage}</div>}
     </div>
   )
 }
