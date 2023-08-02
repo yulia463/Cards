@@ -16,13 +16,11 @@ export const TextField: FC<TextFieldProps> = ({
   onClickIcon,
   ...inputProps
 }) => {
-  const hasError = Boolean(errorMessage)
-
   return (
     <div>
-      <div className={`${s.inputWrapper} ${hasError ? s.errorInputWrapper : ''}`}>
+      <div className={`${s.inputWrapper} ${errorMessage ? s.errorInputWrapper : ''}`}>
         <label>{label}</label>
-        <input {...inputProps} className={`${s.input} ${hasError ? s.errorInput : ''}`} />
+        <input {...inputProps} className={`${s.input} ${errorMessage ? s.errorInput : ''}`} />
         {icon && (
           <div className={s.iconWrapper} onClick={onClickIcon}>
             {icon}
