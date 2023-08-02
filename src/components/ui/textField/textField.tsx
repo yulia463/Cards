@@ -1,24 +1,32 @@
-import React from 'react'
+import { FC, InputHTMLAttributes, ReactNode } from 'react'
 
 import s from './textField.module.scss'
 
 type TextFieldProps = {
   label?: string
   errorMessage?: string
-  icon?: React.ReactNode
-} & React.InputHTMLAttributes<HTMLInputElement>
+  icon?: ReactNode
+  onClickIcon?: () => void
+} & InputHTMLAttributes<HTMLInputElement>
 
-export const TextField: React.FC<TextFieldProps> = ({
+export const TextField: FC<TextFieldProps> = ({
   label,
   errorMessage,
   icon,
+  onClickIcon,
   ...inputProps
 }) => {
   return (
-    <div className={s.inputWrapper}>
-      <label>{label}</label>
-      <input {...inputProps} />
-      {icon && <div className={s.iconWrapper}>{icon}</div>}
+    <div>
+      <div className={s.inputWrapper}>
+        <label>{label}</label>
+        <input {...inputProps} />
+        {icon && (
+          <div className={s.iconWrapper} onClick={onClickIcon}>
+            {icon}
+          </div>
+        )}
+      </div>
       {errorMessage && <div className={s.error}>{errorMessage}</div>}
     </div>
   )

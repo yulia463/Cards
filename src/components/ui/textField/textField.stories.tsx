@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
+import { EyeOutlineIcon } from '../icons/eyeOutlineIcon'
+
 import { TextField } from './textField'
 
 const meta = {
@@ -18,6 +20,12 @@ export const Default: Story = {
   },
 }
 
+export const WithIcon: Story = {
+  args: {
+    label: 'Label',
+    icon: <EyeOutlineIcon />,
+  },
+}
 export const Disabled: Story = {
   args: {
     disabled: true,
