@@ -1,7 +1,7 @@
 import { DevTool } from '@hookform/devtools'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { z } from 'zod'
 
 import { Button, TextField } from '../../ui'
@@ -31,6 +31,7 @@ export const ForgotPassword = (props: Props) => {
       rememberMe: false,
     },
   })
+  const navigate = useNavigate()
 
   const handleFormSubmitted = handleSubmit(props.onSubmit)
 
@@ -51,12 +52,9 @@ export const ForgotPassword = (props: Props) => {
           </Button>
         </form>
         <div className={s.account}> Did you remember your password? </div>
-        <Link to={'/SignIn'}>
-          {' '}
-          <Button variant={'link'} className={s.accountLink}>
-            Try logging in
-          </Button>
-        </Link>
+        <Button onClick={() => navigate('/signIn')} variant={'link'} className={s.accountLink}>
+          Try logging in
+        </Button>
       </Card>
     </div>
   )
