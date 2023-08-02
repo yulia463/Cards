@@ -51,7 +51,7 @@ export const ForgotPassword = (props: Props) => {
           </Button>
         </form>
         <div className={s.account}> Did you remember your password? </div>
-        <Link to={'/SignIn'}>
+        <Link to={'/signIn'}>
           {' '}
           <Button variant={'link'} className={s.accountLink}>
             Try logging in

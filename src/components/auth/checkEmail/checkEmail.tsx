@@ -14,7 +14,7 @@ export const CheckEmail = () => {
           <div className={s.title}>Check Email</div>
           <div className={s.icon}>{<EmailIcon />}</div>
           <div className={s.account}>We’ve sent an Email with instructions to example@mail.com</div>
-          <Link to={'/SignIn'}>
+          <Link to={'/signIn'}>
             {' '}
             <Button className={s.button} fullWidth type={'submit'}>
               Back to Sign In
