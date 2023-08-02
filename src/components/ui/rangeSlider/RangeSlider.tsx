@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import Slider from 'rc-slider'
 
-import './Slider.scss'
+import './RangeSlider.scss'
 
 import 'rc-slider/assets/index.css'
 
@@ -13,7 +13,7 @@ type RangeSliderProps = {
   onChange: (newValues: number[]) => void
 }
 
-const RangeSlider: React.FC<RangeSliderProps> = ({ min, max, step, onChange }) => {
+export const RangeSlider: React.FC<RangeSliderProps> = ({ min, max, step, onChange }) => {
   const [values, setValues] = useState<number[]>([min, max])
 
   const handleSliderChange = (newValues: number[] | number) => {
@@ -47,5 +47,3 @@ const RangeSlider: React.FC<RangeSliderProps> = ({ min, max, step, onChange }) =
     </div>
   )
 }
-
-export default RangeSlider

@@ -1,7 +1,11 @@
 export * from './button'
-export * from './textField/textField.tsx'
+export * from './textField'
 export * from './dropdownButton'
 export * from './dropdown'
 export * from './controlled/controlled-checkbox/controlledCheckbox.tsx'
 export * from './checkbox'
-export * from './select/Select.tsx'
+export * from './select'
+export * from './rangeSlider'
+export * from './Layout'
+export * from './Navbar'
+

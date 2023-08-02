@@ -6,8 +6,7 @@ type CardProps = {
   children: React.ReactNode
   className?: string
 }
-const Card: FC<CardProps> = ({ children, className }) => {
+
+export const Card: FC<CardProps> = ({ children, className }) => {
   return <div className={`${s.cardWrapper} ${className}`}>{children}</div>
 }
-
-export default Card
