@@ -54,7 +54,7 @@ export const SignUp = (props: Props) => {
           </Button>
         </form>
         <div className={s.account}> Already have an account? </div>
-        <Link to={'/SignIn'}>
+        <Link to={'/signIn'}>
           {' '}
           <Button variant={'link'} className={s.accountLink}>
             Sign In
