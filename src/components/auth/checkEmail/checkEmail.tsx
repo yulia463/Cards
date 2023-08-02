@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import { Button } from '../../ui'
-import Card from '../../ui/card/Card.tsx'
+import { Card } from '../../ui/card/Card.tsx'
 import { EmailIcon } from '../../ui/icons/emailIcon.tsx'
 
 import s from './checkEmail.module.scss'

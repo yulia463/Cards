@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { z } from 'zod'
 
 import { Button } from '../../ui/button/button.tsx'
-import Card from '../../ui/card/Card.tsx'
+import { Card } from '../../ui/card/Card.tsx'
 import { Checkbox } from '../../ui/checkbox/checkbox.tsx'
 import { TextField } from '../../ui/textField/textField.tsx'
 
