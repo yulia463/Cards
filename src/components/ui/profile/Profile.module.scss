@@ -1,0 +1,38 @@
+.profileWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 420px;
+  height: 348px;
+}
+.icon {
+  fill: var(--color-light-100);
+  width: 20px;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.infoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.imageWrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.imageIconWrapper {
+  background-color: var(--color-dark-300);
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}

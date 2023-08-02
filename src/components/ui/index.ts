@@ -8,4 +8,4 @@ export * from './select'
 export * from './rangeSlider'
 export * from './Layout'
 export * from './Navbar'
-
+export * from './profile'
