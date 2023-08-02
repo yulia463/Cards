@@ -8,7 +8,7 @@ export const Navbar = () => {
   return (
     <div className={s.Navbar}>
       <h1>Cards project</h1>
-      <Link to={'/login'}>
+      <Link to={'/signIn'}>
         <Button>Sign up</Button>
       </Link>
     </div>

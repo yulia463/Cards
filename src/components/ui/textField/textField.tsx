@@ -1,70 +1,25 @@
-import {
-  ChangeEvent,
-  DetailedHTMLProps,
-  InputHTMLAttributes,
-  KeyboardEvent,
-  ReactNode,
-} from 'react'
+import React from 'react'
 
 import s from './textField.module.scss'
 
-type DefaultInputPropsType = DetailedHTMLProps<
-  InputHTMLAttributes<HTMLInputElement>,
-  HTMLInputElement
->
-
-type SupertextFieldPropsType = Omit<DefaultInputPropsType, 'type'> & {
-  onChangeText?: (value: string) => void
-  onEnter?: () => void
-  error?: ReactNode
-  spanClassName?: string
-  disabled?: true
+type TextFieldProps = {
   label?: string
-}
+  errorMessage?: string
+  icon?: React.ReactNode
+} & React.InputHTMLAttributes<HTMLInputElement>
 
-export const TextField: React.FC<SupertextFieldPropsType> = ({
-  onChange,
-  onChangeText,
-  onKeyPress,
-  onEnter,
-  error,
-  className,
+export const TextField: React.FC<TextFieldProps> = ({
   label,
-  spanClassName,
-  id,
-
-  ...restProps
+  errorMessage,
+  icon,
+  ...inputProps
 }) => {
-  const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-    onChange?.(e)
-
-    onChangeText?.(e.currentTarget.value)
-  }
-  const onKeyPressCallback = (e: KeyboardEvent<HTMLInputElement>) => {
-    onKeyPress?.(e)
-
-    onEnter && e.key === 'Enter' && onEnter()
-  }
-
-  const finalSpanClassName = s.error + (spanClassName ? ' ' + spanClassName : '')
-  const finalInputClassName =
-    s.input +
-    (error ? ' ' + s.errorInput : ' ' + s.superInput) +
-    (className ? ' ' + s.className : '')
-
   return (
     <div className={s.inputWrapper}>
-      <span id={id ? id + '-span' : undefined} className={finalSpanClassName}>
-        {error}
-      </span>
-      <input
-        id={id}
-        type={'text'}
-        onChange={onChangeCallback}
-        onKeyPress={onKeyPressCallback}
-        className={finalInputClassName}
-        {...restProps}
-      />
+      <label>{label}</label>
+      <input {...inputProps} />
+      {icon && <div className={s.iconWrapper}>{icon}</div>}
+      {errorMessage && <div className={s.error}>{errorMessage}</div>}
     </div>
   )
 }
