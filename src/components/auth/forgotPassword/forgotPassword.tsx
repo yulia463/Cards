@@ -1,6 +1,6 @@
 import { DevTool } from '@hookform/devtools'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
+import { Controller, useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { z } from 'zod'
 
@@ -22,7 +22,11 @@ type Props = {
 }
 
 export const ForgotPassword = (props: Props) => {
-  const { control, handleSubmit } = useForm<FormType>({
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormType>({
     mode: 'onSubmit',
     resolver: zodResolver(schema),
     defaultValues: {
@@ -42,7 +46,20 @@ export const ForgotPassword = (props: Props) => {
         <form onSubmit={handleFormSubmitted}>
           <div className={s.inputWrapper}>
             <div className={s.title}>Forgot your password?</div>
-            <TextField placeholder={'Email'} label={'Email'} name={'email'} />
+            <Controller
+              control={control}
+              render={({ field }) => (
+                <TextField
+                  errorMessage={errors?.email?.message ?? ''}
+                  value={field.value}
+                  placeholder={'Email'}
+                  label={'Email'}
+                  name={'email'}
+                  onChange={field.onChange}
+                />
+              )}
+              name={'email'}
+            />
           </div>
           <div className={s.text}>
             Enter your email address and we will send you further instructions
