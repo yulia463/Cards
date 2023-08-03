@@ -1,6 +1,5 @@
 import { DevTool } from '@hookform/devtools'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Simulate } from 'react-dom/test-utils'
 import { Controller, useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { z } from 'zod'
@@ -13,11 +12,9 @@ import { TextField } from '../../ui/textField/textField.tsx'
 
 import s from './signIn.module.scss'
 
-import error = Simulate.error
-
 const loginSchema = z.object({
   email: z.string().email(),
-  password: z.string().min(3),
+  password: z.string().nonempty('Enter password').min(3),
   rememberMe: z.boolean().default(false),
 })
 
@@ -77,6 +74,8 @@ export const SignIn = () => {
               control={control}
               render={({ field }) => (
                 <PasswordTextField
+                  placeholder={'Password'}
+                  label={'Password'}
                   errorMessage={errors?.password?.message ?? ''}
                   value={field.value}
                   name={'password'}

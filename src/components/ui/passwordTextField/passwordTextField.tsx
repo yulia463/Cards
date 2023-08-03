@@ -6,8 +6,13 @@ import { TextField } from '../textField/textField'
 
 type PasswordTextFieldProps = {
   errorMessage?: string
+  label: string
 } & InputHTMLAttributes<HTMLInputElement>
-export const PasswordTextField: FC<PasswordTextFieldProps> = ({ errorMessage, ...inputProps }) => {
+export const PasswordTextField: FC<PasswordTextFieldProps> = ({
+  errorMessage,
+  label,
+  ...inputProps
+}) => {
   const [shown, setShown] = useState(false)
   const onClickIconHandler = () => {
     setShown(prev => !prev)
@@ -16,9 +21,7 @@ export const PasswordTextField: FC<PasswordTextFieldProps> = ({ errorMessage, ..
   return (
     <div>
       <TextField
-        placeholder={'Password'}
-        label={'Password'}
-        name={'password'}
+        label={label}
         errorMessage={errorMessage}
         onClickIcon={onClickIconHandler}
         icon={shown ? <EyeOutlineIcon /> : <EyeOffOutlineIcon />}
