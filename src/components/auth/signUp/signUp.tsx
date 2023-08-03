@@ -90,10 +90,6 @@ export const SignUp = (props: Props) => {
               )}
               name={'confirmPassword'}
             />
-            {/*<TextField placeholder={'Password'} label={'Password'} name={'password'} />*/}
-            {/*<TextField placeholder={'Confirm Password'} label={'Confirm Password'}*/}
-            {/*  name={'Confirm password'}*/}
-            {/*/>*/}
           </div>
           <Button className={s.button} fullWidth type={'submit'}>
             Sign Up
