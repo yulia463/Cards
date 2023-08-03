@@ -1,37 +1,42 @@
-.label {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
+/* Скрываем оригинальный чекбокс */
+.customCheckbox input[type='checkbox'] {
+  display: none;
 
-  &.disabled {
-    color: var(--color-checkbox-disabled);
-  }
 }
 
-.root {
+/* Создаем стилизованный вид для кастомного чекбокса */
+.customCheckbox {
   cursor: pointer;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
 
-  width: 18px;
-  height: 18px;
+  display: inline-block;
 
-  background-color: var(--color-bg-primary);
-  border: 2px solid var(--color-light-900);
-  border-radius: 2px;
+  width: 24px; /* Задайте желаемый размер */
+  height: 24px;
+  
+}
 
-  &:focus {
-    background-color: var(--color-bg-focus);
-  }
+/* Создаем отображение для изображения чекбокса, когда он отмечен */
+.customCheckbox .checkboxImage {
+  display: inline-block;
 
-  &:disabled {
-    cursor: initial;
-    border-color: var(--color-checkbox-disabled);
-  }
+  width: 100%;
+  height: 100%;
 
-  &[data-state='checked']:disabled {
-    background-color: var(--color-checkbox-disabled);
-  }
+  background-image: url('/public/checked.svg'); /* Путь к изображению checked */
+  background-size: cover; /* Размер изображения */
+
+  /* Дополнительные стили по желанию */
+}
+
+/* Создаем отображение для изображения чекбокса, когда он не отмечен */
+.customCheckbox input[type='checkbox']:not(:checked) + .checkboxImage {
+  background-image: url('/public/notChecked.svg'); /* Путь к изображению notChecked */
+}
+
+.label {
+  position: absolute;
+  left: 28px;
+  white-space: nowrap;
 }
