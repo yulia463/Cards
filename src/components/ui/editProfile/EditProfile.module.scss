@@ -1,0 +1,25 @@
+.editWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.imageWrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.infoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+
+}
