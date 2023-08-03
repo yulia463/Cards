@@ -7,5 +7,5 @@ export * from './checkbox'
 export * from './select'
 export * from './rangeSlider'
 export * from './Layout'
-export * from './Navbar'
+export * from './Header'
 
