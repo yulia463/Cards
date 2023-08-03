@@ -100,7 +100,9 @@ export const SignIn = () => {
                 )}
                 name={'rememberMe'}
               />
-              <div className={s.forgotText}>Forgot Password?</div>
+              <div onClick={() => navigate('/forgotPassword')} className={s.forgotText}>
+                Forgot Password?
+              </div>
             </div>
           </div>
           <Button className={s.button} fullWidth type={'submit'}>

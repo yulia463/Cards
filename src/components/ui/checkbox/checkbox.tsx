@@ -32,21 +32,21 @@ export const Checkbox: React.FC<CheckboxPropsType & { label: string }> = ({
     if (onValueChange) {
       onValueChange(checked)
     }
+    console.log(event)
   }
 
   return (
-    <label className={s.label}>
+    <label htmlFor={id} className={s.customCheckbox}>
       <input
         checked={checked}
-        className={s.root}
         type="checkbox"
         onChange={handleChange}
         id={id}
         disabled={disabled}
         {...restProps}
       />
-      <span />
-      {label}
+      <span className={s.checkboxImage} />
+      <span className={s.label}>{label}</span>
     </label>
   )
 }
