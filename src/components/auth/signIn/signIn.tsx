@@ -25,8 +25,6 @@ export const SignIn = () => {
     control,
     handleSubmit,
     watch,
-    setValue,
-    reset,
     formState: { errors },
   } = useForm<FormValues>({
     mode: 'onSubmit',
