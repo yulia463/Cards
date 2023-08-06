@@ -2,6 +2,7 @@
   "name": "cards",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://yulia463.github.io/Cards",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,12 +11,15 @@
     "format": "prettier --write src",
     "lint": "eslint --fix src/**/*.{tsx,ts,jsx,js} --no-error-on-unmatched-pattern && stylelint --fix src/{,*/}*.{scss,css} --allow-empty-input",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "predeploy": "pnpm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@fontsource/roboto": "^5.0.5",
     "@hookform/resolvers": "^3.1.1",
     "@reduxjs/toolkit": "^1.9.5",
+    "gh-pages": "^5.0.0",
     "rc-slider": "^10.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
