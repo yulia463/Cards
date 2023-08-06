@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 
 import { SignIn } from '../src/components/auth/signIn'
+import { useGetDecksQuery } from '../src/services/base-api.ts'
 
 import { CheckEmail } from './components/auth/checkEmail/checkEmail.tsx'
 import { CreateNewPassword } from './components/auth/createNewPassword/createNewPassword.tsx'
@@ -44,6 +45,10 @@ const router = createBrowserRouter(
 )
 
 export function App() {
+  const result = useGetDecksQuery()
+
+  console.log(result)
+
   return (
     <div>
       <RouterProvider router={router} />
