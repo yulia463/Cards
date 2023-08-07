@@ -1,48 +1,28 @@
-// Dropdown.module.scss
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: start;
+  padding: 12px;
 
-.dropdown-container {
-  position: relative;
+}
+
+.content {
   display: inline-block;
+  position: relative;
+  padding: 12px;
+
+  background-color: var(--color-dark-700);
+  border: 1px solid var(--color-dark-500);
+  border-radius: var(--border-radius-s);
 }
 
-.dropdown-select {
-  cursor: pointer;
-
-  min-width: 150px;
-  padding: 8px 16px;
-
-  background-color: #341919;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-
-  &:hover {
-    background-color: #9f9696;
-  }
+.option {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.dropdown-options {
-  position: absolute;
-  z-index: 1;
-  top: 100%;
-  left: 0;
-
-  min-width: 150px;
-  margin: 0;
-  padding: 0;
-
-  list-style: none;
-
-  background-color: #211f1f;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgb(0 0 0 / 20%);
-}
-
-.dropdown-option {
-  cursor: pointer;
-  padding: 8px 16px;
-
-  &:hover {
-    background-color: #f0f0f0;
-  }
+.divider {
+  border: 1px solid grey;
 }

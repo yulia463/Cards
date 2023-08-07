@@ -1,23 +1,29 @@
+import { Card } from '../card/Card.tsx'
+
 import s from './dropdown.module.scss'
-export type Option = { label: string; value: string }
 
 type DropdownProps = {
-  options: Option[]
-  isDropdownOpen: boolean
+  options: React.ReactNode[]
+  isDropdownOpen?: boolean
 }
 
 export const Dropdown: React.FC<DropdownProps> = ({ options, isDropdownOpen }) => {
   return (
-    <div className={s['dropdown-container']}>
+    <>
       {isDropdownOpen && (
-        <ul className={s['dropdown-options']}>
-          {options.map((option, index) => (
-            <li key={index} className={s['dropdown-option']}>
-              {option.label}
-            </li>
-          ))}
-        </ul>
+        <div className={s.content}>
+          <Card className={s.card}>
+            {options.map((el, index) => {
+              return (
+                <div className={s.option} key={index}>
+                  {el}
+                  <div className={s.divider} />
+                </div>
+              )
+            })}
+          </Card>
+        </div>
       )}
-    </div>
+    </>
   )
 }
