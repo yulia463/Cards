@@ -4,25 +4,31 @@
   gap: 12px;
   align-items: start;
   padding: 12px;
-
+  width: 217px;
+  height: 147px;
 }
 
 .content {
   display: inline-block;
-  position: relative;
+ position: relative;
   padding: 12px;
 
   background-color: var(--color-dark-700);
   border: 1px solid var(--color-dark-500);
-  border-radius: var(--border-radius-s);
+  border-radius: 6px;
 }
 
 .option {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  border: 1px solid rebeccapurple;
+  justify-content: center;
+  align-items: start;
 }
 
 .divider {
-  border: 1px solid grey;
+  width: 193px;
+  height: 1px;
+ background-color: grey;
 }
