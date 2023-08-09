@@ -63,7 +63,7 @@ export const Pagination: FC<PaginationProps> = ({
     onChange,
     siblings,
   })
-
+  console.log('Yulia')
   const showPerPageSelect = !!perPage && !!perPageOptions && !!onPerPageChange
 
   return (
