@@ -2,15 +2,19 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  align-items: start;
+  align-items: center;
+
+  width: auto;
+
+  //height: 147px;
   padding: 12px;
-  width: 217px;
-  height: 147px;
 }
 
 .content {
-  display: inline-block;
  position: relative;
+
+  display: inline-block;
+
   padding: 12px;
 
   background-color: var(--color-dark-700);
@@ -22,13 +26,46 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  border: 1px solid rebeccapurple;
+  align-items: flex-end;
   justify-content: center;
-  align-items: start;
+
+  width: 100%;
+
+  //border: 1px solid rebeccapurple;
 }
 
-.divider {
-  width: 193px;
-  height: 1px;
- background-color: grey;
+//
+//.divider {
+//  width: 193px;
+//  height: 1px;
+// background-color: grey;
+//}
+
+.option {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: start;
+  justify-content: center;
+
 }
+
+.option::before {
+  content: "";
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background-color: grey;
+}
+
+
+
+
+
