@@ -1,3 +1,36 @@
+.content {
+  position: relative;
+
+  display: inline-block;
+
+  padding: 12px;
+  position: relative;
+  background-color: var(--color-dark-700);
+
+  border: 1px solid var(--color-dark-500);
+  border-radius: 6px;
+}
+
+.triangle {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 10%;
+  top: -20px;
+  border: 10px solid transparent; /* Прозрачные границы */
+  border-bottom: 10px solid  var(--color-dark-500);
+  background-color: var(--color-dark-700);
+}
+.triangleBackground{
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  right: 10%;
+  top: -19px;
+  border: 10px solid transparent; /* Прозрачные границы */
+  border-bottom: 10px solid  var(--color-dark-700);
+
+}
 .card {
   display: flex;
   flex-direction: column;
@@ -10,17 +43,6 @@
   padding: 12px;
 }
 
-.content {
- position: relative;
-
-  display: inline-block;
-
-  padding: 12px;
-
-  background-color: var(--color-dark-700);
-  border: 1px solid var(--color-dark-500);
-  border-radius: 6px;
-}
 
 .option {
   display: flex;

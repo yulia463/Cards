@@ -12,6 +12,8 @@ export const Dropdown: React.FC<DropdownProps> = ({ options, isDropdownOpen }) =
     <>
       {isDropdownOpen && (
         <div className={s.content}>
+          <div className={s.triangle}></div>
+          <div className={s.triangleBackground}></div>
           <Card className={s.card}>
             {options.map((el, index) => {
               return (
