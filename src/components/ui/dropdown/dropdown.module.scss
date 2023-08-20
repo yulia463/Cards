@@ -2,8 +2,8 @@
   position: relative;
 
   display: inline-block;
-
   padding: 12px;
+  // padding: 0 0 -12px 0 ;
   position: relative;
   background-color: var(--color-dark-700);
 
@@ -18,67 +18,56 @@
   right: 10%;
   top: -20px;
   border: 10px solid transparent; /* Прозрачные границы */
-  border-bottom: 10px solid  var(--color-dark-500);
+  border-bottom: 10px solid var(--color-dark-500);
   background-color: var(--color-dark-700);
 }
-.triangleBackground{
+
+.triangleBackground {
   width: 15px;
   height: 15px;
   position: absolute;
   right: 10%;
   top: -19px;
   border: 10px solid transparent; /* Прозрачные границы */
-  border-bottom: 10px solid  var(--color-dark-700);
+  border-bottom: 10px solid var(--color-dark-700);
 
 }
+
 .card {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 24px;
   align-items: center;
 
   width: auto;
 
-  //height: 147px;
-  padding: 12px;
 }
 
-
-.option {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: flex-end;
-  justify-content: center;
-
-  width: 100%;
-
-  //border: 1px solid rebeccapurple;
-}
-
-//
-//.divider {
-//  width: 193px;
-//  height: 1px;
-// background-color: grey;
-//}
-
-.option {
+.optionWrapper {
   position: relative;
-
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 12px;
   align-items: start;
   justify-content: center;
 
+
 }
 
-.option::before {
+.option {
+
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+}
+
+.optionWrapper:not(:last-child)::before {
   content: "";
 
   position: absolute;
-  bottom: 0;
+  bottom: -12px;
   left: 0;
 
   width: 100%;
@@ -86,7 +75,6 @@
 
   background-color: grey;
 }
-
 
 
 

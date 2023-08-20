@@ -33,21 +33,23 @@ const router = createBrowserRouter(
           <Dropdown
             isDropdownOpen={true}
             options={[
-              <div>
-                <AvatarForDropdownIcon />
-                <span>
-                  <div>Ivan</div>
-                  <div> ававававhdihdhje</div>
-                </span>
-              </div>,
-              <div>
-                <PersonIcon />
-                <span>My profile</span>
-              </div>,
-              <div>
-                <LogOutIcon />
-                <span>Sign Out</span>
-              </div>,
+              {
+                icon: <AvatarForDropdownIcon />,
+                link: (
+                  <div>
+                    <div>Ivan</div>
+                    <div> j&johnson@gmail.com</div>
+                  </div>
+                ),
+              },
+              {
+                icon: <PersonIcon />,
+                link: <span>My profile</span>,
+              },
+              {
+                icon: <LogOutIcon />,
+                link: <span>Sign Out</span>,
+              },
             ]}
           />
         }
@@ -58,18 +60,18 @@ const router = createBrowserRouter(
           <Dropdown
             isDropdownOpen={true}
             options={[
-              <div>
-                <PlayIcon />
-                <span>Learn</span>
-              </div>,
-              <div>
-                <PenIcon />
-                <span>Edit</span>
-              </div>,
-              <div>
-                <DeleteIcon />
-                <span>Delete</span>
-              </div>,
+              {
+                icon: <PlayIcon />,
+                link: <span>Learn</span>,
+              },
+              {
+                icon: <PenIcon />,
+                link: <span>Edit</span>,
+              },
+              {
+                icon: <DeleteIcon />,
+                link: <span>Delete</span>,
+              },
             ]}
           />
         }
