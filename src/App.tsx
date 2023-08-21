@@ -55,7 +55,7 @@ const router = createBrowserRouter(
         }
       />
       <Route
-        path={'/dropdown1'}
+        path={'/settings'}
         element={
           <Dropdown
             isDropdownOpen={true}
