@@ -1,6 +1,5 @@
 import { useActions } from 'common/hooks'
 import { authThunks } from 'features/auth/auth.slice'
-import s from 'features/auth/Register/styles.module.css'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
@@ -27,7 +26,7 @@ export const Login = () => {
   }
 
   return (
-    <div className={s.container}>
+    <div>
       <h1>Login</h1>
       <button onClick={loginHandler}>login</button>
     </div>
