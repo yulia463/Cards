@@ -36,7 +36,6 @@ export const SignIn = () => {
     },
   })
   const navigate = useNavigate()
-
   const onSubmit = (data: FormValues) => {
     console.log(data)
   }
@@ -106,7 +105,7 @@ export const SignIn = () => {
             Sign In
           </Button>
         </form>
-        <div className={s.account}> Don't have an account? </div>
+        <div className={s.account}> Don't have an account?</div>
         <Button onClick={() => navigate('/signUp')} variant={'link'} className={s.accountLink}>
           Sign Up
         </Button>
