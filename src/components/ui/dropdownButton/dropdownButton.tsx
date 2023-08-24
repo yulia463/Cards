@@ -1,9 +1,13 @@
 import { useState } from 'react'
 
-import { Dropdown, Option } from '../dropdown/dropdown.tsx'
+import { Dropdown } from '../dropdown/dropdown.tsx'
 
 type DropDownButtonProps = {
-  options: Option[]
+  options: {
+    icon?: React.ReactNode
+    link: React.ReactNode
+  }[]
+  //options: React.ReactNode[]
 }
 export const DropDownButton: React.FC<DropDownButtonProps> = ({ options }) => {
   const [isDropdownOpened, setIsDropdownOpened] = useState(false)
