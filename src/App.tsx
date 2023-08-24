@@ -19,6 +19,7 @@ import { CheckEmail } from './components/auth/checkEmail/checkEmail.tsx'
 import { CreateNewPassword } from './components/auth/createNewPassword/createNewPassword.tsx'
 import { ForgotPassword } from './components/auth/forgotPassword/forgotPassword.tsx'
 import { SignUp } from './components/auth/signUp/signUp.tsx'
+import { EmptyPack } from './components/ui/emptyPack'
 import { Layout } from './components/ui/Layout/Layout.tsx'
 
 const router = createBrowserRouter(
@@ -27,6 +28,7 @@ const router = createBrowserRouter(
       <Route path={'/signIn'} element={<SignIn />} />
       <Route path={'/checkEmail'} element={<CheckEmail />} />
       <Route path={'/createNewPassword'} element={<CreateNewPassword />} />
+      <Route path={'/emptyPack'} element={<EmptyPack />} />
       <Route
         path={'/dropdown'}
         element={
