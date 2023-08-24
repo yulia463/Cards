@@ -1,0 +1,57 @@
+.profileWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 420px;
+  height: 348px;
+}
+.icon {
+  fill: var(--color-light-100);
+  width: 20px;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.infoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+}
+
+.imageWrapper {
+  //display: flex;
+  //align-items: center;
+  //gap: 5px;
+  position: relative;
+}
+
+.imageIconWrapper {
+  background-color: var(--color-dark-300);
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  position: absolute;
+  top: 60%;
+  right: 1%;
+}
+
+.editIconWrapper {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+
+}
