@@ -2,8 +2,8 @@ import { FC } from 'react'
 
 import { Button } from '../button'
 import { Card } from '../card'
-import { EditIcon } from '../icons/editIcon.tsx'
-import { LogoutIcon } from '../icons/logoutIcon.tsx'
+import { LogOutIcon } from '../icons/logOutIcon.tsx'
+import { PenIcon } from '../icons/penIcon.tsx'
 
 import s from './Profile.module.scss'
 
@@ -17,17 +17,17 @@ export const Profile: FC<ProfileType> = ({ personalInfo, setIsEditOn }) => {
       <div className={s.imageWrapper}>
         <img src={personalInfo.profileImg} alt="profileImg" className={s.image} />
         <div className={s.imageIconWrapper}>
-          <EditIcon className={s.icon} />
+          <PenIcon />
         </div>
       </div>
       <div className={s.infoWrapper}>
         {personalInfo.name}
         <div onClick={() => setIsEditOn(true)} className={s.editIconWrapper}>
-          <EditIcon className={s.icon} />
+          <PenIcon />
         </div>
       </div>
       <Button variant={'secondary'}>
-        <LogoutIcon className={s.icon} />
+        <LogOutIcon />
         Logout
       </Button>
     </Card>
