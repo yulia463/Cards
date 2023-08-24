@@ -101,9 +101,9 @@ const router = createBrowserRouter(
 )
 
 export function App() {
-  const result = useGetDecksQuery()
+  // const result = useGetDecksQuery()
 
-  console.log(result)
+  // console.log(result)
 
   return (
     <div>
