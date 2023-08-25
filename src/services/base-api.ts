@@ -14,8 +14,11 @@ export const baseApi = createApi({
       getDecks: builder.query<any, void>({
         query: () => `v1/decks`,
       }),
+      getUserData: builder.query<any, void>({
+        query: () => `/v1/auth/me`,
+      }),
     }
   },
 })
 
-export const { useGetDecksQuery } = baseApi
+export const { useGetDecksQuery, useGetUserDataQuery } = baseApi

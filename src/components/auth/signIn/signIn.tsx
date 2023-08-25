@@ -35,16 +35,13 @@ export const SignIn = () => {
       rememberMe: false,
     },
   })
+
   const navigate = useNavigate()
   const onSubmit = (data: FormValues) => {
     console.log(data)
   }
 
   const handleFormSubmitted = handleSubmit(onSubmit)
-
-  console.log(watch('rememberMe'))
-  console.log(watch('email'))
-  console.log(errors)
 
   return (
     <div className={s.signIn}>
