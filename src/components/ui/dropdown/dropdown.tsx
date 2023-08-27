@@ -35,4 +35,3 @@ export const Dropdown: React.FC<DropdownProps> = ({ options, isDropdownOpen }) =
     </>
   )
 }
-// добавить для дроп дауна язычок при его включении
