@@ -13,7 +13,6 @@ import { LogOutIcon } from '../src/components/ui/icons/logOutIcon.tsx'
 import { PenIcon } from '../src/components/ui/icons/penIcon.tsx'
 import { PersonIcon } from '../src/components/ui/icons/personIcon.tsx'
 import { PlayIcon } from '../src/components/ui/icons/playIcon.tsx'
-import { useGetDecksQuery } from '../src/services/base-api.ts'
 
 import { CheckEmail } from './components/auth/checkEmail/checkEmail.tsx'
 import { CreateNewPassword } from './components/auth/createNewPassword/createNewPassword.tsx'
@@ -21,6 +20,7 @@ import { ForgotPassword } from './components/auth/forgotPassword/forgotPassword.
 import { SignUp } from './components/auth/signUp/signUp.tsx'
 import { EmptyPack } from './components/ui/emptyPack'
 import { Layout } from './components/ui/Layout/Layout.tsx'
+import { PackList } from './components/ui/packListVersial/PackList.tsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,6 +29,7 @@ const router = createBrowserRouter(
       <Route path={'/checkEmail'} element={<CheckEmail />} />
       <Route path={'/createNewPassword'} element={<CreateNewPassword />} />
       <Route path={'/emptyPack'} element={<EmptyPack />} />
+      <Route path={'/packList'} element={<PackList nameForPack={'Pack List'} />} />
       <Route
         path={'/dropdown'}
         element={
