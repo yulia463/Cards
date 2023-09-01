@@ -19,6 +19,7 @@
     "@fontsource/roboto": "^5.0.5",
     "@hookform/resolvers": "^3.1.1",
     "@reduxjs/toolkit": "^1.9.5",
+    "axios": "^1.5.0",
     "gh-pages": "^5.0.0",
     "rc-slider": "^10.2.1",
     "react": "^18.2.0",
