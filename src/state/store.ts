@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 
 import { loadState } from '../utils/localstorage'
 
-import { cardsReducer } from './slices/cardsSlice'
+import { cardsReducer } from './slices/cardsSlice.ts'
 import { newPasswordReducer } from './slices/newPasswordSlice'
 import { packsReducer } from './slices/packsSlice'
 import { resetPasswordReducer } from './slices/resetPasswordSlice'

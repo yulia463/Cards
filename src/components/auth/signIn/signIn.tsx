@@ -24,7 +24,7 @@ export const SignIn = () => {
   const {
     control,
     handleSubmit,
-    watch,
+    // watch,
     formState: { errors },
   } = useForm<FormValues>({
     mode: 'onSubmit',
@@ -102,6 +102,7 @@ export const SignIn = () => {
             Sign In
           </Button>
         </form>
+        {/* eslint-disable-next-line react/no-unescaped-entities */}
         <div className={s.account}> Don't have an account?</div>
         <Button onClick={() => navigate('/signUp')} variant={'link'} className={s.accountLink}>
           Sign Up
