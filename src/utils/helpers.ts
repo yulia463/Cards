@@ -10,6 +10,7 @@ export const useAppDispatch = () => useDispatch<AppDispatch>()
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
 export type ActionCreatorResponse<T extends (...args: any[]) => any> = ReturnType<ReturnType<T>>
 type IsValidArg<T> = T extends object ? (keyof T extends never ? false : true) : true
+// @ts-ignore
 export type ReplaceReturnType<T, TNewReturn> = T extends (a: infer A) => infer R
   ? IsValidArg<A> extends true
     ? (a: A) => TNewReturn
