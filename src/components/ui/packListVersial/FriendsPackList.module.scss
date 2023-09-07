@@ -1,0 +1,36 @@
+.packDiv {
+  color: var(--light-100, #FFF);
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  top: 90px;
+  left: 158px;
+  column-gap: 10px;
+  padding-bottom: 25px;
+
+}
+
+.titleWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.nameForPack {
+  color: var(--light-100, #FFF);
+  font-family: Roboto;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px;
+
+}
+
+.container {
+  width: 75%;
+}

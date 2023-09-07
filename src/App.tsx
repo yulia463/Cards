@@ -13,12 +13,13 @@ import { LogOutIcon } from '../src/components/ui/icons/logOutIcon.tsx'
 import { PenIcon } from '../src/components/ui/icons/penIcon.tsx'
 import { PersonIcon } from '../src/components/ui/icons/personIcon.tsx'
 import { PlayIcon } from '../src/components/ui/icons/playIcon.tsx'
+import { EmptyPack } from '../src/components/ui/packListVersial/emptyPack.tsx'
+import { FriendsPackList } from '../src/components/ui/packListVersial/FriendsPackList.tsx'
 
 import { CheckEmail } from './components/auth/checkEmail/checkEmail.tsx'
 import { CreateNewPassword } from './components/auth/createNewPassword/createNewPassword.tsx'
 import { ForgotPassword } from './components/auth/forgotPassword/forgotPassword.tsx'
 import { SignUp } from './components/auth/signUp/signUp.tsx'
-import { EmptyPack } from './components/ui/emptyPack'
 import { Layout } from './components/ui/Layout/Layout.tsx'
 import { PackList } from './components/ui/packListVersial/PackList.tsx'
 
@@ -30,6 +31,7 @@ const router = createBrowserRouter(
       <Route path={'/createNewPassword'} element={<CreateNewPassword />} />
       <Route path={'/emptyPack'} element={<EmptyPack />} />
       <Route path={'/packList'} element={<PackList nameForPack={'Pack List'} />} />
+      <Route path={'/friendsPack'} element={<FriendsPackList nameForPack={'Friend’s Pack'} />} />
       <Route
         path={'/dropdown'}
         element={

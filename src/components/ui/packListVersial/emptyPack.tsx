@@ -1,4 +1,4 @@
-import { LeftArrowIcon } from '../../ui/icons/leftArrowIcon.tsx'
+import { LeftArrowIcon } from '../../../components/ui/icons/leftArrowIcon.tsx'
 import { Button } from '../button/button.tsx'
 
 import s from './emptyPack.module.scss'
