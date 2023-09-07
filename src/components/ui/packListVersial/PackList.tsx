@@ -1,4 +1,5 @@
 import { RangeSlider } from '../../ui/rangeSlider/RangeSlider.tsx'
+import { Table } from '../../ui/table/table.tsx'
 import { TextField } from '../../ui/textField/textField.tsx'
 import { Button } from '../button/button.tsx'
 
@@ -21,7 +22,9 @@ export const PackList = (props: PackListType) => {
         <RangeSlider min={1} max={15} step={1} onChange={() => {}} />
       </div>
       <Button>Clear Filter</Button>
-      <div>add tabel</div>
+      <div>
+        <Table />
+      </div>
     </div>
   )
 }
