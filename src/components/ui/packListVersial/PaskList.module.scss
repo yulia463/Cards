@@ -1,9 +1,10 @@
-.titleWrapper{
+.titleWrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
 }
+
 .nameForPack {
   color: var(--light-100, #FFF);
   font-family: Roboto;
@@ -13,8 +14,38 @@
   line-height: 36px; /* 138.462% */
 
 }
-.content{
+
+.content {
   display: flex;
-  gap: 40px;
+  gap: 80px;
   align-items: center;
+  margin-bottom: 36px;
+}
+
+.input {
+  align-self: end;
+}
+
+.buttonAddCard {
+  border-radius: 2px 0px 0px 2px;
+  border: 1px solid var(--dark-300, #4C4C4C);
+  padding: 6px 14px;
+  background-color: black;
+
+}
+
+.buttonAllCards {
+  padding: 6px 14px;
+  border-radius: 0px 2px 2px 0px;
+  border-left: 1px solid var(--primary-500, #8C61FF);
+}
+
+.buttonFilter {
+  align-self: end;
+}
+
+.slider {
+  width: 251px;
+  height: 36px;
+  flex-shrink: 0;
 }

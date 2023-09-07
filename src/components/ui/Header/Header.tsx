@@ -12,7 +12,7 @@ export const Header = () => {
     <div className={s.Navbar}>
       <img src={Logo} alt="Cards Logo" onClick={() => navigate('/')} />
       <Link to={'/signIn'}>
-        <Button>Sign up</Button>
+        <Button>Sign in</Button>
       </Link>
     </div>
   )

@@ -18,17 +18,21 @@ export const PackList = (props: PackListType) => {
         <Button variant="primary">Add New Pack</Button>
       </div>
       <div className={s.content}>
-        <TextField placeholder={'input search'} icon={<SearchIcon />} />
+        <div className={s.input}>
+          <TextField placeholder={'input search'} icon={<SearchIcon />} />
+        </div>
         <div>
           <p>Show packs cards</p>
-          <Button>My Cards</Button>
-          <Button>New Cards</Button>
+          <Button className={s.buttonAddCard}>My Cards</Button>
+          <Button className={s.buttonAllCards}>All Cards</Button>
         </div>
         <div>
           <p>Number of cards</p>
-          <RangeSlider min={1} max={15} step={1} onChange={() => {}} />
+          <div className={s.slider}>
+            <RangeSlider min={1} max={15} step={1} onChange={() => {}} />
+          </div>
         </div>
-        <Button variant={'secondary'} icon={<DeleteIcon />}>
+        <Button variant={'secondary'} className={s.buttonFilter} icon={<DeleteIcon />}>
           Clear Filter
         </Button>
       </div>
