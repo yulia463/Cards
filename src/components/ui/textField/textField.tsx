@@ -14,6 +14,7 @@ export const TextField: FC<TextFieldProps> = ({
   errorMessage,
   icon,
   onClickIcon,
+  className,
   ...inputProps
 }) => {
   return (
