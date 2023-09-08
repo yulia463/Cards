@@ -1,29 +1,49 @@
 import { Outlet } from 'react-router-dom'
 
-import { useGetDecksQuery, useGetUserDataQuery } from '../../../services/base-api'
+import { useMeQuery } from '../../../services/auth.tsx'
 import { Header } from '../Header'
+// import { Outlet, useNavigate } from 'react-router-dom'
+// import { useGetUserDataQuery } from '../../../services/base-api'
+// export const Layout = () => {
+//   // const result = useGetDecksQuery();
+//   const userData = useGetUserDataQuery()
+//   const navigate = useNavigate()
+//   const [login] = useLoginMutation()
+//   const { data, isLoading } = useMeQuery()
+//   //
+//   // // console.log(result)
+//   // console.log(userData)
+//   // useEffect(() => {
+//   //   if (true) {
+//   //     navigate('/signIn')
+//   //   }
+//   // }, [])
+//
+//   return (
+//     <main>
+//       <Header />
+//       {/*<div>{result?.data?.items?.map(el => el.name)}</div>*/}
+//       <div
+//         style={{
+//           height: 'calc(100vh - 56px)',
+//           display: 'flex',
+//           alignItems: 'center',
+//           justifyContent: 'center',
+//         }}
+//       >
+//         <Outlet />
+//       </div>
+//     </main>
+//   )
+// }
 
 export const Layout = () => {
-  // const result = useGetDecksQuery();
-  const userData = useGetUserDataQuery()
-
-  // console.log(result)
-  console.log(userData)
+  const { data } = useMeQuery()
 
   return (
-    <main>
-      <Header />
-      {/*<div>{result?.data?.items?.map(el => el.name)}</div>*/}
-      <div
-        style={{
-          height: 'calc(100vh - 56px)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        <Outlet />
-      </div>
-    </main>
+    <>
+      <Header data={data} />
+      <Outlet />
+    </>
   )
 }

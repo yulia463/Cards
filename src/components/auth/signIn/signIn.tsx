@@ -1,3 +1,5 @@
+import { FC } from 'react'
+
 import { DevTool } from '@hookform/devtools'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Controller, useForm } from 'react-hook-form'
@@ -19,12 +21,20 @@ const loginSchema = z.object({
 })
 
 type FormValues = z.infer<typeof loginSchema>
+type PropsType = {
+  onSubmit: (data: SignInFormShem) => void
+}
+type SignInFormShem = z.infer<typeof sigInSchema>
+const sigInSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(3),
+  rememberMe: z.boolean().default(false),
+})
 
-export const SignIn = () => {
+export const SignIn: FC<PropsType> = ({ onSubmit }) => {
   const {
     control,
     handleSubmit,
-    // watch,
     formState: { errors },
   } = useForm<FormValues>({
     mode: 'onSubmit',
@@ -37,9 +47,9 @@ export const SignIn = () => {
   })
 
   const navigate = useNavigate()
-  const onSubmit = (data: FormValues) => {
-    console.log(data)
-  }
+  // const onSubmit = (data: FormValues) => {
+  //   console.log(data)
+  // }
 
   const handleFormSubmitted = handleSubmit(onSubmit)
 

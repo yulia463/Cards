@@ -1,3 +1,5 @@
+import { ReactNode } from 'react'
+
 import { Card } from '../card/Card.tsx'
 
 import s from './dropdown.module.scss'
@@ -9,6 +11,7 @@ type DropdownProps = {
     link: React.ReactNode
   }[]
   isDropdownOpen?: boolean
+  trigger?: ReactNode
 }
 
 export const Dropdown: React.FC<DropdownProps> = ({ options, isDropdownOpen }) => {
