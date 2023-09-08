@@ -26,7 +26,7 @@ import { PackList } from './components/ui/packListVersial/PackList.tsx'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
-      <Route path={'/signIn'} element={<SignIn />} />
+      <Route path={'/signIn'} element={<SignIn onSubmit={() => {}} />} />
       <Route path={'/checkEmail'} element={<CheckEmail />} />
       <Route path={'/createNewPassword'} element={<CreateNewPassword />} />
       <Route path={'/emptyPack'} element={<EmptyPack />} />

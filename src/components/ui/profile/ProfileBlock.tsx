@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { ResponseUserType } from '../../../services/auth.tsx'
+import { ResponseUserType } from '../../../services/types.ts'
 import { AvatarForDropdownIcon } from '../icons/avatarForDropdownIcon.tsx'
 import { Typography } from '../typography/typography.tsx'
 
@@ -12,7 +12,10 @@ type PropsType = {
 export const ProfileBlock: FC<PropsType> = ({ data }) => {
   return (
     <div className={s.infoBlock}>
-      <AvatarForDropdownIcon src={data?.avatar} name={data?.name} />
+      <AvatarForDropdownIcon
+          // src={data?.avatar}
+          // name={data?.name}
+      />
       <div className={s.info}>
         <Typography variant={'subtitle2'}>{data?.name}</Typography>
         <Typography variant={'caption'} className={s.email}>

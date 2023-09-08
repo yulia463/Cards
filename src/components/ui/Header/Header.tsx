@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import { useLogoutMutation } from '../../../services/auth.tsx'
 import { Button } from '../button'
@@ -14,11 +14,12 @@ import { Typography } from '../typography'
 import s from './Header.module.scss'
 
 import { ResponseUserType } from 'services/types.ts'
+import {LogOutIcon} from "../icons/logOutIcon.tsx";
 type HeaderProps = {
   data?: ResponseUserType | null
 }
 export const Header: FC<HeaderProps> = ({ data }) => {
-  const navigate = useNavigate()
+ // const navigate = useNavigate()
   const [logout] = useLogoutMutation()
   const logoutHandler = () => {
     logout()
@@ -38,7 +39,7 @@ export const Header: FC<HeaderProps> = ({ data }) => {
       id: 3,
       component: (
         <Button variant={'link'} className={s.buttonDrop} onClick={logoutHandler}>
-          {/*<Logout />*/}
+          <LogOutIcon />
           <Typography variant={'caption'}>Sign Out</Typography>
         </Button>
       ),
@@ -70,8 +71,7 @@ export const Header: FC<HeaderProps> = ({ data }) => {
             <Dropdown
               trigger={
                 <AvatarForDropdownIcon
-                  // src={data.avatar}
-                  name={data.name}
+                   src={data.avatar}
                   items={dropDownMenu}
                 />
               }
