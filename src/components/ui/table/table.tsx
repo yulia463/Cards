@@ -78,7 +78,7 @@ export const Empty: FC<ComponentProps<'div'> & { mt?: string; mb?: string }> = (
   )
 }
 
-type TypeTestData = {
+export type TypeTestData = {
   id: number
   name: string
   cardsNumber: number
@@ -86,17 +86,11 @@ type TypeTestData = {
   createdBy: string
 }
 
-const testData: TypeTestData[] = [
-  { id: 1, name: 'Pack Name', cardsNumber: 4, lastDate: '24.07.2023', createdBy: 'Ivan Ivanov' },
-  { id: 2, name: 'Pack Name', cardsNumber: 4, lastDate: '25.07.2023', createdBy: 'Ivan Ivanov' },
-  { id: 3, name: 'Pack Name', cardsNumber: 4, lastDate: '26.07.2023', createdBy: 'Ivan Ivanov' },
-  { id: 4, name: 'Pack Name', cardsNumber: 4, lastDate: '27.07.2023', createdBy: 'Ivan Ivanov' },
-  { id: 5, name: 'Pack Name', cardsNumber: 4, lastDate: '28.07.2023', createdBy: 'Ivan Ivanov' },
-  { id: 6, name: 'Pack Name', cardsNumber: 4, lastDate: '29.07.2023', createdBy: 'Ivan Ivanov' },
-  { id: 7, name: 'Pack Name', cardsNumber: 4, lastDate: '30.07.2023', createdBy: 'Ivan Ivanov' },
-]
+type TableProps = {
+  rows: TypeTestData[]
+}
 
-export const Table = () => {
+export const Table: FC<TableProps> = ({ rows }) => {
   const [sortTable, setSortTable] = useState(false)
   const changeSort = (status: boolean) => setSortTable(status)
 
@@ -118,7 +112,7 @@ export const Table = () => {
         </Row>
       </Head>
       <Body>
-        {testData.map(el => {
+        {rows.map(el => {
           return (
             <Row key={el.id}>
               <Cell>{el.name}</Cell>
