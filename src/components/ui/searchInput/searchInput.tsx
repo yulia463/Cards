@@ -1,29 +1,15 @@
 import { FC, InputHTMLAttributes } from 'react'
 
 import { SearchIcon } from '../icons/searchIcon.tsx'
-
-import { TextField } from 'components/ui'
+import { TextField } from '../textField/textField.tsx'
 
 type SearchInputProps = {
-  errorMessage?: string
-  label: string
+  onCancelSearch: () => void
 } & InputHTMLAttributes<HTMLInputElement>
-export const SearchInput: FC<SearchInputProps> = ({ errorMessage, label, ...inputProps }) => {
-  // const [search, setSearch] = useState(false)
-  // const onClickIconHandler = () => {
-  //   setSearch(prev => !prev)
-  // }
-
+export const SearchInput: FC<SearchInputProps> = ({ onCancelSearch, ...inputProps }) => {
   return (
     <div>
-      <TextField
-        label={label}
-        errorMessage={errorMessage}
-        // onClickIcon={onClickIconHandler}
-        icon={<SearchIcon />}
-        type={'text'}
-        {...inputProps}
-      />
+      <TextField placeholder={'Search'} icon={<SearchIcon />} type={'text'} {...inputProps} />
     </div>
   )
 }

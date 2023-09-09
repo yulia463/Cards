@@ -19,8 +19,8 @@ export const TextField: FC<TextFieldProps> = ({
 }) => {
   return (
     <div>
+      <label>{label}</label>
       <div className={`${s.inputWrapper} ${errorMessage ? s.errorInputWrapper : ''}`}>
-        <label>{label}</label>
         <input {...inputProps} className={`${s.input} ${errorMessage ? s.errorInput : ''}`} />
         {icon && (
           <div className={s.iconWrapper} onClick={onClickIcon}>
