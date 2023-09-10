@@ -8,3 +8,78 @@
     cursor: pointer;
   }
 }
+.headerBlock {
+  display: flex;
+  height: 3.75rem;
+  background: var(--color-dark-700);
+  border: 1px solid white;
+  padding: 10px 137.5px;
+
+
+  .contentHeader {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #960c24;
+
+    width: 80rem;
+    margin: 0 auto;
+
+    .logo {
+      padding: 0;
+
+      &:focus,
+      &:active,
+      &:hover {
+        outline: none;
+      }
+
+      & svg {
+        width: 9.75rem;
+        height: 2.25rem;
+      }
+    }
+
+    .avatar_menu {
+      display: flex;
+      gap: 0.88rem;
+      align-items: center;
+      justify-content: flex-end;
+
+      .menu_name {
+        cursor: pointer;
+        position: relative;
+
+        &::after {
+          content: '';
+
+          position: absolute;
+          bottom: 0;
+          left: 0;
+
+          width: 100%;
+
+          border-bottom: 1px dotted;
+        }
+      }
+
+      & svg {
+        width: 2.25rem;
+      }
+    }
+  }
+}
+
+.buttonDrop {
+  padding: 0;
+  color: var(--color-light-100);
+
+  &:focus,
+  &:active,
+  &:hover {
+    color: var(--color-light-100);
+    outline: none;
+  }
+}
+

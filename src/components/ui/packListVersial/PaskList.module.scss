@@ -1,3 +1,8 @@
+.packList{
+  width: 80%;
+  margin: 0 auto;
+}
+
 .titleWrapper {
   display: flex;
   justify-content: space-between;
@@ -20,6 +25,7 @@
   gap: 80px;
   align-items: center;
   margin-bottom: 36px;
+
 }
 
 .input {

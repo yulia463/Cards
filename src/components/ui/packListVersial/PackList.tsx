@@ -34,7 +34,7 @@ export const PackList = (props: PackListType) => {
   }
 
   return (
-    <div>
+    <div className={s.packList}>
       <div className={s.titleWrapper}>
         <p className={s.nameForPack}>{props.nameForPack}</p>
         <Button variant="primary">Add New Pack</Button>
