@@ -1,8 +1,8 @@
-.container{
-  //display: flex;
-  //flex-direction: column;
-
+.container {
+  padding: 81px 137.5px;
+  position: relative;
 }
+
 .backDiv {
   color: var(--light-100, #FFF);
   font-family: Roboto;
@@ -13,54 +13,42 @@
   position: absolute;
   display: flex;
   align-items: center;
-  top: 90px;
-  left: 158px;
-  column-gap: 10px;
-
+  top: 24px;
 }
+
 
 .namePack {
   color: var(--light-100, #FFF);
-
   font-family: Roboto;
   font-size: 26px;
   font-style: normal;
   font-weight: 700;
   line-height: 36px;
-  position: absolute;
   top: 150px;
-  left: 160px;
-
 
 }
 
 .text {
   color: var(--dark-100, #808080);
-
   font-family: Roboto;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 24px; /* 150% */
   padding: 0 0 30px 0;
+  text-align: center;
 }
 
 .button {
   display: flex;
-  width: 180px;
-  height: 36px;
+  align-self: center;
   justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 4px;
-  background: var(--primary-500, #8C61FF);
-  box-shadow: 0px 4px 18px 0px rgba(140, 97, 255, 0.35);
-  margin-left: 90px;
 
 }
 
-//height: calc(100vh - 56px);
-//    display: flex;
-//    align-items: center;
-//    justify-content: center;
-//    position: relative;
+//
+////height: calc(100vh - 56px);
+////    display: flex;
+////    align-items: center;
+////    justify-content: center;
+////    position: relative;

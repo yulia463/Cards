@@ -13,7 +13,7 @@ export const EmptyPack = () => {
       <h1 className={s.namePack}>Name Pack</h1>
       <div className={s.text}>This pack is empty. Click add new card to fill this pack</div>
       <div className={s.button}>
-        <Button>Add New Card</Button>
+        <Button variant={'primary'}>Add New Card</Button>
       </div>
     </div>
   )
