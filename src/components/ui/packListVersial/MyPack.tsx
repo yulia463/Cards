@@ -4,11 +4,12 @@ import { Table } from '../../ui/table/table.tsx'
 import { TextField } from '../../ui/textField/textField.tsx'
 import { Button } from '../button/button.tsx'
 import { LeftArrowIcon } from '../icons/leftArrowIcon.tsx'
+import { ModeIcon } from '../icons/modeIcon.tsx'
 import { SearchIcon } from '../icons/searchIcon.tsx'
 
 import s from './FriendsPackList.module.scss'
 
-export const FriendsPackList = () => {
+export const MyPack = () => {
   const testData = [
     { id: 1, name: 'Lucas', cardsNumber: 4, lastDate: '24.07.2023', createdBy: 'Ivan Ivanov' },
     { id: 2, name: 'Olivia', cardsNumber: 4, lastDate: '25.07.2023', createdBy: 'Ivan Ivanov' },
@@ -31,7 +32,10 @@ export const FriendsPackList = () => {
         Back to Packs List
       </div>
       <div className={s.titleWrapper}>
-        <p className={s.nameForPack}>Friend’s Pack</p>
+        <p className={s.nameForPack}>My Pack</p>
+        <div style={{ border: `'1px-solid-red'` }}>
+          <ModeIcon />
+        </div>
         <Button variant="primary">Learn to Pack</Button>
       </div>
       <TextField

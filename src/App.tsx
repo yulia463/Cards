@@ -15,6 +15,7 @@ import { PersonIcon } from '../src/components/ui/icons/personIcon.tsx'
 import { PlayIcon } from '../src/components/ui/icons/playIcon.tsx'
 import { EmptyPack } from '../src/components/ui/packListVersial/emptyPack.tsx'
 import { FriendsPackList } from '../src/components/ui/packListVersial/FriendsPackList.tsx'
+import { MyPack } from '../src/components/ui/packListVersial/MyPack.tsx'
 
 import { CheckEmail } from './components/auth/checkEmail/checkEmail.tsx'
 import { CreateNewPassword } from './components/auth/createNewPassword/createNewPassword.tsx'
@@ -31,7 +32,8 @@ const router = createBrowserRouter(
       <Route path={'/createNewPassword'} element={<CreateNewPassword />} />
       <Route path={'/emptyPack'} element={<EmptyPack />} />
       <Route path={'/packList'} element={<PackList nameForPack={'Pack List'} />} />
-      <Route path={'/friendsPack'} element={<FriendsPackList nameForPack={'Friend’s Pack'} />} />
+      <Route path={'/friendsPack'} element={<FriendsPackList />} />
+      <Route path={'/myPack'} element={<MyPack />} />
       <Route
         path={'/dropdown'}
         element={
