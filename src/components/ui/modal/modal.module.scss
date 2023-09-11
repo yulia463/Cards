@@ -1,0 +1,60 @@
+.overlay {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  background-color: rgb(0 0 0 / 50%);
+}
+
+.content {
+  position: fixed;
+  z-index: 101;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 33.875rem;
+
+  background-color: var(--color-dark-700);
+
+  .buttonBottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 1.5rem 2.25rem;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1.12rem 1.5rem;
+
+  border-bottom: 1px solid var(--color-dark-500);
+}
+
+.contentBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: space-between;
+
+  padding: 1.5rem;
+}
+
+.closeButton {
+  cursor: pointer;
+
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+}
