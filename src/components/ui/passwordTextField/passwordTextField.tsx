@@ -1,8 +1,8 @@
 import { FC, InputHTMLAttributes, useState } from 'react'
 
+import { TextField } from '..'
 import { EyeOffOutlineIcon } from '../icons/eyeOffOutlineIcon'
 import { EyeOutlineIcon } from '../icons/eyeOutlineIcon'
-import { TextField } from '../textField/textField'
 
 type PasswordTextFieldProps = {
   errorMessage?: string
