@@ -1,7 +1,7 @@
 import { baseApi } from './base-api.ts'
 import { RequestForgotPassword, ResponseUserType, SignUpArgsType } from './types.ts'
 
-const authApi = baseApi.injectEndpoints({
+const authApi = baseApi.enhanceEndpoints({ addTagTypes: ['Me'] }).injectEndpoints({
   endpoints: builder => {
     return {
       me: builder.query<ResponseUserType | null, void>({

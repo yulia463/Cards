@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom'
 
-import { useMeQuery } from '../../../services/auth.tsx'
+import { useMeQuery } from '../../../services/auth.ts'
 import { Header } from '../Header'
 // import { Outlet, useNavigate } from 'react-router-dom'
 // import { useGetUserDataQuery } from '../../../services/base-api'
