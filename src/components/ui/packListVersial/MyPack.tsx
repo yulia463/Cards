@@ -12,7 +12,6 @@ import s from './FriendsPackList.module.scss'
 // import {Typography} from "components/ui/typography";
 
 export const MyPack = () => {
-  //  const dispatch = useAppDispatch()
   const testData = [
     { id: 1, name: 'Lucas', cardsNumber: 4, lastDate: '24.07.2023', createdBy: 'Ivan Ivanov' },
     { id: 2, name: 'Olivia', cardsNumber: 4, lastDate: '25.07.2023', createdBy: 'Ivan Ivanov' },
@@ -24,54 +23,55 @@ export const MyPack = () => {
   ]
 
   const [searched, setSearched] = useState<string>('')
+
   const filteredRows = testData.filter(row => {
-  //   return row.name.toLowerCase().includes(searched.toLowerCase())
-  // })
-  //   const openPackModal = (value: NameModal) => {
-  //       dispatch(modalActions.setOpenModal(value))
-  //       dispatch(modalActions.setPackName(data!.name))
-  //       dispatch(modalActions.setPrivatePack(data!.isPrivate))
-  //       setCardId(data!.id)
-  //   }
-  //   const onSetPerPageHandler = (value: number) => {
-  //       setPerPage({ ...perPage, value })
-  //   }
-  //   const addCardModalHandler = () => {
-  //       dispatch(modalActions.setOpenModal('addCard'))
-  //   }
-  //   const dropDownMenu = [
-  //       {
-  //           id: 1,
-  //           component: (
-  //               <Button as={Link} to={`/learn-pack/${params.id}`} variant={'link'} className={s.buttonDrop}>
-  //                   <Play />
-  //                   <Typography variant={'caption'}>Learn</Typography>
-  //               </Button>
-  //           ),
-  //       },
-  //       {
-  //           id: 2,
-  //           component: (
-  //               <Button variant={'link'} className={s.buttonDrop} onClick={() => openPackModal('editPack')}>
-  //                   <Edit />
-  //                   <Typography variant={'caption'}>Edit</Typography>
-  //               </Button>
-  //           ),
-  //       },
-  //       {
-  //           id: 3,
-  //           component: (
-  //               <Button
-  //                   variant={'link'}
-  //                   className={s.buttonDrop}
-  //                   onClick={() => openPackModal('deletePack')}
-  //               >
-  //                   <Trash />
-  //                   <Typography variant={'caption'}>Delete</Typography>
-  //               </Button>
-  //           ),
-  //       },
-  //   ]
+    return row.name.toLowerCase().includes(searched.toLowerCase())
+  })
+  // const openPackModal = (value: NameModal) => {
+  //   dispatch(modalActions.setOpenModal(value))
+  //   dispatch(modalActions.setPackName(data!.name))
+  //   dispatch(modalActions.setPrivatePack(data!.isPrivate))
+  //   setCardId(data!.id)
+  // }
+  // const onSetPerPageHandler = (value: number) => {
+  //   setPerPage({ ...perPage, value })
+  // }
+  // const addCardModalHandler = () => {
+  //   dispatch(modalActions.setOpenModal('addCard'))
+  // }
+  // const dropDownMenu = [
+  //   {
+  //     id: 1,
+  //     component: (
+  //       <Button as={Link} to={`/learn-pack/${params.id}`} variant={'link'} className={s.buttonDrop}>
+  //         <Play />
+  //         <Typography variant={'caption'}>Learn</Typography>
+  //       </Button>
+  //     ),
+  //   },
+  //   {
+  //     id: 2,
+  //     component: (
+  //       <Button variant={'link'} className={s.buttonDrop} onClick={() => openPackModal('editPack')}>
+  //         <Edit />
+  //         <Typography variant={'caption'}>Edit</Typography>
+  //       </Button>
+  //     ),
+  //   },
+  //   {
+  //     id: 3,
+  //     component: (
+  //       <Button
+  //         variant={'link'}
+  //         className={s.buttonDrop}
+  //         onClick={() => openPackModal('deletePack')}
+  //       >
+  //         <Trash />
+  //         <Typography variant={'caption'}>Delete</Typography>
+  //       </Button>
+  //     ),
+  //   },
+  // ]
 
   return (
     <div className={s.container}>
@@ -85,8 +85,12 @@ export const MyPack = () => {
           <ModeIcon />
         </div>
         <Button
-            // onClick={addCardModalHandler}
-            variant="primary"> Add New Card</Button>
+          // onClick={addCardModalHandler}
+          variant="primary"
+        >
+          {' '}
+          Add New Card
+        </Button>
       </div>
       <TextField
         style={{ marginBottom: '20px' }}

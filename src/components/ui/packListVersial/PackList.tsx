@@ -14,13 +14,13 @@ type PackListType = {
   nameForPack?: string
 }
 const testData = [
-  { id: 1, name: 'Lucas', cardsNumber: 4, lastDate: '24.07.2023', createdBy: 'Ivan Ivanov' },
+  { id: 1, name: 'Lucas', cardsNumber: 2, lastDate: '24.07.2023', createdBy: 'Ivan Ivanov' },
   { id: 2, name: 'Olivia', cardsNumber: 4, lastDate: '25.07.2023', createdBy: 'Ivan Ivanov' },
-  { id: 3, name: 'Liam', cardsNumber: 4, lastDate: '26.07.2023', createdBy: 'Ivan Ivanov' },
-  { id: 4, name: 'Emma', cardsNumber: 4, lastDate: '27.07.2023', createdBy: 'Ivan Ivanov' },
-  { id: 5, name: 'Noah', cardsNumber: 4, lastDate: '28.07.2023', createdBy: 'Ivan Ivanov' },
-  { id: 6, name: 'Ava', cardsNumber: 4, lastDate: '29.07.2023', createdBy: 'Ivan Ivanov' },
-  { id: 7, name: 'Isabella', cardsNumber: 4, lastDate: '30.07.2023', createdBy: 'Ivan Ivanov' },
+  { id: 3, name: 'Liam', cardsNumber: 3, lastDate: '26.07.2023', createdBy: 'Ivan Ivanov' },
+  { id: 4, name: 'Emma', cardsNumber: 5, lastDate: '27.07.2023', createdBy: 'Ivan Ivanov' },
+  { id: 5, name: 'Noah', cardsNumber: 7, lastDate: '28.07.2023', createdBy: 'Ivan Ivanov' },
+  { id: 6, name: 'Ava', cardsNumber: 6, lastDate: '29.07.2023', createdBy: 'Ivan Ivanov' },
+  { id: 7, name: 'Isabella', cardsNumber: 12, lastDate: '30.07.2023', createdBy: 'Ivan Ivanov' },
 ]
 
 export const PackList = (props: PackListType) => {
