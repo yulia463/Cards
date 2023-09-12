@@ -1,12 +1,12 @@
 import { useState } from 'react'
 
 import { Table } from '../../ui/table/table.tsx'
-import { TextField } from '../../ui/textField/textField.tsx'
 import { Button } from '../button/button.tsx'
 import { LeftArrowIcon } from '../icons/leftArrowIcon.tsx'
 import { SearchIcon } from '../icons/searchIcon.tsx'
 
 import s from './FriendsPackList.module.scss'
+import {TextField} from "src/components/ui";
 
 export const FriendsPackList = () => {
   const testData = [
