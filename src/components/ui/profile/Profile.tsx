@@ -7,7 +7,7 @@ import { FC } from 'react'
 //
 // import s from './Profile.module.scss'
 
-import { useLogoutMutation, useMeQuery, useUpdateProfileMutation } from '../../../services/auth.ts'
+import { useLogoutMutation, useMeQuery, useUpdateProfileMutation } from 'src/services/auth-api.ts'
 import { PersonalInformation } from '../../ui/profile/PersonalInformation.tsx'
 
 export type ProfileType = {

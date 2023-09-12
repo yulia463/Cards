@@ -36,7 +36,7 @@
 import { Navigate, useNavigate } from 'react-router-dom'
 
 import { SignIn } from '../../components/auth/signIn/signIn.tsx'
-import { useLoginMutation, useMeQuery } from '../../services/auth.ts'
+import { useLoginMutation, useMeQuery } from 'src/services/auth-api.ts'
 
 export const Login = () => {
   const [login] = useLoginMutation()
