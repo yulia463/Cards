@@ -1,4 +1,4 @@
-import { useState } from 'react'
+//import { useState } from 'react'
 
 import { Table } from '../../ui/table/table.tsx'
 import { TextField } from '../../ui/textField/textField.tsx'
@@ -8,6 +8,7 @@ import { ModeIcon } from '../icons/modeIcon.tsx'
 import { SearchIcon } from '../icons/searchIcon.tsx'
 
 import s from './FriendsPackList.module.scss'
+// import {Typography} from "src/components/ui/typography";
 //import {useAppDispatch} from "utils/helpers.ts";
 // import {Typography} from "components/ui/typography";
 
@@ -22,7 +23,7 @@ export const MyPack = () => {
     { id: 7, name: 'Isabella', cardsNumber: 4, lastDate: '30.07.2023', createdBy: 'Ivan Ivanov' },
   ]
 
-  const [searched, setSearched] = useState<string>('')
+  //const [searched, setSearched] = useState<string>('')
 
   const filteredRows = testData.filter(row => {
     return row.name.toLowerCase().includes(searched.toLowerCase())
@@ -39,7 +40,7 @@ export const MyPack = () => {
   // const addCardModalHandler = () => {
   //   dispatch(modalActions.setOpenModal('addCard'))
   // }
-  // const dropDownMenu = [
+  {/*const dropDownMenu = [*/}
   //   {
   //     id: 1,
   //     component: (
@@ -54,8 +55,8 @@ export const MyPack = () => {
   //     component: (
   //       <Button variant={'link'} className={s.buttonDrop} onClick={() => openPackModal('editPack')}>
   //         <Edit />
-  //         <Typography variant={'caption'}>Edit</Typography>
-  //       </Button>
+  {/*        <Typography variant={'caption'}>Edit</Typography>*/}
+  {/*      </Button>*/}
   //     ),
   //   },
   //   {
@@ -63,10 +64,10 @@ export const MyPack = () => {
   //     component: (
   //       <Button
   //         variant={'link'}
-  //         className={s.buttonDrop}
+  {/*        className={s.buttonDrop}*/}
   //         onClick={() => openPackModal('deletePack')}
   //       >
-  //         <Trash />
+  //         {/*<Trash />*/}
   //         <Typography variant={'caption'}>Delete</Typography>
   //       </Button>
   //     ),

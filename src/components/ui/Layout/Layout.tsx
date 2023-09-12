@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
 
-import { useMeQuery } from '../../../services/auth.ts'
 import { Header } from '../Header'
+import {useMeQuery} from "src/services/auth.tsx";
 // import { Outlet, useNavigate } from 'react-router-dom'
 // import { useGetUserDataQuery } from '../../../services/base-api'
 // export const Layout = () => {
