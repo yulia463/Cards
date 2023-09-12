@@ -1,7 +1,7 @@
-import { Outlet } from 'react-router-dom'
+import {Outlet} from 'react-router-dom'
 
-import { Header } from '../Header'
-import {useMeQuery} from "src/services/auth.tsx";
+import {Header} from '../Header'
+import {useMeQuery} from "src/services/auth-api.ts";
 // import { Outlet, useNavigate } from 'react-router-dom'
 // import { useGetUserDataQuery } from '../../../services/base-api'
 // export const Layout = () => {
@@ -38,12 +38,12 @@ import {useMeQuery} from "src/services/auth.tsx";
 // }
 
 export const Layout = () => {
-  const { data } = useMeQuery()
+    const {data} = useMeQuery()
 
-  return (
-    <>
-      <Header data={data} />
-      <Outlet />
-    </>
-  )
+    return (
+        <>
+            <Header data={data}/>
+            <Outlet/>
+        </>
+    )
 }
