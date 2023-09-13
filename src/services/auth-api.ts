@@ -37,12 +37,6 @@ const authApi = baseApi.enhanceEndpoints({ addTagTypes: ['Me'] }).injectEndpoint
             await queryFulfilled
           } catch {
             patchResult.undo()
-
-            /**
-             * Alternatively, on failure you can invalidate the corresponding cache tags
-             * to trigger a re-fetch:
-             * dispatch(api.util.invalidateTags(['Post']))
-             */
           }
         },
         invalidatesTags: ['Me'],

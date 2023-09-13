@@ -11,8 +11,8 @@ import { PersonIcon } from '../icons/personIcon.tsx'
 import { Typography } from '../typography'
 
 import s from './Header.module.scss'
+import {ResponseUserType} from "src/services/types.ts";
 
-import { ResponseUserType } from 'services/types.ts'
 type HeaderProps = {
   data?: ResponseUserType | null
 }

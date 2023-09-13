@@ -98,11 +98,7 @@ const router = createBrowserRouter(
       <Route
         path={'/signUp'}
         element={
-          <SignUp
-            onSubmit={() => {
-              'test'
-            }}
-          />
+          <SignUp/>
         }
       />
     </Route>

@@ -9,20 +9,22 @@ import { Card } from '../../ui/card/Card.tsx'
 import { PasswordTextField } from '../../ui/passwordTextField/passwordTextField'
 
 import s from './signUp.module.scss'
+import {useSignUpMutation} from "src/services/auth-api.ts";
 
-const schema = z.object({
+const schema = z
+    .object({
   email: z.string().email('Invalid email address').nonempty('Enter email'),
   password: z.string().nonempty('Enter password').min(3),
   confirmPassword: z.string().nonempty('Enter password').min(3),
 })
+    .refine(data => data.password === data.confirmPassword, {
+      path: ['confirmPassword'],
+      message: "Password don't match",
+    })
 
 type FormType = z.infer<typeof schema>
 
-type Props = {
-  onSubmit: (data: FormType) => void
-}
-
-export const SignUp = (props: Props) => {
+export const SignUp = () => {
   const {
     control,
     handleSubmit,
@@ -37,15 +39,24 @@ export const SignUp = (props: Props) => {
     },
   })
   const navigate = useNavigate()
-  const handleFormSubmitted = handleSubmit(props.onSubmit)
+  const [signUp] = useSignUpMutation()
 
-  console.log(errors)
+  const onSubmit = (data: FormType) => {
+    signUp({ email: data.email, password: data.password, sendConfirmationEmail: false })
+        .unwrap()
+        .then(() => {
+          navigate('/signIn')
+        })
+        .catch(err => {
+          console.log(err)
+        })
+  }
 
   return (
     <div className={s.signUp}>
       <DevTool control={control} />
       <Card className={s.card}>
-        <form onSubmit={handleFormSubmitted}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className={s.input}>
             <div className={s.title}>Sign Up</div>
             <Controller
