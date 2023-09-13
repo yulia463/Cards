@@ -4,8 +4,6 @@ import { RangeSlider } from '../../ui/rangeSlider/RangeSlider.tsx'
 import { Table } from '../../ui/table/table.tsx'
 import { Button } from '../button/button.tsx'
 import { DeleteIcon } from '../icons/deleteIcon.tsx'
-//import { SearchIcon } from '../icons/searchIcon.tsx'
-//import { TextField } from '../textField/textField.tsx'
 import { SearchInput } from '../searchInput/searchInput.tsx'
 
 import s from './PaskList.module.scss'

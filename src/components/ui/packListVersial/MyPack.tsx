@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 import { Table } from '../../ui/table/table.tsx'
 import { Button } from '../button/button.tsx'
@@ -7,6 +7,10 @@ import { ModeIcon } from '../icons/modeIcon.tsx'
 
 import s from './FriendsPackList.module.scss'
 
+import { Dropdown } from 'src/components/ui'
+import { DeleteIcon } from 'src/components/ui/icons/deleteIcon.tsx'
+import { PenIcon } from 'src/components/ui/icons/penIcon.tsx'
+import { PlayIcon } from 'src/components/ui/icons/playIcon.tsx'
 import { SearchInput } from 'src/components/ui/searchInput/searchInput.tsx'
 
 const testData = [
@@ -21,9 +25,13 @@ const testData = [
 
 export const MyPack = () => {
   const [searched, setSearched] = useState<string>('')
+  const [dropdownOpen, setDropdownOpen] = React.useState(false)
   const filteredRows = testData.filter(row => {
     return row.name.toLowerCase().includes(searched.toLowerCase())
   })
+  const onClickHandler = () => {
+    setDropdownOpen(prev => !prev)
+  }
 
   const cancelSearch = () => {
     setSearched('')
@@ -37,9 +45,26 @@ export const MyPack = () => {
       </div>
       <div className={s.titleWrapper}>
         <p className={s.nameForPack}>My Pack</p>
-        <div style={{ border: `'1px-solid-red'` }}>
+        <div onClick={onClickHandler} style={{ border: `'1px-solid-red'` }}>
           <ModeIcon />
         </div>
+        <Dropdown
+          isDropdownOpen={dropdownOpen}
+          options={[
+            {
+              icon: <PlayIcon />,
+              link: <span>Learn</span>,
+            },
+            {
+              icon: <PenIcon />,
+              link: <span>Edit</span>,
+            },
+            {
+              icon: <DeleteIcon />,
+              link: <span>Delete</span>,
+            },
+          ]}
+        />
         <Button
           // onClick={addCardModalHandler}
           variant="primary"
