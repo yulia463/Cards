@@ -8,6 +8,7 @@ import { Button, TextField } from '../../ui'
 import { Card } from '../../ui/card/Card.tsx'
 
 import s from './forgotPassword.module.scss'
+import {useForgotPasswordMutation} from "src/services/auth-api.ts";
 
 const schema = z.object({
   email: z.string().email('Invalid email address').nonempty('Enter email'),
@@ -17,11 +18,11 @@ const schema = z.object({
 
 type FormType = z.infer<typeof schema>
 
-type Props = {
-  onSubmit: (data: FormType) => void
-}
+// type Props = {
+//   onSubmit: (data: FormType) => void
+// }
 
-export const ForgotPassword = (props: Props) => {
+export const ForgotPassword = () => {
   const {
     control,
     handleSubmit,
@@ -36,14 +37,22 @@ export const ForgotPassword = (props: Props) => {
     },
   })
   const navigate = useNavigate()
-
-  const handleFormSubmitted = handleSubmit(props.onSubmit)
+  const [forgotPassword] = useForgotPasswordMutation();
+ // const handleFormSubmitted = handleSubmit(props.onSubmit)
+  const onSubmit = (data: FormType) => {
+    forgotPassword({
+      ...data,
+      html: `<h1>Hi, ##name##</h1><p>Click <a href="http://localhost:5173/recover-password/##token##">here</a> to recover your password</p>`,
+    })
+    navigate(`/check-email/${data.email}`)
+  }
 
   return (
     <div className={s.forgot}>
       <DevTool control={control} />
       <Card className={s.card}>
-        <form onSubmit={handleFormSubmitted}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+        {/*<form onSubmit={handleFormSubmitted}>*/}
           <div className={s.inputWrapper}>
             <div className={s.title}>Forgot your password?</div>
             <Controller
