@@ -6,7 +6,7 @@ import { Button } from '../button/button.tsx'
 import { LeftArrowIcon } from '../icons/leftArrowIcon.tsx'
 import { ModeIcon } from '../icons/modeIcon.tsx'
 
-import s from './FriendsPackList.module.scss'
+import s from './MyPack.module.scss'
 
 import { Dropdown } from 'src/components/ui'
 import { DeleteIcon } from 'src/components/ui/icons/deleteIcon.tsx'
@@ -45,27 +45,29 @@ export const MyPack = () => {
         Back to Packs List
       </div>
       <div className={s.titleWrapper}>
-        <p className={s.nameForPack}>My Pack</p>
-        <div onClick={onClickHandler} style={{ border: `'1px-solid-red'` }}>
-          <ModeIcon />
+        <div className={s.myPack}>
+          <p className={s.nameForPack}>My Pack</p>
+          <div className={s.icon} onClick={onClickHandler}>
+            <ModeIcon />
+            <Dropdown
+              isDropdownOpen={dropdownOpen}
+              options={[
+                {
+                  icon: <PlayIcon />,
+                  link: <span>Learn</span>,
+                },
+                {
+                  icon: <PenIcon />,
+                  link: <span>Edit</span>,
+                },
+                {
+                  icon: <DeleteIcon />,
+                  link: <span>Delete</span>,
+                },
+              ]}
+            />
+          </div>
         </div>
-        <Dropdown
-          isDropdownOpen={dropdownOpen}
-          options={[
-            {
-              icon: <PlayIcon />,
-              link: <span>Learn</span>,
-            },
-            {
-              icon: <PenIcon />,
-              link: <span>Edit</span>,
-            },
-            {
-              icon: <DeleteIcon />,
-              link: <span>Delete</span>,
-            },
-          ]}
-        />
         <Button
           // onClick={addCardModalHandler}
           variant="primary"
