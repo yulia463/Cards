@@ -17,17 +17,24 @@
   left: 158px;
   column-gap: 10px;
   padding-bottom: 25px;
-
 }
-.icon{
-
+.myPack{
+  display: flex;
+}
+.icon {
+  position: relative;
+  display: flex;
+  justify-content: left;
+  border: 25px;
+  border-color: #2db7f5;
+  top: 33px;
+  margin: 0 10px;
 }
 
 .titleWrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .nameForPack {
@@ -37,7 +44,6 @@
   font-style: normal;
   font-weight: 700;
   line-height: 36px;
-
 }
 
 
