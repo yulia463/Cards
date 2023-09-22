@@ -31,7 +31,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<Layout />}>
       <Route path={'/signIn'} element={<SignIn onSubmit={() => {}} />} />
       <Route path={'/checkEmail'} element={<CheckEmail />} />
-      <Route path={'/createNewPassword'} element={<CreateNewPassword />} />
+      <Route path={'/recover-password/:token'} element={<CreateNewPassword />} />
       <Route path={'/emptyPack'} element={<EmptyPack />} />
       <Route path={'/packList'} element={<PackList nameForPack={'Pack List'} />} />
       <Route path={'/friendsPack'} element={<FriendsPackList />} />
@@ -88,11 +88,7 @@ const router = createBrowserRouter(
       <Route
         path={'/forgotPassword'}
         element={
-          <ForgotPassword
-            onSubmit={() => {
-              'test'
-            }}
-          />
+          <ForgotPassword/>
         }
       />
       <Route
