@@ -1,12 +1,9 @@
 .content {
-  position: relative;
-
+  position: absolute;
+  top: 50px;
   display: inline-block;
   padding: 12px;
-  // padding: 0 0 -12px 0 ;
-  position: relative;
   background-color: var(--color-dark-700);
-
   border: 1px solid var(--color-dark-500);
   border-radius: 6px;
 }
@@ -30,7 +27,6 @@
   top: -19px;
   border: 10px solid transparent; /* Прозрачные границы */
   border-bottom: 10px solid var(--color-dark-700);
-
 }
 
 .card {
@@ -38,9 +34,7 @@
   flex-direction: column;
   gap: 24px;
   align-items: center;
-
   width: auto;
-
 }
 
 .optionWrapper {
@@ -51,28 +45,21 @@
   gap: 12px;
   align-items: start;
   justify-content: center;
-
-
 }
 
 .option {
-
   display: flex;
   gap: 8px;
   align-items: center;
-
 }
 
 .optionWrapper:not(:last-child)::before {
   content: "";
-
   position: absolute;
   bottom: -12px;
   left: 0;
-
   width: 100%;
   height: 1px;
-
   background-color: grey;
 }
 

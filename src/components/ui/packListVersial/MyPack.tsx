@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/default
 import React, { useState } from 'react'
 
 import { Table } from '../../ui/table/table.tsx'

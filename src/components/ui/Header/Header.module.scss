@@ -43,22 +43,10 @@
       gap: 0.88rem;
       align-items: center;
       justify-content: flex-end;
+      position: relative;
 
       .menu_name {
         cursor: pointer;
-        position: relative;
-
-        &::after {
-          content: '';
-
-          position: absolute;
-          bottom: 0;
-          left: 0;
-
-          width: 100%;
-
-          border-bottom: 1px dotted;
-        }
       }
 
       & svg {
