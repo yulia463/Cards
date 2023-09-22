@@ -1,6 +1,6 @@
 import { DevTool } from '@hookform/devtools'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Controller, useForm } from 'react-hook-form'
+import {Controller, SubmitHandler, useForm} from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { z } from 'zod'
 
@@ -11,16 +11,11 @@ import s from './forgotPassword.module.scss'
 import {useForgotPasswordMutation} from "src/services/auth-api.ts";
 
 const schema = z.object({
-  email: z.string().email('Invalid email address').nonempty('Enter email'),
-  password: z.string().nonempty('Enter password'),
-  rememberMe: z.boolean().optional(),
+  email: z.string().email('Invalid email address').nonempty('Enter email')
 })
 
 type FormType = z.infer<typeof schema>
 
-// type Props = {
-//   onSubmit: (data: FormType) => void
-// }
 
 export const ForgotPassword = () => {
   const {
@@ -32,19 +27,16 @@ export const ForgotPassword = () => {
     resolver: zodResolver(schema),
     defaultValues: {
       email: '',
-      password: '',
-      rememberMe: false,
     },
   })
   const navigate = useNavigate()
   const [forgotPassword] = useForgotPasswordMutation();
- // const handleFormSubmitted = handleSubmit(props.onSubmit)
-  const onSubmit = (data: FormType) => {
+  const onSubmit: SubmitHandler<FormType> = (data) => {
     forgotPassword({
       ...data,
       html: `<h1>Hi, ##name##</h1><p>Click <a href="http://localhost:5173/recover-password/##token##">here</a> to recover your password</p>`,
     })
-    navigate(`/check-email/${data.email}`)
+    navigate(`/checkEmail`)
   }
 
   return (
@@ -52,7 +44,6 @@ export const ForgotPassword = () => {
       <DevTool control={control} />
       <Card className={s.card}>
         <form onSubmit={handleSubmit(onSubmit)}>
-        {/*<form onSubmit={handleFormSubmitted}>*/}
           <div className={s.inputWrapper}>
             <div className={s.title}>Forgot your password?</div>
             <Controller
