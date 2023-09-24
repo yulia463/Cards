@@ -6,10 +6,11 @@ import { z } from 'zod'
 
 import { Button, TextField } from '../../ui'
 import { Card } from '../../ui/card/Card.tsx'
-import { PasswordTextField } from '../../ui/passwordTextField/passwordTextField'
+
 
 import s from './signUp.module.scss'
 import {useSignUpMutation} from "src/services/auth-api.ts";
+import {PasswordTextField} from "src/components/ui/passwordTextField";
 
 const schema = z
     .object({
