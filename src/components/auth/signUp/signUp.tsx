@@ -3,11 +3,8 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { Controller, useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { z } from 'zod'
-
 import { Button, TextField } from '../../ui'
 import { Card } from '../../ui/card/Card.tsx'
-
-
 import s from './signUp.module.scss'
 import {useSignUpMutation} from "src/services/auth-api.ts";
 import {PasswordTextField} from "src/components/ui/passwordTextField";
