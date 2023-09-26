@@ -10,7 +10,6 @@ export const Layout = () => {
         <>
             <Header data={data}/>
             <Outlet/>
-            <div>Главная страница </div>
         </>
     )
 }
