@@ -62,7 +62,6 @@ export const PersonalInformation: FC<PropsType> = ({ name, email, avatar, logout
             label={'Name'}
             defaultValue={name}
             type={'default'}
-            // control={control}
             className={s.editNickName}
             placeholder={'Name'}
           />
@@ -97,7 +96,9 @@ export const PersonalInformation: FC<PropsType> = ({ name, email, avatar, logout
           </Typography>
           <Button as={Link} to="/login" variant={'secondary'} className={s.logout} onClick={logout}>
             <LogOutIcon />
-            <Typography variant={'subtitle2'}>Logout</Typography>
+            <Link to={"/signIn"}>
+              <Typography variant={'subtitle2'}>Logout</Typography>
+            </Link>
           </Button>
         </div>
       )}
