@@ -1,12 +1,4 @@
 import { FC } from 'react'
-
-// import { Button } from '../button'
-// import { Card } from '../card'
-// import { LogOutIcon } from '../icons/logOutIcon.tsx'
-// import { PenIcon } from '../icons/penIcon.tsx'
-//
-// import s from './Profile.module.scss'
-
 import { useLogoutMutation, useMeQuery, useUpdateProfileMutation } from 'src/services/auth-api.ts'
 import { PersonalInformation } from '../../ui/profile/PersonalInformation.tsx'
 

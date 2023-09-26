@@ -52,11 +52,17 @@ export const Header: FC<HeaderProps> = ({ data }) => {
                 },
                 {
                   icon: <PersonIcon />,
-                  link: <span>My profile</span>,
+                  link:
+                      <Link to="/profile">
+                          <span>My profile</span>
+                      </Link>,
                 },
                 {
                   icon: <LogOutIcon />,
-                  link: <span>Sign Out</span>,
+                  link:
+                      <Link to="/signIn">
+                      <span>Sign Out</span>
+                  </Link>,
                 },
               ]}
             />
