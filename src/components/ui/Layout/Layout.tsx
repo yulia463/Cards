@@ -1,17 +1,15 @@
-import { Outlet } from 'react-router-dom'
+import {Outlet} from 'react-router-dom'
 
-import { Header } from '../Header'
-
-import { useMeQuery } from 'src/services/auth-api.ts'
+import {Header} from '../Header'
+import {useMeQuery} from "src/services/auth-api.ts";
 
 export const Layout = () => {
-  const { data } = useMeQuery()
+    const {data} = useMeQuery()
 
-  return (
-    <>
-      <Header data={data} />
-      <Outlet />
-      <div>Главная страница </div>
-    </>
-  )
+    return (
+        <>
+            <Header data={data}/>
+            <Outlet/>
+        </>
+    )
 }
