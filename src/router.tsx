@@ -18,6 +18,7 @@ import { FriendsPackList } from './components/ui/packListVersial/FriendsPackList
 import { MyPack } from './components/ui/packListVersial/MyPack.tsx'
 import { PackList } from './components/ui/packListVersial/PackList.tsx'
 import { useGetDecksQuery } from './services/base-api.ts'
+import {Profile} from "src/components/ui/profile";
 
 export const Router = () => {
   const result = useGetDecksQuery()
@@ -36,6 +37,7 @@ const router = createBrowserRouter(
       <Route path={'/packList'} element={<PackList nameForPack={'Pack List'} />} />
       <Route path={'/friendsPack'} element={<FriendsPackList />} />
       <Route path={'/myPack'} element={<MyPack />} />
+      <Route path={'/profile'} element={<Profile />} />
       <Route
         path={'/dropdown'}
         element={

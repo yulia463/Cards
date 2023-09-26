@@ -11,8 +11,8 @@ import { useLogoutMutation, useMeQuery, useUpdateProfileMutation } from 'src/ser
 import { PersonalInformation } from '../../ui/profile/PersonalInformation.tsx'
 
 export type ProfileType = {
-  personalInfo: { name: string; email: string; profileImg: string }
-  setIsEditOn: (editOn: boolean) => void
+  personalInfo?: { name: string; email: string; profileImg: string }
+  setIsEditOn?: (editOn: boolean) => void
 }
 export const Profile: FC<ProfileType> = () => {
   // export const Profile: FC<ProfileType> = ({ personalInfo, setIsEditOn }) => {
