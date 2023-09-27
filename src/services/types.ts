@@ -114,3 +114,10 @@ export type LearnDeckResponse = {
     created: string
     updated: string
 }
+export type NameModal =
+    | 'addPack'
+    | 'addCard'
+    | 'editPack'
+    | 'editCard'
+    | 'deletePack'
+    | 'deleteCard'

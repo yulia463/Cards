@@ -6,8 +6,8 @@ import {
     GetDecksArgs,
     LearnDeckResponse,
 } from './types.ts'
+import {baseApi} from "src/services/base-api.ts";
 
-import { baseApi } from '@/services/base-api.ts'
 
 const decksApi = baseApi.injectEndpoints({
     endpoints: builder => {
