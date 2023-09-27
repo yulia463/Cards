@@ -13,14 +13,13 @@ import { LogOutIcon } from './components/ui/icons/logOutIcon.tsx'
 import { PenIcon } from './components/ui/icons/penIcon.tsx'
 import { PersonIcon } from './components/ui/icons/personIcon.tsx'
 import { PlayIcon } from './components/ui/icons/playIcon.tsx'
+import { ModalAddNewPack } from './components/ui/modalAddNewPack/modalAddNewPack.tsx'
 import { EmptyPack } from './components/ui/packListVersial/emptyPack.tsx'
 import { FriendsPackList } from './components/ui/packListVersial/FriendsPackList.tsx'
 import { MyPack } from './components/ui/packListVersial/MyPack.tsx'
 import { PackList } from './components/ui/packListVersial/PackList.tsx'
+import { Profile } from './components/ui/profile'
 import { useGetDecksQuery } from './services/base-api.ts'
-
-import { ModalAddNewPack } from 'src/components/ui/modalAddNewPack/modalAddNewPack.tsx'
-import { Profile } from 'src/components/ui/profile'
 
 export const Router = () => {
   const result = useGetDecksQuery()

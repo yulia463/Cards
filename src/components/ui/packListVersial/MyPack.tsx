@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import { Link } from 'react-router-dom'
+
 import { Table } from '../../ui/table/table.tsx'
 import { Button } from '../button/button.tsx'
 import { LeftArrowIcon } from '../icons/leftArrowIcon.tsx'
@@ -11,6 +13,7 @@ import { Dropdown } from 'src/components/ui'
 import { DeleteIcon } from 'src/components/ui/icons/deleteIcon.tsx'
 import { PenIcon } from 'src/components/ui/icons/penIcon.tsx'
 import { PlayIcon } from 'src/components/ui/icons/playIcon.tsx'
+import { ModalAddNewPack } from 'src/components/ui/modalAddNewPack/modalAddNewPack.tsx'
 import { SearchInput } from 'src/components/ui/searchInput/searchInput.tsx'
 
 const testData = [
@@ -26,6 +29,7 @@ const testData = [
 export const MyPack = () => {
   const [searched, setSearched] = useState<string>('')
   const [dropdownOpen, setDropdownOpen] = React.useState(false)
+  const [isModalOpen, setModalOpen] = useState(false)
   const filteredRows = testData.filter(row => {
     return row.name.toLowerCase().includes(searched.toLowerCase())
   })
@@ -67,7 +71,9 @@ export const MyPack = () => {
             />
           </div>
         </div>
-        <Button variant="primary">Add New Card</Button>
+        <Button onClick={() => setModalOpen(true)} variant="primary">
+          Add New Card
+        </Button>
       </div>
       <SearchInput
         value={searched}
@@ -78,6 +84,7 @@ export const MyPack = () => {
       />
 
       <Table rows={filteredRows} />
+      {isModalOpen && <ModalAddNewPack />}
     </div>
   )
 }
