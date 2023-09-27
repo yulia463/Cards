@@ -71,11 +71,14 @@ import { RangeSlider } from '../../ui/rangeSlider/RangeSlider.tsx'
 import { Button } from '../button/button.tsx'
 import { DeleteIcon } from '../icons/deleteIcon.tsx'
 import s from './PaskList.module.scss'
-import {useAppDispatch, useAppSelector} from "src/utils/helpers.ts";
+import {useAppDispatch, useAppSelector, useDebounce} from "src/utils/helpers.ts";
 import {TextField} from "src/components/ui";
 import {Typography} from "src/components/ui/typography";
 import {Pagination} from "src/components/ui/pagination";
 import {selectOpenModals, selectSettings} from "src/components/ui/modal/selectors.tsx";
+import { usePackDeckState } from '../../auth/hooks/hook.ts'
+import {useMeQuery} from "src/services/auth-api.ts";
+import {useGetDecksQuery} from "src/services/base-api.ts";
 
 type PackListType = {
   nameForPack?: string
