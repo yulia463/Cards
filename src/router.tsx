@@ -18,7 +18,9 @@ import { FriendsPackList } from './components/ui/packListVersial/FriendsPackList
 import { MyPack } from './components/ui/packListVersial/MyPack.tsx'
 import { PackList } from './components/ui/packListVersial/PackList.tsx'
 import { useGetDecksQuery } from './services/base-api.ts'
-import {Profile} from "src/components/ui/profile";
+
+import { ModalAddNewPack } from 'src/components/ui/modalAddNewPack/modalAddNewPack.tsx'
+import { Profile } from 'src/components/ui/profile'
 
 export const Router = () => {
   const result = useGetDecksQuery()
@@ -38,6 +40,7 @@ const router = createBrowserRouter(
       <Route path={'/friendsPack'} element={<FriendsPackList />} />
       <Route path={'/myPack'} element={<MyPack />} />
       <Route path={'/profile'} element={<Profile />} />
+      <Route path={'/modal'} element={<ModalAddNewPack />} />
       <Route
         path={'/dropdown'}
         element={
@@ -87,18 +90,8 @@ const router = createBrowserRouter(
           />
         }
       />
-      <Route
-        path={'/forgotPassword'}
-        element={
-          <ForgotPassword/>
-        }
-      />
-      <Route
-        path={'/signUp'}
-        element={
-          <SignUp/>
-        }
-      />
+      <Route path={'/forgotPassword'} element={<ForgotPassword />} />
+      <Route path={'/signUp'} element={<SignUp />} />
     </Route>
   )
 )
