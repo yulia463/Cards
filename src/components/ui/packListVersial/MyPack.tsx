@@ -7,7 +7,7 @@ import { ModeIcon } from '../icons/modeIcon.tsx'
 
 import s from './MyPack.module.scss'
 
-import {Dropdown} from 'src/components/ui'
+import { Dropdown } from 'src/components/ui'
 import { DeleteIcon } from 'src/components/ui/icons/deleteIcon.tsx'
 import { PenIcon } from 'src/components/ui/icons/penIcon.tsx'
 import { PlayIcon } from 'src/components/ui/icons/playIcon.tsx'
@@ -24,65 +24,60 @@ const testData = [
 ]
 
 export const MyPack = () => {
-     const [searched, setSearched] = useState<string>('')
-    const [dropdownOpen, setDropdownOpen] = React.useState(false)
-    const filteredRows = testData.filter(row => {
-      return row.name.toLowerCase().includes(searched.toLowerCase())
-    })
-    const onClickHandler = () => {
-      setDropdownOpen(prev => !prev)
-    }
+  const [searched, setSearched] = useState<string>('')
+  const [dropdownOpen, setDropdownOpen] = React.useState(false)
+  const filteredRows = testData.filter(row => {
+    return row.name.toLowerCase().includes(searched.toLowerCase())
+  })
+  const onClickHandler = () => {
+    setDropdownOpen(prev => !prev)
+  }
 
-    const cancelSearch = () => {
-      setSearched('')
-    }
+  const cancelSearch = () => {
+    setSearched('')
+  }
 
-
-
-    return (
-        <div className={s.container}>
-            <div className={s.packDiv} onClick={() => {}}>
-                <LeftArrowIcon />
-                Back to Packs List
-            </div>
-            <div className={s.titleWrapper}>
-                <div className={s.myPack}>
-                    <p className={s.nameForPack}>My Pack</p>
-                    <div className={s.icon} onClick={onClickHandler}>
-                        <ModeIcon />
-                        <Dropdown
-                            isDropdownOpen={dropdownOpen}
-                            options={[
-                                {
-                                    icon: <PlayIcon />,
-                                    link: <span>Learn</span>,
-                                },
-                                {
-                                    icon: <PenIcon />,
-                                    link: <span>Edit</span>,
-                                },
-                                {
-                                    icon: <DeleteIcon />,
-                                    link: <span>Delete</span>,
-                                },
-                            ]}
-                        />
-                    </div>
-                </div>
-                <Button
-                        variant="primary">
-                    Add New Card
-                </Button>
-            </div>
-            <SearchInput
-              value={searched}
-              onChange={e => {
-                setSearched(e.target.value)
-              }}
-              onCancelSearch={() => cancelSearch()}
+  return (
+    <div className={s.container}>
+      <div className={s.packDiv} onClick={() => {}}>
+        <LeftArrowIcon />
+        Back to Packs List
+      </div>
+      <div className={s.titleWrapper}>
+        <div className={s.myPack}>
+          <p className={s.nameForPack}>My Pack</p>
+          <div className={s.icon} onClick={onClickHandler}>
+            <ModeIcon />
+            <Dropdown
+              isDropdownOpen={dropdownOpen}
+              options={[
+                {
+                  icon: <PlayIcon />,
+                  link: <span>Learn</span>,
+                },
+                {
+                  icon: <PenIcon />,
+                  link: <span>Edit</span>,
+                },
+                {
+                  icon: <DeleteIcon />,
+                  link: <span>Delete</span>,
+                },
+              ]}
             />
-
-            <Table rows={filteredRows} />
+          </div>
         </div>
-    )
+        <Button variant="primary">Add New Card</Button>
+      </div>
+      <SearchInput
+        value={searched}
+        onChange={e => {
+          setSearched(e.target.value)
+        }}
+        onCancelSearch={() => cancelSearch()}
+      />
+
+      <Table rows={filteredRows} />
+    </div>
+  )
 }
