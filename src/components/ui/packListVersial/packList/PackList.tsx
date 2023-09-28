@@ -1,12 +1,12 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 
-import { RangeSlider } from 'src/components/ui/rangeSlider/RangeSlider.tsx'
-import { Table } from 'src/components/ui/table/table.tsx'
 import { Button } from 'src/components/ui/button/button.tsx'
 import { DeleteIcon } from 'src/components/ui/icons/deleteIcon.tsx'
-import { SearchInput } from 'src/components/ui/searchInput/searchInput.tsx'
-
+import { ModalAddNewPack } from 'src/components/ui/modal/modalAddNewPack/modalAddNewPack.tsx'
 import s from 'src/components/ui/packListVersial/packList/PaskList.module.scss'
+import { RangeSlider } from 'src/components/ui/rangeSlider/RangeSlider.tsx'
+import { SearchInput } from 'src/components/ui/searchInput/searchInput.tsx'
+import { Table } from 'src/components/ui/table/table.tsx'
 
 type PackListType = {
   nameForPack?: string
@@ -23,6 +23,7 @@ const testData = [
 
 export const PackList = (props: PackListType) => {
   const [searched, setSearched] = useState<string>('')
+  const [isModalOpen, setModalOpen] = useState(false)
   const filteredRows = testData.filter(row => {
     return row.name.toLowerCase().includes(searched.toLowerCase())
   })
@@ -35,7 +36,9 @@ export const PackList = (props: PackListType) => {
     <div className={s.packList}>
       <div className={s.titleWrapper}>
         <p className={s.nameForPack}>{props.nameForPack}</p>
-        <Button variant="primary">Add New Pack</Button>
+        <Button onClick={() => setModalOpen(true)} variant="primary">
+          Add New Pack
+        </Button>
       </div>
       <div className={s.content}>
         <div className={s.input}>
@@ -63,7 +66,7 @@ export const PackList = (props: PackListType) => {
         </Button>
       </div>
       <Table rows={filteredRows} />
+      {isModalOpen && <ModalAddNewPack setModalOpen={setModalOpen} />}
     </div>
   )
 }
-
