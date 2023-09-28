@@ -10,7 +10,7 @@ export type CheckboxPropsType = Omit<DefaultInputPropsType, 'type'> & {
   onValueChange?: (checked: boolean) => void
   disabled?: boolean
   required?: boolean
-  label?: string
+  label?: string | React.ReactElement
   id?: string
   position?: 'left'
 }
