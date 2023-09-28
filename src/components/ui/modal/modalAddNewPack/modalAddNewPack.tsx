@@ -1,8 +1,8 @@
-import { Button } from '../button/button'
-import { Checkbox } from '../checkbox'
-import { TextField } from '../textField'
+import { Button } from 'src/components/ui/button/button.tsx'
+import { Checkbox } from 'src/components/ui/checkbox'
+import { TextField } from 'src/components/ui/textField'
 
-import s from './modalAddNewPack.module.scss'
+import s from 'src/components/ui/modal/modalAddNewPack/modalAddNewPack.module.scss'
 
 import { CrossIcon } from 'src/components/ui/icons/ crossIcon.tsx'
 

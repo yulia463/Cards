@@ -13,7 +13,7 @@ import { Dropdown } from 'src/components/ui'
 import { DeleteIcon } from 'src/components/ui/icons/deleteIcon.tsx'
 import { PenIcon } from 'src/components/ui/icons/penIcon.tsx'
 import { PlayIcon } from 'src/components/ui/icons/playIcon.tsx'
-import { ModalAddNewPack } from 'src/components/ui/modalAddNewPack/modalAddNewPack.tsx'
+import { ModalAddNewPack } from 'src/components/ui/modal/modalAddNewPack/modalAddNewPack.tsx'
 import { SearchInput } from 'src/components/ui/searchInput/searchInput.tsx'
 
 const testData = [
