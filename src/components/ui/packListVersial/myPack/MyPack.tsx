@@ -84,7 +84,7 @@ export const MyPack = () => {
       />
 
       <Table rows={filteredRows} />
-      {isModalOpen && <ModalAddNewPack />}
+      {isModalOpen && <ModalAddNewPack setModalOpen={setModalOpen}/>}
     </div>
   )
 }

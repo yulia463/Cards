@@ -40,7 +40,6 @@ const router = createBrowserRouter(
       <Route path={'/friendsPack'} element={<FriendsPackList />} />
       <Route path={'/myPack'} element={<MyPack />} />
       <Route path={'/profile'} element={<Profile />} />
-      <Route path={'/modal'} element={<ModalAddNewPack />} />
       <Route path={'/pageNotFound'} element={<Error />} />
       <Route
         path={'/dropdown'}
