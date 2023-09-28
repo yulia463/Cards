@@ -20,6 +20,8 @@ import { PackList } from 'src/components/ui/packListVersial/packList/PackList.ts
 import { useGetDecksQuery } from './services/base-api.ts'
 
 import { Profile } from 'src/components/ui/profile'
+import {Error} from "src/components/ui/error/error.tsx";
+import {PageNotFoundIcon} from "src/components/ui/icons/pageNotFoundIcon.tsx";
 
 export const Router = () => {
   const result = useGetDecksQuery()
@@ -40,6 +42,7 @@ const router = createBrowserRouter(
       <Route path={'/myPack'} element={<MyPack />} />
       <Route path={'/profile'} element={<Profile />} />
       <Route path={'/modal'} element={<ModalAddNewPack />} />
+      <Route path={'/pageNotFound'} element={<Error />} />
       <Route
         path={'/dropdown'}
         element={
