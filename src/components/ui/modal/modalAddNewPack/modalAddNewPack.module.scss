@@ -3,7 +3,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
 }
 
 .modal {
@@ -14,6 +13,7 @@
   background-color: #171717;
   color: #FFFFFF;
 }
+
 .header{
   width: 541px;
   height: 60px;
@@ -22,20 +22,18 @@
   border-bottom: 1px solid #a0a0a0;
   justify: space-between
 }
+
 h2 {
   padding: 12px 24px 18px 24px;
   font-family: Roboto;
   font-size: 18px;
 }
+
 .crossIcon{
   float: right;
   position: relative;
   top: -60px;
   margin-right: 18px;
-  //width: 14px;
-  //height: 14px;
-  //top: 5px;
-  //left: 5px;
 }
 
 .textField {
