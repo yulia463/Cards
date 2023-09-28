@@ -27,10 +27,16 @@ h2 {
   padding: 12px 24px 18px 24px;
   font-family: Roboto;
   font-size: 18px;
-  font-weight: 700;
-  line-height: 24px;
-  letter-spacing: 0px;
-  text-align: left;
+}
+.crossIcon{
+  float: right;
+  position: relative;
+  top: -60px;
+  margin-right: 18px;
+  //width: 14px;
+  //height: 14px;
+  //top: 5px;
+  //left: 5px;
 }
 
 .textField {
@@ -44,13 +50,19 @@ h2 {
 }
 
 .checkbox{
+  margin-top: 20px;
   display: flex;
   justify-content: start;
   color: #FFFFFF;
 }
 
-.checkboxLabel{
-  color: red; /* Замените "red" на желаемый цвет текста */
+.buttons {
+  width: 542px;
+  height: 84px;
+  padding: 12px 24px 36px 24px;
+  border: 0px 1px 1px 1px;
+  display: flex;
+  justify-content: space-between;
 }
 
 
