@@ -1,6 +1,6 @@
-import { LeftArrowIcon } from '../../../components/ui/icons/leftArrowIcon.tsx'
-import { Button } from '../button/button.tsx'
-import s from './emptyPack.module.scss'
+import { LeftArrowIcon } from 'src/components/ui/icons/leftArrowIcon.tsx'
+import { Button } from 'src/components/ui/button/button.tsx'
+import s from 'src/components/ui/packListVersial/emptyPack/emptyPack.module.scss'
 
 export const EmptyPack = () => {
   return (

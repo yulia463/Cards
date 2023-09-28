@@ -1,10 +1,10 @@
 import { useState } from 'react'
 
-import { Table } from '../../ui/table/table.tsx'
-import { Button } from '../button/button.tsx'
-import { LeftArrowIcon } from '../icons/leftArrowIcon.tsx'
+import { Table } from 'src/components/ui/table/table.tsx'
+import { Button } from 'src/components/ui/button/button.tsx'
+import { LeftArrowIcon } from 'src/components/ui/icons/leftArrowIcon.tsx'
 
-import s from './FriendsPackList.module.scss'
+import s from 'src/components/ui/packListVersial/friendsPackList/FriendsPackList.module.scss'
 
 import { SearchInput } from 'src/components/ui/searchInput/searchInput.tsx'
 
