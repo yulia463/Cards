@@ -41,5 +41,16 @@ h2 {
   padding: 24px;
   border: 0px 1px 0px 1px;
   gap: 24px;
-
 }
+
+.checkbox{
+  display: flex;
+  justify-content: start;
+  color: #FFFFFF;
+}
+
+.checkboxLabel{
+  color: red; /* Замените "red" на желаемый цвет текста */
+}
+
+
