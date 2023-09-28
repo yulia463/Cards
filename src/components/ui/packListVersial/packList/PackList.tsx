@@ -1,12 +1,12 @@
 import { useState } from 'react'
 
-import { RangeSlider } from '../../ui/rangeSlider/RangeSlider.tsx'
-import { Table } from '../../ui/table/table.tsx'
-import { Button } from '../button/button.tsx'
-import { DeleteIcon } from '../icons/deleteIcon.tsx'
-import { SearchInput } from '../searchInput/searchInput.tsx'
+import { RangeSlider } from 'src/components/ui/rangeSlider/RangeSlider.tsx'
+import { Table } from 'src/components/ui/table/table.tsx'
+import { Button } from 'src/components/ui/button/button.tsx'
+import { DeleteIcon } from 'src/components/ui/icons/deleteIcon.tsx'
+import { SearchInput } from 'src/components/ui/searchInput/searchInput.tsx'
 
-import s from './PaskList.module.scss'
+import s from 'src/components/ui/packListVersial/packList/PaskList.module.scss'
 
 type PackListType = {
   nameForPack?: string

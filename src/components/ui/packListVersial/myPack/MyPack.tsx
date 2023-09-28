@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 
 import { Link } from 'react-router-dom'
 
-import { Table } from '../../ui/table/table.tsx'
-import { Button } from '../button/button.tsx'
-import { LeftArrowIcon } from '../icons/leftArrowIcon.tsx'
-import { ModeIcon } from '../icons/modeIcon.tsx'
+import { Table } from 'src/components/ui/table/table.tsx'
+import { Button } from 'src/components/ui/button/button.tsx'
+import { LeftArrowIcon } from 'src/components/ui/icons/leftArrowIcon.tsx'
+import { ModeIcon } from 'src/components/ui/icons/modeIcon.tsx'
 
-import s from './MyPack.module.scss'
+import s from 'src/components/ui/packListVersial/myPack/MyPack.module.scss'
 
 import { Dropdown } from 'src/components/ui'
 import { DeleteIcon } from 'src/components/ui/icons/deleteIcon.tsx'
