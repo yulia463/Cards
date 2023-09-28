@@ -1,21 +1,16 @@
 import React, { useState } from 'react'
 
-import { Link } from 'react-router-dom'
-
-import { Table } from 'src/components/ui/table/table.tsx'
+import { Dropdown } from 'src/components/ui'
 import { Button } from 'src/components/ui/button/button.tsx'
+import { DeleteIcon } from 'src/components/ui/icons/deleteIcon.tsx'
 import { LeftArrowIcon } from 'src/components/ui/icons/leftArrowIcon.tsx'
 import { ModeIcon } from 'src/components/ui/icons/modeIcon.tsx'
-
-import s from 'src/components/ui/packListVersial/myPack/MyPack.module.scss'
-
-import { Dropdown } from 'src/components/ui'
-import { DeleteIcon } from 'src/components/ui/icons/deleteIcon.tsx'
 import { PenIcon } from 'src/components/ui/icons/penIcon.tsx'
 import { PlayIcon } from 'src/components/ui/icons/playIcon.tsx'
 import { ModalAddNewPack } from 'src/components/ui/modal/modalAddNewPack/modalAddNewPack.tsx'
+import s from 'src/components/ui/packListVersial/myPack/MyPack.module.scss'
 import { SearchInput } from 'src/components/ui/searchInput/searchInput.tsx'
-import {ModalEditPack} from "src/components/ui/modal/modalEditPack/modalEditPack.tsx";
+import { Table } from 'src/components/ui/table/table.tsx'
 
 const testData = [
   { id: 1, name: 'Lucas', cardsNumber: 4, lastDate: '24.07.2023', createdBy: 'Ivan Ivanov' },
@@ -54,7 +49,6 @@ export const MyPack = () => {
           <div className={s.icon} onClick={onClickHandler}>
             <ModeIcon />
             <Dropdown
-
               isDropdownOpen={dropdownOpen}
               options={[
                 {
