@@ -15,6 +15,7 @@ import { PenIcon } from 'src/components/ui/icons/penIcon.tsx'
 import { PlayIcon } from 'src/components/ui/icons/playIcon.tsx'
 import { ModalAddNewPack } from 'src/components/ui/modal/modalAddNewPack/modalAddNewPack.tsx'
 import { SearchInput } from 'src/components/ui/searchInput/searchInput.tsx'
+import {ModalEditPack} from "src/components/ui/modal/modalEditPack/modalEditPack.tsx";
 
 const testData = [
   { id: 1, name: 'Lucas', cardsNumber: 4, lastDate: '24.07.2023', createdBy: 'Ivan Ivanov' },
@@ -53,6 +54,7 @@ export const MyPack = () => {
           <div className={s.icon} onClick={onClickHandler}>
             <ModeIcon />
             <Dropdown
+
               isDropdownOpen={dropdownOpen}
               options={[
                 {

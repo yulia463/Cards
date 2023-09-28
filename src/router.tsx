@@ -4,7 +4,6 @@ import {
   Route,
   RouterProvider,
 } from 'react-router-dom'
-import { ModalAddNewPack } from 'src/components/ui/modal/modalAddNewPack/modalAddNewPack.tsx'
 import { CheckEmail, CreateNewPassword, ForgotPassword, SignIn, SignUp } from './components/auth'
 import { Dropdown, Layout } from './components/ui'
 import { AvatarForDropdownIcon } from './components/ui/icons/avatarForDropdownIcon.tsx'
@@ -21,6 +20,7 @@ import { useGetDecksQuery } from './services/base-api.ts'
 
 import { Profile } from 'src/components/ui/profile'
 import {Error} from "src/components/ui/error/error.tsx";
+import {ModalEditPack} from "src/components/ui/modal/modalEditPack/modalEditPack.tsx";
 
 export const Router = () => {
   const result = useGetDecksQuery()

@@ -1,0 +1,65 @@
+.modalContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal {
+  width: 542px;
+  height: 311px;
+  border-radius: 3px;
+  border: 1px solid #a0a0a0;
+  background-color: #171717;
+  color: #FFFFFF;
+}
+
+.header{
+  width: 541px;
+  height: 60px;
+  top: 162px;
+  left: 369px;
+  border-bottom: 1px solid #a0a0a0;
+  justify: space-between
+}
+
+h2 {
+  padding: 12px 24px 18px 24px;
+  font-family: Roboto;
+  font-size: 18px;
+}
+
+.crossIcon{
+  float: right;
+  position: relative;
+  top: -60px;
+  margin-right: 18px;
+}
+
+.textField {
+  width: 541px;
+  height: 168px;
+  top: 222px;
+  left: 369px;
+  padding: 24px;
+  border: 0px 1px 0px 1px;
+  gap: 24px;
+}
+
+.checkbox{
+  margin-top: 20px;
+  display: flex;
+  justify-content: start;
+  color: #FFFFFF;
+}
+
+.buttons {
+  width: 542px;
+  height: 84px;
+  padding: 12px 24px 36px 24px;
+  border: 0px 1px 1px 1px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
