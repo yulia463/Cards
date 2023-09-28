@@ -21,7 +21,6 @@ import { useGetDecksQuery } from './services/base-api.ts'
 
 import { Profile } from 'src/components/ui/profile'
 import {Error} from "src/components/ui/error/error.tsx";
-import {PageNotFoundIcon} from "src/components/ui/icons/pageNotFoundIcon.tsx";
 
 export const Router = () => {
   const result = useGetDecksQuery()
