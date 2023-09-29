@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 import { Button } from 'src/components/ui/button/button.tsx'
 import { DeleteIcon } from 'src/components/ui/icons/deleteIcon.tsx'
