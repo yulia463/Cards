@@ -30,10 +30,9 @@ export const ModalEditPack = (props: ModalAddNewPackType) => {
                     />
                     <div className={s.checkbox}>
                         <Checkbox
-                            // variant={'withText'}
+
                             label={<span style={{color: 'white'}}>Private pack</span>}
-                            // checked={privatePack}
-                            // onChange={() => setPrivatePack(!privatePack)}
+
                         />
                     </div>
                 </div>

@@ -10,12 +10,12 @@ export type CheckboxPropsType = Omit<DefaultInputPropsType, 'type'> & {
   onValueChange?: (checked: boolean) => void
   disabled?: boolean
   required?: boolean
-  label?: string | React.ReactElement
+  label?:  React.ReactNode
   id?: string
   position?: 'left'
 }
 
-export const Checkbox: React.FC<CheckboxPropsType & { label: string }> = ({
+export const Checkbox: React.FC<CheckboxPropsType > = ({
   checked,
   onValueChange,
   position,

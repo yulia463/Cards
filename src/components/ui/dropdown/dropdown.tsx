@@ -6,15 +6,16 @@ import s from './dropdown.module.scss'
 
 type DropdownProps = {
   // options: React.ReactNode[]
-  options: {
-    icon?: React.ReactNode
-    link: React.ReactNode
-  }[]
+  // options: {
+  //   icon?: React.ReactNode
+  //   link: React.ReactNode
+  // }[]
+  children:ReactNode
   isDropdownOpen?: boolean
   trigger?: ReactNode
 }
 
-export const Dropdown: React.FC<DropdownProps> = ({ options, isDropdownOpen }) => {
+export const Dropdown: React.FC<DropdownProps> = ({ children, isDropdownOpen }) => {
   return (
     <>
       {isDropdownOpen && (
@@ -22,16 +23,12 @@ export const Dropdown: React.FC<DropdownProps> = ({ options, isDropdownOpen }) =
           <div className={s.triangle}></div>
           <div className={s.triangleBackground}></div>
           <Card className={s.card}>
-            {options.map((el, index) => {
-              return (
-                <div className={s.optionWrapper} key={index}>
-                  <div className={s.option}>
-                    {el.icon}
-                    {el.link}
-                  </div>
-                </div>
-              )
-            })}
+            {/*{options.map((el, index) => {*/}
+            {/*  return (*/}
+
+            {/*  )*/}
+            {/*})}*/}
+            {children}
           </Card>
         </div>
       )}
