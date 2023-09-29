@@ -15,11 +15,11 @@
 }
 .modal {
   width: 542px;
-  height: 311px;
   border-radius: 3px;
   border: 1px solid #a0a0a0;
   background-color: #171717;
   color: #FFFFFF;
+
 }
 
 .header{
@@ -44,20 +44,15 @@ h2 {
   margin-right: 18px;
 }
 
-.textField {
-  width: 541px;
-  height: 168px;
-  top: 222px;
-  left: 369px;
-  padding: 24px;
-  gap: 24px;
-}
-
 .checkbox{
   margin-top: 20px;
   display: flex;
   justify-content: start;
   color: #FFFFFF;
+}
+
+.body {
+  margin:  20px 0 20px 0;
 }
 
 .buttons {
@@ -68,4 +63,9 @@ h2 {
   justify-content: space-between;
 }
 
-
+.text{
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  margin: 0 0 0 50px;
+}

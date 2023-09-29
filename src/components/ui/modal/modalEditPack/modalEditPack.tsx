@@ -1,11 +1,11 @@
 import { Button } from 'src/components/ui/button/button.tsx'
 import { Checkbox } from 'src/components/ui/checkbox'
 import { CrossIcon } from 'src/components/ui/icons/ crossIcon.tsx'
-import s from 'src/components/ui/modal/modalAddNewPack/modalAddNewPack.module.scss'
 import { TextField } from 'src/components/ui/textField'
+import s from './modalEditPack.module.scss'
 
 type ModalAddNewPackType = {
-  setModalOpen: (isModalOpen: boolean) => void
+  closeModal: () => void
 }
 export const ModalEditPack = (props: ModalAddNewPackType) => {
   return (
@@ -13,8 +13,8 @@ export const ModalEditPack = (props: ModalAddNewPackType) => {
       <div className={s.modalContainer}>
         <div className={s.modal}>
           <div className={s.header}>
-            <h2>Add New Pack</h2>
-            <div onClick={() => props.setModalOpen(false)} className={s.crossIcon}>
+            <h2>Edit Pack</h2>
+            <div onClick={props.closeModal} className={s.crossIcon}>
               <CrossIcon />
             </div>
           </div>
@@ -25,10 +25,10 @@ export const ModalEditPack = (props: ModalAddNewPackType) => {
             </div>
           </div>
           <div className={s.buttons}>
-            <Button onClick={() => props.setModalOpen(false)} variant="secondary">
+            <Button onClick={props.closeModal} variant="secondary">
               Cancel
             </Button>
-            <Button>Edit Pack</Button>
+            <Button>Save Changes</Button>
           </div>
         </div>
       </div>
