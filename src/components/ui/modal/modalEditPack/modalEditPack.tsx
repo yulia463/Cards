@@ -5,7 +5,7 @@ import s from 'src/components/ui/modal/modalAddNewPack/modalAddNewPack.module.sc
 import { TextField } from 'src/components/ui/textField'
 
 type ModalAddNewPackType = {
-  setModalOpen: (isModalOpen: boolean) => void
+  closeModal: () => void
 }
 export const ModalEditPack = (props: ModalAddNewPackType) => {
   return (
@@ -14,7 +14,7 @@ export const ModalEditPack = (props: ModalAddNewPackType) => {
         <div className={s.modal}>
           <div className={s.header}>
             <h2>Edit Pack</h2>
-            <div onClick={() => props.setModalOpen(false)} className={s.crossIcon}>
+            <div onClick={props.closeModal} className={s.crossIcon}>
               <CrossIcon />
             </div>
           </div>
@@ -25,7 +25,7 @@ export const ModalEditPack = (props: ModalAddNewPackType) => {
             </div>
           </div>
           <div className={s.buttons}>
-            <Button onClick={() => props.setModalOpen(false)} variant="secondary">
+            <Button onClick={props.closeModal} variant="secondary">
               Cancel
             </Button>
             <Button>Save Changes</Button>
