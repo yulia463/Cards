@@ -22,6 +22,20 @@ const testData = [
   { id: 7, name: 'Isabella', cardsNumber: 4, lastDate: '30.07.2023', createdBy: 'Ivan Ivanov' },
 ]
 
+const options = [
+  {
+    icon: <PlayIcon />,
+    link: <span>Learn</span>,
+  },
+  {
+    icon: <PenIcon />,
+    link: <span>Edit</span>,
+  },
+  {
+    icon: <DeleteIcon />,
+    link: <span>Delete</span>,
+  },
+]
 
 export const MyPack = () => {
   const [searched, setSearched] = useState<string>('')
@@ -51,7 +65,6 @@ export const MyPack = () => {
             <ModeIcon />
             <Dropdown isDropdownOpen={dropdownOpen}>
               <div>
-                {}
                 <div className={s.optionWrapper}>
 
                   <div className={s.option} onClick={() => setModalOpen(true)}>

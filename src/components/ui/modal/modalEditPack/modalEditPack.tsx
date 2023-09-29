@@ -13,7 +13,7 @@ export const ModalEditPack = (props: ModalAddNewPackType) => {
       <div className={s.modalContainer}>
         <div className={s.modal}>
           <div className={s.header}>
-            <h2>Add New Pack</h2>
+            <h2>Edit Pack</h2>
             <div onClick={() => props.setModalOpen(false)} className={s.crossIcon}>
               <CrossIcon />
             </div>
@@ -28,7 +28,7 @@ export const ModalEditPack = (props: ModalAddNewPackType) => {
             <Button onClick={() => props.setModalOpen(false)} variant="secondary">
               Cancel
             </Button>
-            <Button>Edit Pack</Button>
+            <Button>Save Changes</Button>
           </div>
         </div>
       </div>
