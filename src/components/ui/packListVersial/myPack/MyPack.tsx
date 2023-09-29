@@ -67,12 +67,8 @@ export const MyPack = () => {
                             isDropdownOpen={dropdownOpen}
 
                         >
-                            <div>{/*<div className={s.optionWrapper}>*/}
-                                {/*    <div className={s.option}>*/}
-                                {/*        {el.icon}*/}
-                                {/*        {el.link}*/}
-                                {/*    </div>*/}
-                                {/*</div>*/}
+                            <div>
+                                {}
                                 <div className={s.optionWrapper}>
                                     <div className={s.option} onClick={()=>setModalOpen(true)}>
                                         <PenIcon/>
