@@ -15,11 +15,11 @@
 }
 .modal {
   width: 542px;
-  height: 311px;
   border-radius: 3px;
   border: 1px solid #a0a0a0;
   background-color: #171717;
   color: #FFFFFF;
+
 }
 
 .header{
@@ -51,6 +51,10 @@ h2 {
   color: #FFFFFF;
 }
 
+.body {
+  margin:  20px 0 20px 0;
+}
+
 .buttons {
   width: 542px;
   height: 84px;
@@ -59,4 +63,9 @@ h2 {
   justify-content: space-between;
 }
 
-
+.text{
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  margin: 0 0 0 50px;
+}

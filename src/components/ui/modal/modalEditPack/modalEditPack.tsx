@@ -1,8 +1,8 @@
 import { Button } from 'src/components/ui/button/button.tsx'
 import { Checkbox } from 'src/components/ui/checkbox'
 import { CrossIcon } from 'src/components/ui/icons/ crossIcon.tsx'
-import s from 'src/components/ui/modal/modalAddNewPack/modalAddNewPack.module.scss'
 import { TextField } from 'src/components/ui/textField'
+import s from './modalEditPack.module.scss'
 
 type ModalAddNewPackType = {
   closeModal: () => void

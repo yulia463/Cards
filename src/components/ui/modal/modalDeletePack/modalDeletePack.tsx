@@ -1,7 +1,6 @@
 import { Button } from 'src/components/ui/button/button.tsx'
 import { CrossIcon } from 'src/components/ui/icons/ crossIcon.tsx'
-import s from 'src/components/ui/modal/modalAddNewPack/modalAddNewPack.module.scss'
-
+import s from './modalDeletePack.module.scss'
 type ModalAddNewPackType = {
     closeModal: () => void
 }
@@ -14,6 +13,13 @@ export const ModalDeletePack = (props: ModalAddNewPackType) => {
                         <h2>Delete Pack</h2>
                         <div onClick={props.closeModal} className={s.crossIcon}>
                             <CrossIcon />
+                        </div>
+
+                    </div>
+                    <div className={s.body}>
+                        <div className={s.text}>
+                            Do you really want to remove Pack Name?
+                            <br/> All cards will be deleted.
                         </div>
                     </div>
                     <div className={s.buttons}>

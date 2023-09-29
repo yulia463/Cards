@@ -23,20 +23,6 @@ const testData = [
   { id: 7, name: 'Isabella', cardsNumber: 4, lastDate: '30.07.2023', createdBy: 'Ivan Ivanov' },
 ]
 
-// const options = [
-//   {
-//     icon: <PlayIcon />,
-//     link: <span>Learn</span>,
-//   },
-//   {
-//     icon: <PenIcon />,
-//     link: <span>Edit</span>,
-//   },
-//   {
-//     icon: <DeleteIcon />,
-//     link: <span>Delete</span>,
-//   },
-// ]
 type ModalType= 'edit' | 'delete' | 'learn' | ''
 export const MyPack = () => {
   const [searched, setSearched] = useState<string>('')
