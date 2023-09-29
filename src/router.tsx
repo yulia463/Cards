@@ -17,10 +17,8 @@ import { FriendsPackList } from 'src/components/ui/packListVersial/friendsPackLi
 import { MyPack } from 'src/components/ui/packListVersial/myPack/MyPack.tsx'
 import { PackList } from 'src/components/ui/packListVersial/packList/PackList.tsx'
 import { useGetDecksQuery } from './services/base-api.ts'
-
 import { Profile } from 'src/components/ui/profile'
 import {Error} from "src/components/ui/error/error.tsx";
-import {ModalEditPack} from "src/components/ui/modal/modalEditPack/modalEditPack.tsx";
 
 export const Router = () => {
   const result = useGetDecksQuery()
