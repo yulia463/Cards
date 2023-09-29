@@ -1,20 +1,29 @@
-import { ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 
 import { Card } from '../card/Card.tsx'
 
 import s from './dropdown.module.scss'
 
 type DropdownProps = {
-  // options: React.ReactNode[]
-  // options: {
-  //   icon?: React.ReactNode
-  //   link: React.ReactNode
-  // }[]
   children:ReactNode
   isDropdownOpen?: boolean
   trigger?: ReactNode
 }
-
+// если отрисовывать мапом
+// const options = [
+//   {
+//     icon: <PlayIcon />,
+//     link: <span>Learn</span>,
+//   },
+//   {
+//     icon: <PenIcon />,
+//     link: <span>Edit</span>,
+//   },
+//   {
+//     icon: <DeleteIcon />,
+//     link: <span>Delete</span>,
+//   },
+// ]
 export const Dropdown: React.FC<DropdownProps> = ({ children, isDropdownOpen }) => {
   return (
     <>
@@ -23,11 +32,6 @@ export const Dropdown: React.FC<DropdownProps> = ({ children, isDropdownOpen }) 
           <div className={s.triangle}></div>
           <div className={s.triangleBackground}></div>
           <Card className={s.card}>
-            {/*{options.map((el, index) => {*/}
-            {/*  return (*/}
-
-            {/*  )*/}
-            {/*})}*/}
             {children}
           </Card>
         </div>
