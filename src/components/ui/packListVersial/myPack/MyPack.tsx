@@ -86,6 +86,7 @@ export const MyPack = () => {
       />
       <Table rows={filteredRows} />
       {/*{isModalOpen && <ModalEditPack setModalOpen={setModalOpen} /> }*/}
+      {/*добавть еще модалку*/}
       {isModalOpen =='edit'&& <ModalEditPack closeModal={()=>{setModalOpen('')}} /> }
       {isModalOpen =='delete'&& <ModalDeletePack closeModal={()=>{setModalOpen('')}}/> }
     </div>
