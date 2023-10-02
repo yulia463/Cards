@@ -23,7 +23,7 @@ export const ModalLearnSmallPack = (props: ModalAddNewPackType) => {
                         </div>
                     </div>
                     <div className={s.button}>
-                        <Button className={s.bts} onClick={props.closeModal} variant="primary">
+                        <Button className={s.bts} variant="primary">
                            Shaw Answer
                         </Button>
                     </div>
