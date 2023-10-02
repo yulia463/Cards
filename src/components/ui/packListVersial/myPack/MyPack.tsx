@@ -12,6 +12,7 @@ import s from 'src/components/ui/packListVersial/myPack/MyPack.module.scss'
 import { SearchInput } from 'src/components/ui/searchInput/searchInput.tsx'
 import { Table } from 'src/components/ui/table/table.tsx'
 import {ModalDeletePack} from "src/components/ui/modal/modalDeletePack/modalDeletePack.tsx";
+import {ModalLearnSmallPack} from "src/components/ui/modal/modalLearnSmallPack/modalLearnSmallPack.tsx";
 
 const testData = [
   { id: 1, name: 'Lucas', cardsNumber: 4, lastDate: '24.07.2023', createdBy: 'Ivan Ivanov' },
@@ -23,7 +24,7 @@ const testData = [
   { id: 7, name: 'Isabella', cardsNumber: 4, lastDate: '30.07.2023', createdBy: 'Ivan Ivanov' },
 ]
 
-type ModalType= 'edit' | 'delete' | 'learn' | ''
+type ModalType= 'edit' | 'delete' | 'learn' | '' | 'learnSmall'
 export const MyPack = () => {
   const [searched, setSearched] = useState<string>('')
   const [dropdownOpen, setDropdownOpen] = React.useState(false)
@@ -54,7 +55,7 @@ export const MyPack = () => {
               <div>
                 <div className={s.optionWrapper}>
 
-                  <div className={s.option} onClick={() => setModalOpen('learn')}>
+                  <div className={s.option} onClick={() => setModalOpen('learnSmall')}>
                     <PlayIcon />
                     <span>Learn</span>
                   </div>
@@ -85,10 +86,9 @@ export const MyPack = () => {
         onCancelSearch={() => cancelSearch()}
       />
       <Table rows={filteredRows} />
-      {/*{isModalOpen && <ModalEditPack setModalOpen={setModalOpen} /> }*/}
-      {/*добавть еще модалку*/}
       {isModalOpen =='edit'&& <ModalEditPack closeModal={()=>{setModalOpen('')}} /> }
       {isModalOpen =='delete'&& <ModalDeletePack closeModal={()=>{setModalOpen('')}}/> }
+      {isModalOpen =='learnSmall'&& <ModalLearnSmallPack closeModal={()=>{setModalOpen('')}}/> }
     </div>
   )
 }
