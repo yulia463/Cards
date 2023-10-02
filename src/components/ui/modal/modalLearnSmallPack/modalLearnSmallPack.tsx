@@ -17,11 +17,13 @@ export const ModalLearnSmallPack = (props: ModalAddNewPackType) => {
                     <div className={s.body}>
                         <div className={s.text}>
                             Question: How "This" works in JavaScript?
-                            <br/> Количество попыток ответов на вопрос: 10
+                        </div>
+                        <div className={s.answer}>
+                            Количество попыток ответов на вопрос: 10
                         </div>
                     </div>
-                    <div className={s.buttons}>
-                        <Button onClick={props.closeModal} variant="primary">
+                    <div className={s.button}>
+                        <Button className={s.bts} onClick={props.closeModal} variant="primary">
                            Shaw Answer
                         </Button>
                     </div>
