@@ -48,12 +48,21 @@ h2 {
   margin:  20px 0 20px 0;
 }
 
-.buttons {
-  width: 542px;
-  height: 84px;
-  padding: 12px 24px 36px 24px;
+.button {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+  padding: 20px;
+
+}
+.bts{
+  width: 348px;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .text{
@@ -61,4 +70,12 @@ h2 {
   justify-content: start;
   align-items: start;
   margin: 0 0 0 50px;
+}
+.answer{
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  margin: 0 0 0 50px;
+  color: grey;
+  font-size: 14px;
 }

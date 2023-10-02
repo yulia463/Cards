@@ -24,7 +24,7 @@ const testData = [
   { id: 7, name: 'Isabella', cardsNumber: 4, lastDate: '30.07.2023', createdBy: 'Ivan Ivanov' },
 ]
 
-type ModalType= 'edit' | 'delete' | 'learn' | '' | 'learnSmall'
+export type ModalType= 'edit' | 'delete' | 'learn' | '' | 'learnSmall'
 export const MyPack = () => {
   const [searched, setSearched] = useState<string>('')
   const [dropdownOpen, setDropdownOpen] = React.useState(false)
