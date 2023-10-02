@@ -7,12 +7,13 @@ import { LeftArrowIcon } from 'src/components/ui/icons/leftArrowIcon.tsx'
 import { ModeIcon } from 'src/components/ui/icons/modeIcon.tsx'
 import { PenIcon } from 'src/components/ui/icons/penIcon.tsx'
 import { PlayIcon } from 'src/components/ui/icons/playIcon.tsx'
+import { ModalAddNewCard } from 'src/components/ui/modal/modalAddNewCard/modalAddNewCard.tsx'
+import { ModalDeletePack } from 'src/components/ui/modal/modalDeletePack/modalDeletePack.tsx'
 import { ModalEditPack } from 'src/components/ui/modal/modalEditPack/modalEditPack.tsx'
+import { ModalLearnSmallPack } from 'src/components/ui/modal/modalLearnSmallPack/modalLearnSmallPack.tsx'
 import s from 'src/components/ui/packListVersial/myPack/MyPack.module.scss'
 import { SearchInput } from 'src/components/ui/searchInput/searchInput.tsx'
 import { Table } from 'src/components/ui/table/table.tsx'
-import {ModalDeletePack} from "src/components/ui/modal/modalDeletePack/modalDeletePack.tsx";
-import {ModalLearnSmallPack} from "src/components/ui/modal/modalLearnSmallPack/modalLearnSmallPack.tsx";
 
 const testData = [
   { id: 1, name: 'Lucas', cardsNumber: 4, lastDate: '24.07.2023', createdBy: 'Ivan Ivanov' },
@@ -24,11 +25,13 @@ const testData = [
   { id: 7, name: 'Isabella', cardsNumber: 4, lastDate: '30.07.2023', createdBy: 'Ivan Ivanov' },
 ]
 
-export type ModalType= 'edit' | 'delete' | 'learn' | '' | 'learnSmall'
+type ModalType = 'edit' | 'delete' | 'learn' | '' | 'learnSmall'
+
 export const MyPack = () => {
   const [searched, setSearched] = useState<string>('')
   const [dropdownOpen, setDropdownOpen] = React.useState(false)
-  const [isModalOpen, setModalOpen] = useState<ModalType>('')
+  const [isModalOpen, setModalOpen] = useState(false)
+  const [isModalType, setModalType] = useState<ModalType>('')
   const filteredRows = testData.filter(row => {
     return row.name.toLowerCase().includes(searched.toLowerCase())
   })
@@ -54,29 +57,26 @@ export const MyPack = () => {
             <Dropdown isDropdownOpen={dropdownOpen}>
               <div>
                 <div className={s.optionWrapper}>
-
-                  <div className={s.option} onClick={() => setModalOpen('learnSmall')}>
+                  <div className={s.option} onClick={() => setModalType('learnSmall')}>
                     <PlayIcon />
                     <span>Learn</span>
                   </div>
-
-                  <div className={s.option} onClick={() => setModalOpen('edit')}>
+                  <div className={s.option} onClick={() => setModalType('edit')}>
                     <PenIcon />
                     <span>Edit</span>
                   </div>
-
-                  <div className={s.option} onClick={() => setModalOpen('delete')}>
+                  <div className={s.option} onClick={() => setModalType('delete')}>
                     <DeleteIcon />
                     <span>Delete</span>
                   </div>
-
-
                 </div>
               </div>
             </Dropdown>
           </div>
         </div>
-        <Button variant="primary">Add New Card</Button>
+        <Button onClick={() => setModalOpen(true)} variant="primary">
+          Add New Card
+        </Button>
       </div>
       <SearchInput
         value={searched}
@@ -86,9 +86,34 @@ export const MyPack = () => {
         onCancelSearch={() => cancelSearch()}
       />
       <Table rows={filteredRows} />
-      {isModalOpen =='edit'&& <ModalEditPack closeModal={()=>{setModalOpen('')}} /> }
-      {isModalOpen =='delete'&& <ModalDeletePack closeModal={()=>{setModalOpen('')}}/> }
-      {isModalOpen =='learnSmall'&& <ModalLearnSmallPack closeModal={()=>{setModalOpen('')}}/> }
+      {isModalType == 'edit' && (
+        <ModalEditPack
+          closeModal={() => {
+            setModalType('')
+          }}
+        />
+      )}
+      {isModalType == 'delete' && (
+        <ModalDeletePack
+          closeModal={() => {
+            setModalType('')
+          }}
+        />
+      )}
+      {isModalType == 'learnSmall' && (
+        <ModalLearnSmallPack
+          closeModal={() => {
+            setModalType('')
+          }}
+        />
+      )}
+      {isModalOpen && (
+        <ModalAddNewCard
+          closeModal={() => {
+            setModalOpen(false)
+          }}
+        />
+      )}
     </div>
   )
 }
