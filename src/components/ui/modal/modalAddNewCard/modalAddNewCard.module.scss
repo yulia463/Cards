@@ -19,8 +19,21 @@
   border: 1px solid #a0a0a0;
   background-color: #171717;
   color: #FFFFFF;
-
 }
+
+.textField {
+  width: 542px;
+  height: 319px;
+  padding: 34px;
+  border: 0px 1px 0px 1px;
+  gap: 24px;
+}
+.textFieldQuestion{
+  padding-top: 14px;
+}
+.textFieldAnswer{
+   padding-top: 14px;
+ }
 
 .header{
   width: 541px;

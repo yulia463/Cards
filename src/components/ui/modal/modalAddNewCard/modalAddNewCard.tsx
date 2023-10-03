@@ -27,7 +27,7 @@ export const ModalAddNewCard = (props: ModalAddNewPackType) => {
               placeholder={'Text'}
               // onChangeText={e => setPackName(e)}
             />
-            <div className={s.textField}>
+            <div className={s.textFieldQuestion}>
               <TextField
                 type={'default'}
                 // value={valu}
@@ -35,22 +35,22 @@ export const ModalAddNewCard = (props: ModalAddNewPackType) => {
                 placeholder={'Text'}
                 // onChangeText={e => setPackName(e)}
               />
-              <div className={s.textField}>
-                <TextField
-                  type={'default'}
-                  // value={valu}
-                  label={'Answer'}
-                  placeholder={'Text'}
-                  // onChangeText={e => setPackName(e)}
-                />
-                <div className={s.buttons}>
-                  <Button onClick={props.closeModal} variant="secondary">
-                    Cancel
-                  </Button>
-                  <Button>Add New Card</Button>
-                </div>
-              </div>
             </div>
+            <div className={s.textFieldAnswer}>
+              <TextField
+                type={'default'}
+                // value={valu}
+                label={'Answer'}
+                placeholder={'Text'}
+                // onChangeText={e => setPackName(e)}
+              />
+            </div>
+          </div>
+          <div className={s.buttons}>
+            <Button onClick={props.closeModal} variant="secondary">
+              Cancel
+            </Button>
+            <Button>Add New Card</Button>
           </div>
         </div>
       </div>
