@@ -13,7 +13,9 @@ export const ModalAddNewPack = (props: ModalAddNewPackType) => {
       <div className={s.modalContainer}>
         <div className={s.modal}>
           <div className={s.header}>
-            <h2>Add New Pack</h2>
+            <div className={s.headername}>
+              <h2>Add New Pack</h2>
+            </div>
             <div onClick={() => props.setModalOpen(false)} className={s.crossIcon}>
               <CrossIcon />
             </div>
