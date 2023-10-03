@@ -21,6 +21,16 @@ export const ModalLearnPackName = (props: ModalAddNewPackType) => {
                         <div className={s.answer}>
                             Количество попыток ответов на вопрос: 10
                         </div>
+                        <div className={s.text}>Answer: This is how "This" works in JavaScript</div>
+                        <div className={s.rate}>Rate yourself:</div>
+                        <div className={s.radio}>
+                            <input type={'radio'} />Did not know
+                            <input type={'radio'} />Forgot
+                            <input type={'radio'} />A lot of thought
+                            <input type={'radio'} />Сonfused
+                            <input type={'radio'} />Knew the answer
+
+                        </div>
                     </div>
                     <div className={s.button}>
                         <Button className={s.bts}
