@@ -5,6 +5,7 @@ import { LeftArrowIcon } from 'src/components/ui/icons/leftArrowIcon.tsx'
 import s from 'src/components/ui/packListVersial/friendsPackList/FriendsPackList.module.scss'
 import { SearchInput } from 'src/components/ui/searchInput/searchInput.tsx'
 import { TableForPackList } from 'src/components/ui/tables/tableForPackList/tableForPackList.tsx'
+import {Link} from "react-router-dom";
 
 const testData = [
   { id: 1, name: 'Lucas', cardsNumber: 4, lastDate: '24.07.2023', createdBy: 'Ivan Ivanov' },
@@ -28,13 +29,15 @@ export const FriendsPackList = () => {
 
   return (
     <div className={s.container}>
+        <Link to={'/packList'} className={s.linkWithoutUnderline}>
       <div className={s.packDiv} onClick={() => {}}>
         <LeftArrowIcon />
         Back to Packs List
       </div>
+        </Link>
       <div className={s.titleWrapper}>
         <p className={s.nameForPack}>Friend’s Pack</p>
-        <Button variant="primary">Learn to Pack</Button>
+      <Link to={'/learn'}><Button variant="primary">Learn to Pack</Button></Link>
       </div>
       <SearchInput
         value={searched}

@@ -3,6 +3,7 @@ import { ChangeEvent, useState } from 'react'
 import { Button } from 'src/components/ui/button/button.tsx'
 import { LeftArrowIcon } from 'src/components/ui/icons/leftArrowIcon.tsx'
 import s from 'src/components/ui/LearnPackName/LearnPackName.module.scss'
+import {Link} from "react-router-dom";
 
 export const LearnPackName = () => {
   const [valueRad, setValueRad] = useState<number>(1)
@@ -14,10 +15,12 @@ export const LearnPackName = () => {
 
   return (
     <div className={s.modalContainer}>
+      <Link to={'/packList'} className={s.linkWithoutUnderline}>
       <div className={s.packDiv} onClick={() => {}}>
         <LeftArrowIcon />
         Back to Packs List
       </div>
+      </Link>
       <div className={s.modal}>
         <h2>Learn “Pack Name”</h2>
         <div className={s.body}>

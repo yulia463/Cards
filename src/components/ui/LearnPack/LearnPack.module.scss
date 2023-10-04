@@ -5,7 +5,9 @@
   min-height: calc(100vh - 150px);
   flex-direction: column;
 }
-
+.linkWithoutUnderline{
+  text-decoration: none;
+}
 .modal {
   width: 420px;
   height: 288px;

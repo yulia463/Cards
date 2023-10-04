@@ -4,7 +4,9 @@
   align-items: center;
   min-height: calc(100vh - 60px);
 }
-
+.linkWithoutUnderline{
+  text-decoration: none;
+}
 .modal {
   width: 420px;
   height: 540px;
