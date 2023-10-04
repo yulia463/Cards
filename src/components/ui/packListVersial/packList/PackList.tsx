@@ -6,7 +6,7 @@ import { ModalAddNewPack } from 'src/components/ui/modal/modalAddNewPack/modalAd
 import s from 'src/components/ui/packListVersial/packList/PaskList.module.scss'
 import { RangeSlider } from 'src/components/ui/rangeSlider/RangeSlider.tsx'
 import { SearchInput } from 'src/components/ui/searchInput/searchInput.tsx'
-import { Table } from 'src/components/ui/tables/table.tsx'
+import { TableForPackList } from 'src/components/ui/tables/tableForPackList/tableForPackList.tsx'
 
 type PackListType = {
   nameForPack?: string
@@ -65,7 +65,7 @@ export const PackList = (props: PackListType) => {
           Clear Filter
         </Button>
       </div>
-      <Table rows={filteredRows} />
+      <TableForPackList rows={filteredRows} />
       {isModalOpen && <ModalAddNewPack setModalOpen={setModalOpen} />}
     </div>
   )

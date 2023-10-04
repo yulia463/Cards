@@ -2,14 +2,14 @@ import React, { ComponentProps, FC, useState } from 'react'
 
 import { clsx } from 'clsx'
 
-import { ArrowDown } from '../icons/arrowDown.tsx'
-import { ArrowUp } from '../icons/arrowUp.tsx'
-import { Edit } from '../icons/edit.tsx'
-import { Play } from '../icons/play.tsx'
-import { Trash } from '../icons/trash.tsx'
-import { Typography } from '../typography/typography.tsx'
+import { ArrowDown } from '../../icons/arrowDown.tsx'
+import { ArrowUp } from '../../icons/arrowUp.tsx'
+import { Edit } from '../../icons/edit.tsx'
+import { Play } from '../../icons/play.tsx'
+import { Trash } from '../../icons/trash.tsx'
+import { Typography } from '../../typography/typography.tsx'
 
-import s from './table.module.scss'
+import s from './tableForPackList.module.scss'
 
 export type RootProps = ComponentProps<'table'>
 
@@ -91,7 +91,7 @@ type TableProps = {
   rows: TypeTestData[]
 }
 
-export const Table: FC<TableProps> = ({ rows }) => {
+export const TableForPackList: FC<TableProps> = ({ rows }) => {
   const [sortTable, setSortTable] = useState(false)
   const changeSort = (status: boolean) => setSortTable(status)
 

@@ -1,1 +1,1 @@
-export * from './table'
+export * from './tableForPackList/tableForPackList.tsx'

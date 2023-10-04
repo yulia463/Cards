@@ -10,7 +10,7 @@ import { LearnPackName } from 'src/components/ui/LeanPackName/LeanPackName.tsx'
 import { ModalAddNewCard } from 'src/components/ui/modal/modalAddNewCard/modalAddNewCard.tsx'
 import s from 'src/components/ui/packListVersial/myPack/MyPack.module.scss'
 import { SearchInput } from 'src/components/ui/searchInput/searchInput.tsx'
-import { Table } from 'src/components/ui/tables'
+import { TableForPackList } from 'src/components/ui/tables'
 
 const testData = [
   { id: 1, name: 'Lucas', cardsNumber: 4, lastDate: '24.07.2023', createdBy: 'Ivan Ivanov' },
@@ -82,7 +82,7 @@ export const MyPack = () => {
         }}
         onCancelSearch={() => cancelSearch()}
       />
-      <Table rows={filteredRows} />
+      <TableForPackList rows={filteredRows} />
       {isModalOpen && (
         <ModalAddNewCard
           closeModal={() => {
