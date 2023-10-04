@@ -1,7 +1,8 @@
+import { Link } from 'react-router-dom'
+
 import { Button } from 'src/components/ui/button/button.tsx'
 import { LeftArrowIcon } from 'src/components/ui/icons/leftArrowIcon.tsx'
 import s from 'src/components/ui/LearnPack/LearnPack.module.scss'
-import {Link} from "react-router-dom";
 
 type ModalAddNewPackType = {
   closeModal: () => void
@@ -13,10 +14,10 @@ export const LearnPack = (props: ModalAddNewPackType) => {
     <div>
       <div className={s.modalContainer}>
         <Link to={'/packList'} className={s.linkWithoutUnderline}>
-        <div className={s.packDiv}>
-          <LeftArrowIcon />
-          Back to Packs List
-        </div>
+          <div className={s.packDiv}>
+            <LeftArrowIcon />
+            Back to Packs List
+          </div>
         </Link>
         <div className={s.modal}>
           <h2>Learn “Pack Name”</h2>
