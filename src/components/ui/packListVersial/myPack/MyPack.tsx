@@ -10,11 +10,11 @@ import {PlayIcon} from 'src/components/ui/icons/playIcon.tsx'
 import {ModalAddNewCard} from 'src/components/ui/modal/modalAddNewCard/modalAddNewCard.tsx'
 import {ModalDeletePack} from 'src/components/ui/modal/modalDeletePack/modalDeletePack.tsx'
 import {ModalEditPack} from 'src/components/ui/modal/modalEditPack/modalEditPack.tsx'
-import {ModalLearnSmallPack} from 'src/components/ui/modal/modalLearnSmallPack/modalLearnSmallPack.tsx'
+import {LeanPack} from 'src/components/ui/LeanPack/LeanPack.tsx'
 import s from 'src/components/ui/packListVersial/myPack/MyPack.module.scss'
 import {SearchInput} from 'src/components/ui/searchInput/searchInput.tsx'
 import {Table} from 'src/components/ui/table/table.tsx'
-import {ModalLearnPackName} from "src/components/ui/modal/modalLeanPackName/modalLeanPackName.tsx";
+import {LearnPackName} from "src/components/ui/LeanPackName/LeanPackName.tsx";
 
 const testData = [
     {id: 1, name: 'Lucas', cardsNumber: 4, lastDate: '24.07.2023', createdBy: 'Ivan Ivanov'},
@@ -103,7 +103,7 @@ export const MyPack = () => {
                 />
             )}
             {isModalType == 'learnSmall' && (
-                <ModalLearnSmallPack
+                <LeanPack
                     onNextClick={()=>{setModalType('answer')}}
                     closeModal={() => {
                         setModalType('')
@@ -118,7 +118,7 @@ export const MyPack = () => {
                 />
             )}
           {isModalType == 'answer' && (
-                <ModalLearnPackName
+                <LearnPackName
                     closeModal={() => {
                         setModalOpen(false)
                     }}
