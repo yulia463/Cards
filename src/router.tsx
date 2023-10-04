@@ -4,17 +4,19 @@ import {
   Route,
   RouterProvider,
 } from 'react-router-dom'
+
 import { CheckEmail, CreateNewPassword, ForgotPassword, SignIn, SignUp } from './components/auth'
 import { Layout } from './components/ui'
+import { useGetDecksQuery } from './services/base-api.ts'
+
+import { Error } from 'src/components/ui/error/error.tsx'
+import { LearnPack } from 'src/components/ui/LearnPack/LearnPack.tsx'
+import { LearnPackName } from 'src/components/ui/LearnPackName/LearnPackName.tsx'
 import { EmptyPack } from 'src/components/ui/packListVersial/emptyPack/emptyPack.tsx'
 import { FriendsPackList } from 'src/components/ui/packListVersial/friendsPackList/FriendsPackList.tsx'
 import { MyPack } from 'src/components/ui/packListVersial/myPack/MyPack.tsx'
 import { PackList } from 'src/components/ui/packListVersial/packList/PackList.tsx'
-import { useGetDecksQuery } from './services/base-api.ts'
 import { Profile } from 'src/components/ui/profile'
-import {Error} from "src/components/ui/error/error.tsx";
-import {LearnPackName} from "src/components/ui/LeanPackName/LeanPackName.tsx";
-import {LeanPack} from "src/components/ui/LeanPack/LeanPack.tsx";
 
 export const Router = () => {
   const result = useGetDecksQuery()
@@ -38,7 +40,7 @@ const router = createBrowserRouter(
       <Route path={'/forgotPassword'} element={<ForgotPassword />} />
       <Route path={'/signUp'} element={<SignUp />} />
       <Route path={'/question'} element={<LearnPackName />} />
-      <Route path={'/learn'} element={<LeanPack onNextClick={()=>{}} closeModal={()=>{}}/>} />
+      <Route path={'/learn'} element={<LearnPack onNextClick={() => {}} closeModal={() => {}} />} />
     </Route>
   )
 )
