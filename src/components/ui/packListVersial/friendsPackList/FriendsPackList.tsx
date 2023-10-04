@@ -30,7 +30,7 @@ export const FriendsPackList = () => {
   return (
     <div className={s.container}>
         <Link to={'/packList'} className={s.linkWithoutUnderline}>
-      <div className={s.packDiv} onClick={() => {}}>
+      <div className={s.packDiv}>
         <LeftArrowIcon />
         Back to Packs List
       </div>

@@ -12,7 +12,7 @@ export const EmptyPack = () => {
   return (
     <div className={s.container}>
         <Link to={'/packList'} className={s.linkWithoutUnderline}>
-      <div className={s.backDiv} onClick={() => {}}>
+      <div className={s.backDiv}>
         <LeftArrowIcon />
         Back to Packs List
       </div>
