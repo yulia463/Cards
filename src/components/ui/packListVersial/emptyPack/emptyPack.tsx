@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 import { Button } from 'src/components/ui/button/button.tsx'
 import { LeftArrowIcon } from 'src/components/ui/icons/leftArrowIcon.tsx'
@@ -14,7 +14,6 @@ export const EmptyPack = () => {
         <LeftArrowIcon />
         Back to Packs List
       </div>
-
       <h1 className={s.namePack}>Name Pack</h1>
       <div className={s.text}>This pack is empty. Click add new card to fill this pack</div>
       <div className={s.button}>

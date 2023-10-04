@@ -1,4 +1,4 @@
-import React, { ComponentProps, FC, useState } from 'react'
+import { ComponentProps, FC, useState } from 'react'
 
 import { clsx } from 'clsx'
 
