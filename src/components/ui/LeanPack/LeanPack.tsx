@@ -1,22 +1,23 @@
 import {Button} from 'src/components/ui/button/button.tsx'
-import {CrossIcon} from 'src/components/ui/icons/ crossIcon.tsx'
-import s from './modalLearnSmallPack.module.scss'
+import s from 'src/components/ui/LeanPack/LeanPack.module.scss'
+import {LeftArrowIcon} from "src/components/ui/icons/leftArrowIcon.tsx";
 
 type ModalAddNewPackType = {
     closeModal: () => void
     onNextClick: () => void
 }
-export const ModalLearnSmallPack = (props: ModalAddNewPackType) => {
+export const LeanPack = (props: ModalAddNewPackType) => {
 
     return (
-        <div className={s.overlay}>
+        <div>
             <div className={s.modalContainer}>
+                <div className={s.packDiv} onClick={() => {
+                }}>
+                    <LeftArrowIcon/>
+                    Back to Packs List
+                </div>
                 <div className={s.modal}>
                     <h2>Learn “Pack Name”</h2>
-                    <div onClick={props.closeModal} className={s.crossIcon}>
-                        <CrossIcon/>
-                    </div>
-
                     <div className={s.body}>
                         <div className={s.text}>
                             Question: How "This" works in JavaScript?

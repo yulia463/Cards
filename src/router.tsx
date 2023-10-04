@@ -13,6 +13,8 @@ import { PackList } from 'src/components/ui/packListVersial/packList/PackList.ts
 import { useGetDecksQuery } from './services/base-api.ts'
 import { Profile } from 'src/components/ui/profile'
 import {Error} from "src/components/ui/error/error.tsx";
+import {LearnPackName} from "src/components/ui/LeanPackName/LeanPackName.tsx";
+import {LeanPack} from "src/components/ui/LeanPack/LeanPack.tsx";
 
 export const Router = () => {
   const result = useGetDecksQuery()
@@ -35,6 +37,8 @@ const router = createBrowserRouter(
       <Route path={'/pageNotFound'} element={<Error />} />
       <Route path={'/forgotPassword'} element={<ForgotPassword />} />
       <Route path={'/signUp'} element={<SignUp />} />
+      <Route path={'/question'} element={<LearnPackName />} />
+      <Route path={'/learn'} element={<LeanPack onNextClick={()=>{}} closeModal={()=>{}}/>} />
     </Route>
   )
 )
