@@ -2,7 +2,9 @@
   padding: 81px 137.5px;
   position: relative;
 }
-
+.linkWithoutUnderline{
+  text-decoration: none;
+}
 .backDiv {
   color: var(--light-100, #FFF);
   font-family: Roboto;
