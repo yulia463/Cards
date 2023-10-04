@@ -1,4 +1,4 @@
-import { ComponentProps, FC, useState } from 'react'
+import React, { ComponentProps, FC, useState } from 'react'
 
 import { clsx } from 'clsx'
 
@@ -10,6 +10,7 @@ import { Trash } from '../icons/trash.tsx'
 import { Typography } from '../typography/typography.tsx'
 
 import s from './table.module.scss'
+
 export type RootProps = ComponentProps<'table'>
 
 export const Root: FC<RootProps> = ({ className, ...rest }) => {
@@ -128,6 +129,13 @@ export const Table: FC<TableProps> = ({ rows }) => {
           )
         })}
       </Body>
+      {/*{isModalType == 'edit' && (*/}
+      {/*  <ModalDeletePack*/}
+      {/*    closeModal={() => {*/}
+      {/*      setModalType('')*/}
+      {/*    }}*/}
+      {/*  />*/}
+      {/*)}*/}
     </Root>
   )
 }

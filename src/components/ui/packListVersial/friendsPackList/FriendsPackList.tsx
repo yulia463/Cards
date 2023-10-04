@@ -1,12 +1,10 @@
 import { useState } from 'react'
 
-import { Table } from 'src/components/ui/table/table.tsx'
 import { Button } from 'src/components/ui/button/button.tsx'
 import { LeftArrowIcon } from 'src/components/ui/icons/leftArrowIcon.tsx'
-
 import s from 'src/components/ui/packListVersial/friendsPackList/FriendsPackList.module.scss'
-
 import { SearchInput } from 'src/components/ui/searchInput/searchInput.tsx'
+import { Table } from 'src/components/ui/tables/table.tsx'
 
 const testData = [
   { id: 1, name: 'Lucas', cardsNumber: 4, lastDate: '24.07.2023', createdBy: 'Ivan Ivanov' },
