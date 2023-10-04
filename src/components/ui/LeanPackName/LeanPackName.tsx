@@ -3,12 +3,7 @@ import s from 'src/components/ui/LeanPackName/LeanPackName.module.scss'
 import  {ChangeEvent, useState} from "react";
 import {LeftArrowIcon} from "src/components/ui/icons/leftArrowIcon.tsx";
 
-// type ModalAddNewPackType = {
-//     closeModal: () => void
-// }
-export const LearnPackName = (
-    // props: ModalAddNewPackType
-) => {
+export const LearnPackName = () => {
 
     const [valueRad,setValueRad] = useState<number>(1)
 
