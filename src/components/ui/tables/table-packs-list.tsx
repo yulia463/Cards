@@ -2,7 +2,7 @@
 //
 // import { Link } from 'react-router-dom'
 //
-// import s from './table-packs-list.module.scss'
+// import s from './tables-packs-list.module.scss'
 // import {DecksResponse, ResponseUserType, Sort} from "src/services/types.ts";
 // import {useAppDispatch} from "src/utils/helpers.ts";
 // import {modalActions} from "src/components/slice/modal.slice.ts";
