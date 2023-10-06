@@ -5,13 +5,13 @@ import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
 import { z } from 'zod'
 
-import { Button } from '../button/button.tsx'
-import { Card } from '../card/Card.tsx'
-import { AvatarDemo } from '../icons/Avatar.tsx'
-import { Edit } from '../icons/edit.tsx'
-import { LogOutIcon } from '../icons/logOutIcon.tsx'
-import { TextField } from '../textField/textField.tsx'
-import { Typography } from '../typography/typography.tsx'
+import { Button } from '../../button/button.tsx'
+import { Card } from '../../card/Card.tsx'
+import { AvatarDemo } from '../../icons/Avatar.tsx'
+import { Edit } from '../../icons/edit.tsx'
+import { LogOutIcon } from '../../icons/logOutIcon.tsx'
+import { TextField } from '../../textField/textField.tsx'
+import { Typography } from '../../typography/typography.tsx'
 
 import s from './PersionalInformation.module.scss'
 
@@ -96,7 +96,7 @@ export const PersonalInformation: FC<PropsType> = ({ name, email, avatar, logout
           </Typography>
           <Button as={Link} to="/login" variant={'secondary'} className={s.logout} onClick={logout}>
             <LogOutIcon />
-            <Link to={"/signIn"}>
+            <Link to={'/signIn'}>
               <Typography variant={'subtitle2'}>Logout</Typography>
             </Link>
           </Button>

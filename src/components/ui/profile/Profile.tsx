@@ -1,6 +1,8 @@
 import { FC } from 'react'
+
+import { PersonalInformation } from './PersonalInformation/PersonalInformation.tsx'
+
 import { useLogoutMutation, useMeQuery, useUpdateProfileMutation } from 'src/services/auth-api.ts'
-import { PersonalInformation } from '../../ui/profile/PersonalInformation.tsx'
 
 export type ProfileType = {
   personalInfo?: { name: string; email: string; profileImg: string }
