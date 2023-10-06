@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import { Link } from 'react-router-dom'
+
 import { Button, Dropdown } from 'src/components/ui'
 import { DeleteIcon } from 'src/components/ui/icons/deleteIcon.tsx'
 import { LeftArrowIcon } from 'src/components/ui/icons/leftArrowIcon.tsx'
@@ -11,7 +13,6 @@ import { ModalAddNewCard } from 'src/components/ui/modal/modalAddNewCard/modalAd
 import s from 'src/components/ui/packListVersial/myPack/MyPack.module.scss'
 import { SearchInput } from 'src/components/ui/searchInput/searchInput.tsx'
 import { TableForPackList } from 'src/components/ui/tables'
-import {Link} from "react-router-dom";
 
 const testData = [
   { id: 1, name: 'Lucas', cardsNumber: 4, lastDate: '24.07.2023', createdBy: 'Ivan Ivanov' },
@@ -44,10 +45,10 @@ export const MyPack = () => {
   return (
     <div className={s.container}>
       <Link to={'/packList'} className={s.linkWithoutUnderline}>
-      <div className={s.packDiv} >
-        <LeftArrowIcon />
-        Back to Packs List
-      </div>
+        <div className={s.packDiv} >
+          <LeftArrowIcon />
+          Back to Packs List
+        </div>
       </Link>
       <div className={s.titleWrapper}>
         <div className={s.myPack}>
