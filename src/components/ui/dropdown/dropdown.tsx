@@ -5,7 +5,7 @@ import { Card } from '../card/Card.tsx'
 import s from './dropdown.module.scss'
 
 type DropdownProps = {
-  children:ReactNode
+  children: ReactNode
   isDropdownOpen?: boolean
   trigger?: ReactNode
 }
