@@ -31,6 +31,7 @@ type PropsType = {
 
 export const PersonalInformation: FC<PropsType> = ({ name, email, avatar, logout, update }) => {
   const [editMode, setEditMode] = useState<boolean>(false)
+  const [updatedName, setUpdatedName] = useState('')
 
   const { handleSubmit } = useForm<SignInFormShem>({
     resolver: zodResolver(sigInSchema),
@@ -50,7 +51,13 @@ export const PersonalInformation: FC<PropsType> = ({ name, email, avatar, logout
           <AvatarDemo src={avatar} name={name} className={s.avatar} />
           {!editMode && (
             <div className={s.avatarEdit}>
-              <Edit />
+              <Edit
+                className={s.changeName}
+                onClick={() => {
+                  setEditMode(true)
+                  setUpdatedName(name || '')
+                }}
+              />
             </div>
           )}
         </div>
@@ -64,16 +71,17 @@ export const PersonalInformation: FC<PropsType> = ({ name, email, avatar, logout
             type={'default'}
             className={s.editNickName}
             placeholder={'Name'}
+            value={updatedName}
+            onChange={e => setUpdatedName(e.target.value)}
           />
           <Button
             fullWidth={true}
             className={s.submit}
             type="submit"
-            onClick={() =>
-              setTimeout(() => {
-                setEditMode(false)
-              }, 0)
-            }
+            onClick={() => {
+              setEditMode(false)
+              update(updatedName)
+            }}
           >
             Save Changes
           </Button>
