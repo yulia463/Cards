@@ -26,19 +26,27 @@ type PropsType = {
   email?: string
   avatar?: string
   logout: () => void
-  update: (value: string) => void
+  update: (value: string, avatar: string) => void
 }
 
 export const PersonalInformation: FC<PropsType> = ({ name, email, avatar, logout, update }) => {
   const [editMode, setEditMode] = useState<boolean>(false)
   const [updatedName, setUpdatedName] = useState('')
+  const [editAvatarMode, setEditAvatarMode] = useState(false)
+  const [newAvatar, setNewAvatar] = useState(avatar)
 
   const { handleSubmit } = useForm<SignInFormShem>({
     resolver: zodResolver(sigInSchema),
   })
 
   const onSubmit = (data: SignInFormShem) => {
-    update(data.name)
+    update(data.name, newAvatar || avatar)
+    setEditMode(false)
+  }
+  const updateAvatar = newAvatarUrl => {
+    setNewAvatar(newAvatarUrl)
+    setEditAvatarMode(false)
+    update(updatedName, newAvatarUrl)
   }
 
   return (
@@ -48,18 +56,35 @@ export const PersonalInformation: FC<PropsType> = ({ name, email, avatar, logout
       </Typography>
       <div className={s.avatarBlock}>
         <div className={s.avatar}>
-          <AvatarDemo src={avatar} name={name} className={s.avatar} />
-          {!editMode && (
-            <div className={s.avatarEdit}>
-              <Edit
-                className={s.changeName}
-                onClick={() => {
-                  setEditMode(true)
-                  setUpdatedName(name || '')
-                }}
-              />
-            </div>
+          {editAvatarMode ? (
+            <input
+              type="file"
+              accept="image/*"
+              onChange={e => {
+                const file = e.target.files?.[0]
+
+                if (file) {
+                  // Здесь вы можете вызвать функцию для загрузки нового аватара
+                  // После успешной загрузки вызывайте updateAvatar с новым URL аватара
+                  //В приведенном выше коде, после успешной загрузки нового аватара на сервер, вы должны вызвать функцию
+                  // updateAvatar с новым URL аватара, чтобы обновить его в компоненте
+                  // и отправить на сервер. Вы должны также иметь функцию uploadAvatarToServer, которая загружает новый
+                  // аватар на сервер и вызывает updateAvatar с новым URL.
+                }
+              }}
+            />
+          ) : (
+            <AvatarDemo src={newAvatar} name={name} className={s.avatar} />
           )}
+
+          <div className={s.avatarEdit}>
+            <Edit
+              className={s.changeName}
+              onClick={() => {
+                setEditAvatarMode(!editAvatarMode)
+              }}
+            />
+          </div>
         </div>
       </div>
       {editMode ? (
@@ -78,10 +103,14 @@ export const PersonalInformation: FC<PropsType> = ({ name, email, avatar, logout
             fullWidth={true}
             className={s.submit}
             type="submit"
-            onClick={() => {
-              setEditMode(false)
-              update(updatedName)
-            }}
+            onClick={() =>
+              setTimeout(() => {
+                setEditMode(false)
+                if (updatedName !== undefined) {
+                  update(updatedName, newAvatar)
+                }
+              }, 0)
+            }
           >
             Save Changes
           </Button>
