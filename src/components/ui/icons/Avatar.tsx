@@ -10,12 +10,14 @@ export type AvatarProps = {
   className?: string
 }
 
-export const AvatarDemo: FC<AvatarProps> = ({ name, src, className }) => (
-  <Avatar.Root className={`${s.AvatarRoot} ${className}`}>
-    {src ? (
-      <Avatar.Image className={s.AvatarImage} src={src} alt={name} />
-    ) : (
-      <Avatar.Fallback className="AvatarFallback">{name?.[0]}</Avatar.Fallback>
-    )}
-  </Avatar.Root>
-)
+export const AvatarDemo: FC<AvatarProps> = ({ name, src, className }) => {
+  return (
+    <Avatar.Root className={`${s.AvatarRoot} ${className}`}>
+      {src ? (
+        <Avatar.Image className={s.AvatarImage} src={src} alt={name} />
+      ) : (
+        <Avatar.Fallback className="AvatarFallback">{name?.[0]}</Avatar.Fallback>
+      )}
+    </Avatar.Root>
+  )
+}

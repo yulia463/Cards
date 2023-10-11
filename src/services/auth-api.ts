@@ -1,5 +1,10 @@
 import { baseApi } from './base-api.ts'
-import { RequestForgotPassword, ResponseUserType, SignUpArgsType } from './types.ts'
+import {
+  RequestForgotPassword,
+  ResponseUserType,
+  SignUpArgsType,
+  UpdatePersonalInformation,
+} from './types.ts'
 
 const authApi = baseApi.enhanceEndpoints({ addTagTypes: ['Me'] }).injectEndpoints({
   endpoints: builder => {
@@ -71,7 +76,7 @@ const authApi = baseApi.enhanceEndpoints({ addTagTypes: ['Me'] }).injectEndpoint
         }),
         invalidatesTags: ['Me'],
       }),
-      updateProfile: builder.mutation<ResponseUserType, FormData>({
+      updateProfile: builder.mutation<ResponseUserType, UpdatePersonalInformation>({
         query: body => ({
           url: 'v1/auth/me',
           method: 'PATCH',

@@ -22,6 +22,13 @@ export type RequestForgotPassword = {
   subject?: string
   email: string
 }
+
+export type UpdatePersonalInformation = {
+  avatar?: FormData
+  name?: string
+  email?: string
+}
+
 export type Sort = {
   key: string
   direction: 'asc' | 'desc'
