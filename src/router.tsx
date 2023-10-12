@@ -7,7 +7,6 @@ import {
 
 import { CheckEmail, CreateNewPassword, ForgotPassword, SignIn, SignUp } from './components/auth'
 import { Layout } from './components/ui'
-import { useGetDecksQuery } from './services/base-api.ts'
 
 import { Error } from 'src/components/ui/error/error.tsx'
 import { LearnPack } from 'src/components/ui/LearnPack/LearnPack.tsx'
@@ -19,10 +18,6 @@ import { PackList } from 'src/components/ui/packListVersial/packList/PackList.ts
 import { Profile } from 'src/components/ui/profile'
 
 export const Router = () => {
-  const result = useGetDecksQuery()
-
-  console.log(result)
-
   return <RouterProvider router={router} />
 }
 const router = createBrowserRouter(
