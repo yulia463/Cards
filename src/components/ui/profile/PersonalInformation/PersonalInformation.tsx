@@ -3,7 +3,6 @@ import React, { FC, useState } from 'react'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Controller, useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
-import { useUploadAvatarMutation } from 'src/services/avatar-api.ts'
 import { z } from 'zod'
 
 import { Button } from '../../button/button.tsx'
@@ -47,11 +46,18 @@ export const PersonalInformation: FC<PropsType> = ({ name, email, avatar, logout
     resolver: zodResolver(personalInformationSchema),
     defaultValues: {
       name: name,
+      avatar: {},
     },
   })
   const onSubmit = (data: PersonalInformationFormShem) => {
-    console.log('data>>>>', data)
-    update(data)
+    console.log('data>>>>', { ...data, avatar: data.avatar[0] })
+
+    const bodyFormData = new FormData()
+
+    bodyFormData.append('avatar', data.avatar[0])
+    bodyFormData.append('name', data.name)
+
+    update(bodyFormData as UpdatePersonalInformation)
   }
   const changeFile = (photoFile: File) => {
     const bodyFormData = new FormData()
@@ -75,15 +81,23 @@ export const PersonalInformation: FC<PropsType> = ({ name, email, avatar, logout
                 <label htmlFor="change_avatar">
                   <Edit className={s.changeName} />
                 </label>
+
                 <input
-                  hidden
                   id={'change_avatar'}
                   type={'file'}
-                  accept="image/*"
-                  onChange={e => {
-                    if (e.target.files) changeFile(e.target.files?.[0])
-                  }}
+                  hidden
+                  {...register('avatar')}
+                  className={s.editNickName}
                 />
+                {/*<input*/}
+                {/*  hidden*/}
+                {/*  id={'change_avatar'}*/}
+                {/*  type={'file'}*/}
+                {/*  accept="image/*"*/}
+                {/*  onChange={e => {*/}
+                {/*    if (e.target.files) changeFile(e.target.files?.[0])*/}
+                {/*  }}*/}
+                {/*/>*/}
               </div>
             )}
           </div>

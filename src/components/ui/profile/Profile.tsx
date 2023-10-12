@@ -22,6 +22,7 @@ export const Profile: FC<ProfileType> = () => {
     <PersonalInformation
       name={data?.name}
       email={data?.email}
+      // avatar={data.avatar}
       update={onSaveChanges}
       logout={logout}
     />
