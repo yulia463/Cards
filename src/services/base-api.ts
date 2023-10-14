@@ -7,6 +7,7 @@ export const baseApi = createApi({
     credentials: 'include',
     prepareHeaders: headers => {
       headers.append('x-auth-skip', 'true')
+      headers.append('Authorization', `Bearer ${localStorage.getItem('token')}`)
     },
   }),
   endpoints: builder => {

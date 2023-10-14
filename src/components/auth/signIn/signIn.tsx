@@ -38,7 +38,7 @@ export const SignIn: FC<PropsType> = () => {
     defaultValues: {
       email: '',
       password: '',
-      rememberMe: false,
+      rememberMe: true,
     },
   })
   const [login] = useLoginMutation()

@@ -24,7 +24,7 @@ export type RequestForgotPassword = {
 }
 
 export type UpdatePersonalInformation = {
-  avatar?: FormData
+  avatar?: string
   name?: string
   email?: string
 }
