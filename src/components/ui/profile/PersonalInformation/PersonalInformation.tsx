@@ -2,6 +2,7 @@ import React, { FC, useState } from 'react'
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Controller, useForm } from 'react-hook-form'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { z } from 'zod'
 
@@ -15,6 +16,7 @@ import { Typography } from '../../typography/typography.tsx'
 import s from './PersionalInformation.module.scss'
 
 import { Card } from 'src/components/ui/card'
+import { useMeQuery } from 'src/services/auth-api.ts'
 import { UpdatePersonalInformation } from 'src/services/types.ts'
 
 const personalInformationSchema = z.object({
@@ -46,16 +48,27 @@ export const PersonalInformation: FC<PropsType> = ({ name, email, avatar, logout
     resolver: zodResolver(personalInformationSchema),
     defaultValues: {
       name: name,
-      avatar: {},
+      avatar: '',
     },
   })
-  const onSubmit = (data: PersonalInformationFormShem) => {
-    console.log('data>>>>', { ...data, avatar: data.avatar[0] })
+  const { data } = useMeQuery()
+
+  const onSubmit = (personalInformation: PersonalInformationFormShem) => {
+    console.log('data>>>>', { ...personalInformation, avatar: personalInformation.avatar[0].name })
 
     const bodyFormData = new FormData()
 
-    bodyFormData.append('avatar', data.avatar[0])
-    bodyFormData.append('name', data.name)
+    bodyFormData.append('avatar', personalInformation.avatar[0])
+    bodyFormData.append('name', personalInformation.name)
+    data && bodyFormData.append('email', data.email)
+    console.log(data)
+    //console.log(bodyFormData)
+    // data &&
+    //   update({
+    //     avatar: personalInformation.avatar[0],
+    //     email: data.email,
+    //     name: personalInformation.name,
+    //   })
 
     update(bodyFormData as UpdatePersonalInformation)
   }
